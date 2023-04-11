@@ -26,18 +26,24 @@ const TodoList = (props: TodoListPropsType) => {
     const onNewTitleChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         (setNewTaskTitle(e.currentTarget.value))
     }
-    const onKeyPressHandler = (e: KeyboardEvent<HTMLInputElement>) => {
-        if (e.charCode === 13) {
-            props.addTasks(newTaskTitle)
-            setNewTaskTitle('')
 
-        }
-    }
+    const isAddTaskNotPossible = newTaskTitle.length === 0 || newTaskTitle.length > 15
+    const onKeyPressHandler =
+        isAddTaskNotPossible ? undefined
+            : (e: KeyboardEvent<HTMLInputElement>) => {
+                if (e.key === 'Enter') {
+                    props.addTasks(newTaskTitle)
+                    setNewTaskTitle('')
+
+                }
+            }
     const onClickHandler = () => {
         props.addTasks(newTaskTitle)
         setNewTaskTitle('')
-
     }
+
+    const titleTooLongWarning = newTaskTitle.length > 15 && <div>title should be shorter</div>
+
 
     const onClickAllHandler = () => props.changeFilter('all')
     const onClickActiveHandler = () => props.changeFilter('completed')
@@ -48,28 +54,33 @@ const TodoList = (props: TodoListPropsType) => {
         <div className="todolist">
             <h3>{props.title}</h3>
             <div>
-                <input value={newTaskTitle}
+                <input placeholder={'enter your text'}
+                       value={newTaskTitle}
                        onChange={onNewTitleChangeHandler}
-                       onKeyPress={onKeyPressHandler}/>
-                <button onClick={() => {
-                    onClickHandler()
-                }}>AddTask
+                       onKeyDown={onKeyPressHandler}/>
+                <button
+                    disabled={isAddTaskNotPossible}
+                    onClick={() => {
+                        onClickHandler()
+                    }}>Add task
                 </button>
+                {titleTooLongWarning}
             </div>
             <ul>
                 {
-                    props.tasks.map(t =>
-                        <li><input type="checkbox" checked={t.isDone}/>
-                            <span>{t.title}</span>
-                            <button onClick={() => {
-                                {
-                                    props.removeTask(t.id)
-                                }
-                            }}>Delete
-                            </button>
-                        </li>)
+                    props.tasks.map(t => {
+                        const onClickRemoveHandler = () => props.removeTask(t.id)
 
-                }
+                        return (
+                            <li>
+                                <input type="checkbox" checked={t.isDone}/>
+                                <span>{t.title}</span>
+                                <button
+                                    onClick={onClickRemoveHandler}>Delete
+                                </button>
+                            </li>
+                        )
+                    })}
 
             </ul>
             <div>
