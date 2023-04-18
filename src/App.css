@@ -28,3 +28,53 @@
 .is-done {
   opacity: 0.7;
 }
+
+ul {
+  list-style: none;
+  padding: 0px 15px
+}
+li {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 0;
+}
+li button {
+  height: 20px;
+  border: white;
+  border-radius: 10px;
+}
+.checkbox-title {
+
+}
+
+.btns {
+  display:flex;
+  justify-content: space-between;
+  margin: 0 15px;
+}
+
+.btns button{
+  width: 80px;
+  height: 30px;
+  border: white;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+}
+
+.inp-btn input {
+ width: 200px;
+  height: 20px;
+  border-radius: 20px;
+  border: white;
+  margin: 0 15px;
+}
+.inp-btn button {
+  height: 25px;
+  border: white;
+  border-radius: 10px;
+}

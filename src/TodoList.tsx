@@ -63,12 +63,12 @@ const TodoList = (props: TodoListPropsType) => {
     return (
         <div className="todolist">
             <h3>{props.title}</h3>
-            <div>
+            <div className={'inp-btn'}>
                 <input placeholder={'enter your text'}
-                       value={newTaskTitle}
-                       onChange={onNewTitleChangeHandler}
-                       onKeyDown={onKeyPressHandler}
-                       className={error? 'error':''}/>
+                          value={newTaskTitle}
+                          onChange={onNewTitleChangeHandler}
+                          onKeyDown={onKeyPressHandler}
+                          className={error ? 'error' : ''}/>
                 <button
                     disabled={isAddTaskNotPossible}
                     onClick={() => {
@@ -89,8 +89,8 @@ const TodoList = (props: TodoListPropsType) => {
 
                         return (
                             <li className={t.isDone? 'is-done':''} key={t.id}>
-                                <input type="checkbox" onChange={onChangeCheckBox} checked={t.isDone}/>
-                                <span>{t.title}</span>
+                                <div className={'checkbox-title'}><input type="checkbox" onChange={onChangeCheckBox} checked={t.isDone}/>
+                                    <span>{t.title}</span></div>
                                 <button
                                     onClick={onClickRemoveHandler}>Delete
                                 </button>
@@ -99,7 +99,7 @@ const TodoList = (props: TodoListPropsType) => {
                     })}
 
             </ul>
-            <div>
+            <div className={'btns'}>
                 <button className={props.filter==='all'?'active-filter':''} onClick={onClickAllHandler}>All</button>
                 <button className={props.filter==='active'?'active-filter':''} onClick={onClickActiveHandler}>Active</button>
                 <button className={props.filter==='completed'?'active-filter':''} onClick={onClickCompletedHandler}>Completed</button>
