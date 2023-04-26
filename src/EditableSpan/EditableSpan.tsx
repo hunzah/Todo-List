@@ -1,5 +1,5 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
-import '../App.css'
+import s from './EditableSpan.module.css'
 
 export type EditableSpan = {
     title: string
@@ -27,7 +27,7 @@ export function EditableSpan(props:EditableSpan) {
     };
 
     return editeMode? <input
-        className='input'
+        className={s.input}
         value={title}
         onChange={onChangeHandler}
         onBlur={activateViewMode}

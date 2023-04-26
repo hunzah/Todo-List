@@ -1,5 +1,5 @@
 import React, {FC, useState} from 'react';
-import './App.css';
+import s from './App.module.css';
 import TodoList, {TaskType} from './TodoList/TodoList';
 import {v1} from 'uuid';
 import {AddItemForm} from './AddItemForm/AddItemForm';
@@ -43,7 +43,7 @@ function App() {
         }
     )
 
-    // Wor With Tasks
+    // Work With Tasks
     function removeTask(id: string, todoListId: string) {
         const tasks = tasksObj[todoListId]
         tasksObj[todoListId] = tasks.filter(t => t.id !== id)
@@ -54,11 +54,14 @@ function App() {
 
     function addTasks(todoListId: string, title: string) {
 
+        const newTask: TaskType = {id: v1(), title: title, isDone: false};
+
         const tasks = tasksObj[todoListId]
-        const newTask = {id: v1(), title: title, isDone: false};
         tasksObj[todoListId] = [...tasks, newTask]
         setTasksObj({...tasksObj})
     }
+
+
 
 
     function changeStatus(taskId: string, isDone: boolean, todoListId: string) {
@@ -114,7 +117,7 @@ function App() {
     }
 
     return (
-        <div className="App">
+        <div className={s.App}>
             <AddItemForm addItem={addTodoList} titleForButtons={'Add Todo'}/>
             {
                 todoLists.map((tl) => {
@@ -142,6 +145,7 @@ function App() {
                         removeTodoList={removeTodoList}
                         changeTodoListTitle={changeTodoListTitle}
                     />
+
                 })
             }
 

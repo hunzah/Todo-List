@@ -1,0 +1,25 @@
+.App {
+    padding: 30px;
+    display: flex;
+
+}
+
+.App > div {
+    margin-right: 2vw;
+}
+
+
+
+
+
+
+
+
+
+h3 {
+    display: flex;
+    justify-content: center;
+}
+
+
+

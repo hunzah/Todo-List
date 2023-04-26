@@ -1,7 +1,8 @@
 import React, {ChangeEvent} from 'react';
 import {FilterValueType} from '../App';
+import s from './TodoList.module.css'
 import {AddItemForm} from '../AddItemForm/AddItemForm';
-import {EditableSpan, EditableSpan} from '../EditableSpan/EditableSpan';
+import {EditableSpan} from '../EditableSpan/EditableSpan';
 
 
 type TodoListPropsType = {
@@ -45,11 +46,11 @@ const addItem = (title:string) => {
 }
 
     return (
-        <div className="todolist">
+        <div className={s.todolist}>
 
-            <div className="closeButtonAndTitle">
+            <div className={s.closeButtonAndTitle}>
                 <h3> <EditableSpan title={props.title} onChangeTitleHandler={changeTodoListTitle}/></h3>
-                <button className="closeButton" onClick={removeTodoListHandler}>X</button>
+                <button className={s.closeButton} onClick={removeTodoListHandler}>X</button>
             </div>
             <AddItemForm addItem={addItem} titleForButtons={'Add Task'}/>
             <ul>
@@ -68,12 +69,12 @@ const addItem = (title:string) => {
 
 
                         return (
-                            <li className={t.isDone ? 'is-done' : ''} key={t.id}>
-                                <div className={'checkbox-title'}><input type="checkbox" onChange={onChangeCheckBoxHandler}
+                            <li className={t.isDone ? s.isDone : ''} key={t.id}>
+                                <div className={s.checkboxTitle}><input className={s.checkbox} type="checkbox" onChange={onChangeCheckBoxHandler}
                                                                          checked={t.isDone}/>
                                     <EditableSpan title={t.title} onChangeTitleHandler = {onChangeTitleHandler}/>
                                 </div>
-                                <div className='buttons'>
+                                <div className={s.deleteButtons}>
                                     <button
                                         onClick={onClickRemoveHandler}>Delete
                                     </button>
@@ -83,13 +84,13 @@ const addItem = (title:string) => {
                     })}
 
             </ul>
-            <div className={'btns'}>
-                <button className={props.filter === 'all' ? 'active-filter' : ''} onClick={onClickAllHandler}>All
+            <div className={s.filterButtons}>
+                <button className={props.filter === 'all' ? s.activeFilter : ''} onClick={onClickAllHandler}>All
                 </button>
-                <button className={props.filter === 'active' ? 'active-filter' : ''}
+                <button className={props.filter === 'active' ? s.activeFilter : ''}
                         onClick={onClickActiveHandler}>Active
                 </button>
-                <button className={props.filter === 'completed' ? 'active-filter' : ''}
+                <button className={props.filter === 'completed' ? s.activeFilter : ''}
                         onClick={onClickCompletedHandler}>Completed
                 </button>
             </div>

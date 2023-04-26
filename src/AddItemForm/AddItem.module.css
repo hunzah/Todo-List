@@ -1,0 +1,23 @@
+.inpBtn input {
+
+    padding: 0 5px;
+    width: 200px;
+    height: 20px;
+    border-radius: 20px;
+    border: white;
+    margin: 0 15px;
+}
+
+.inpBtn button {
+    height: 25px;
+    border: white;
+    border-radius: 10px;
+
+}
+
+
+.errorMessage {
+    color: #d01111;
+}
+
+

@@ -1,4 +1,5 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
+import s from './AddItem.module.css'
 
 type AddItemFormPropsType = {
     addItem: (title: string) => void
@@ -28,35 +29,35 @@ export function AddItemForm (props:AddItemFormPropsType) {
                         setNewItemTitle('')
                         setError(null)
                     }
-
                 }
             }
 
 
     const onClickHandler = () => {
         if (newItemTitle.trim() === '') {
-            setError('Title is required')
+            // setError('Title is required')
+            setError('Введите текст')
         } else {
             props.addItem(newItemTitle.trim())
             setNewItemTitle('')
         }
     }
 
-    const titleTooLongWarning = newItemTitle.trim().length > 15 && <div>title should be shorter</div>
+    const titleTooLongWarning = newItemTitle.trim().length > 15 && <div className={s.errorMessage}>title should be shorter</div>
     return (
-        <div className={'inp-btn'}>
+        <div className={s.inpBtn}>
             <input placeholder={'enter your text'}
                    value={newItemTitle}
                    onChange={onNewTitleChangeHandler}
                    onKeyDown={onKeyPressHandler}
-                   className={error ? 'error' : ''}/>
+                   className={error ? s.error : ''}/>
             <button
                 disabled={isAddTaskNotPossible}
                 onClick={() => {
                     onClickHandler()
                 }}>{props.titleForButtons}
             </button>
-            {error && <div className={'error-message'}>{error}</div>}
+            {error && <div className={s.errorMessage}>{error}</div>}
             {titleTooLongWarning}
         </div>
     )
