@@ -38,7 +38,7 @@ const TodoList = (props: TodoListPropsType) => {
         props.removeTodoList(props.id)
     }
     const changeTodoListTitle = (newTitle:string) =>{
-props.changeTodoListTitle(props.id, newTitle)
+     props.changeTodoListTitle(props.id, newTitle)
     }
 
 const addItem = (title:string) => {

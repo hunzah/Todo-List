@@ -53,11 +53,14 @@ function App() {
 
 
     function addTasks(todoListId: string, title: string) {
-
+        console.log(todoListId)
+        console.log(title)
         const newTask: TaskType = {id: v1(), title: title, isDone: false};
-
-        const tasks = tasksObj[todoListId]
-        tasksObj[todoListId] = [...tasks, newTask]
+        let tasks = tasksObj[todoListId]
+        console.log(tasks)
+        let newTasks = [...tasks, newTask]
+        console.log(newTasks)
+        tasksObj[todoListId] =  newTasks
         setTasksObj({...tasksObj})
     }
 
@@ -111,9 +114,10 @@ function App() {
 
 
     const addTodoList = (title: string) => {
-        const newTodoList: TodolistType = {id: v1(), title: title, filter: 'all'}
+        const newTodoListId = v1()
+        const newTodoList: TodolistType = {id: newTodoListId, title: title, filter: 'all'}
         setTodoList([...todoLists, newTodoList])
-
+       setTasksObj(prev=>({...prev,[newTodoListId]:[]}))
     }
 
     return (

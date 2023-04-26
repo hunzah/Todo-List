@@ -17,7 +17,7 @@ export function AddItemForm (props:AddItemFormPropsType) {
     }
 
 
-    const isAddTaskNotPossible = newItemTitle.length === 0 || newItemTitle.trim().length > 15
+    const isAddTaskNotPossible = newItemTitle.length === 0 || newItemTitle.trim().length > 20
     const onKeyPressHandler =
         isAddTaskNotPossible ? undefined
             : (e: KeyboardEvent<HTMLInputElement>) => {
@@ -43,7 +43,7 @@ export function AddItemForm (props:AddItemFormPropsType) {
         }
     }
 
-    const titleTooLongWarning = newItemTitle.trim().length > 15 && <div className={s.errorMessage}>title should be shorter</div>
+    const titleTooLongWarning = newItemTitle.trim().length > 20 && <div className={s.errorMessage}>title should be shorter</div>
     return (
         <div className={s.inpBtn}>
             <input placeholder={'enter your text'}
