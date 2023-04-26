@@ -1,12 +1,12 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
-import './App.css'
+import '../App.css'
 
-export type EditableSpanPropsType = {
+export type EditableSpan = {
     title: string
     onChangeTitleHandler: (newValue: string)=> void
 }
 
-export function EditableSpan(props:EditableSpanPropsType) {
+export function EditableSpan(props:EditableSpan) {
     const [editeMode, setEditeMode] = useState<boolean>(false)
     const [title,setTitle] = useState ('')
 

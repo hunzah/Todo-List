@@ -2,6 +2,7 @@ import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 
 type AddItemFormPropsType = {
     addItem: (title: string) => void
+    titleForButtons:string
 }
 
 
@@ -53,7 +54,7 @@ export function AddItemForm (props:AddItemFormPropsType) {
                 disabled={isAddTaskNotPossible}
                 onClick={() => {
                     onClickHandler()
-                }}>Add
+                }}>{props.titleForButtons}
             </button>
             {error && <div className={'error-message'}>{error}</div>}
             {titleTooLongWarning}

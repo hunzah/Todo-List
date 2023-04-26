@@ -1,7 +1,7 @@
 import React, {ChangeEvent} from 'react';
-import {FilterValueType} from './App';
-import {AddItemForm} from './AddItemForm';
-import {EditableSpan, EditableSpanPropsType} from './EditableSpanPropsType';
+import {FilterValueType} from '../App';
+import {AddItemForm} from '../AddItemForm/AddItemForm';
+import {EditableSpan, EditableSpan} from '../EditableSpan/EditableSpan';
 
 
 type TodoListPropsType = {
@@ -10,7 +10,7 @@ type TodoListPropsType = {
     tasks: Array<TaskType>
     removeTask: (id: string, todoListId: string) => void,
     changeFilter: (value: FilterValueType, todoListId: string) => void
-    addTasks: (title: string, id:string) => void
+    addTasks: (id:string, title: string) => void
     changeStatus: (taskId: string, isDone: boolean, todoListId: string) => void
     changeTaskTitle: (taskId: string, newTitle:string, todoListId: string)=> void
     filter: FilterValueType
@@ -51,7 +51,7 @@ const addItem = (title:string) => {
                 <h3> <EditableSpan title={props.title} onChangeTitleHandler={changeTodoListTitle}/></h3>
                 <button className="closeButton" onClick={removeTodoListHandler}>X</button>
             </div>
-            <AddItemForm addItem={addItem}/>
+            <AddItemForm addItem={addItem} titleForButtons={'Add Task'}/>
             <ul>
                 {
                     props.tasks.map(t => {
@@ -73,9 +73,11 @@ const addItem = (title:string) => {
                                                                          checked={t.isDone}/>
                                     <EditableSpan title={t.title} onChangeTitleHandler = {onChangeTitleHandler}/>
                                 </div>
-                                <button
-                                    onClick={onClickRemoveHandler}>Delete
-                                </button>
+                                <div className='buttons'>
+                                    <button
+                                        onClick={onClickRemoveHandler}>Delete
+                                    </button>
+                                </div>
                             </li>
                         )
                     })}

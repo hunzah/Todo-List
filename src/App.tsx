@@ -1,8 +1,8 @@
 import React, {FC, useState} from 'react';
 import './App.css';
-import TodoList, {TaskType} from './TodoList';
+import TodoList, {TaskType} from './TodoList/TodoList';
 import {v1} from 'uuid';
-import {AddItemForm} from './AddItemForm';
+import {AddItemForm} from './AddItemForm/AddItemForm';
 
 
 export type FilterValueType =
@@ -115,7 +115,7 @@ function App() {
 
     return (
         <div className="App">
-            <AddItemForm addItem={addTodoList}/>
+            <AddItemForm addItem={addTodoList} titleForButtons={'Add Todo'}/>
             {
                 todoLists.map((tl) => {
 
