@@ -6,25 +6,25 @@ type AddItemFormPropsType = {
 
 
 export function AddItemForm (props:AddItemFormPropsType) {
-    const [newTaskTitle, setNewTaskTitle] = useState('')
+    const [newItemTitle, setNewItemTitle] = useState('')
     const [error, setError] = useState<string | null>(null)
 
 
     const onNewTitleChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        setNewTaskTitle(e.currentTarget.value)
+        setNewItemTitle(e.currentTarget.value)
     }
 
 
-    const isAddTaskNotPossible = newTaskTitle.length === 0 || newTaskTitle.trim().length > 15
+    const isAddTaskNotPossible = newItemTitle.length === 0 || newItemTitle.trim().length > 15
     const onKeyPressHandler =
         isAddTaskNotPossible ? undefined
             : (e: KeyboardEvent<HTMLInputElement>) => {
                 if (e.key === 'Enter') {
-                    if (newTaskTitle.trim() === '') {
+                    if (newItemTitle.trim() === '') {
                         setError('Title is required')
                     } else {
-                        props.addItem(newTaskTitle.trim())
-                        setNewTaskTitle('')
+                        props.addItem(newItemTitle.trim())
+                        setNewItemTitle('')
                         setError(null)
                     }
 
@@ -33,19 +33,19 @@ export function AddItemForm (props:AddItemFormPropsType) {
 
 
     const onClickHandler = () => {
-        if (newTaskTitle.trim() === '') {
+        if (newItemTitle.trim() === '') {
             setError('Title is required')
         } else {
-            props.addItem(newTaskTitle.trim())
-            setNewTaskTitle('')
+            props.addItem(newItemTitle.trim())
+            setNewItemTitle('')
         }
     }
 
-    const titleTooLongWarning = newTaskTitle.trim().length > 15 && <div>title should be shorter</div>
+    const titleTooLongWarning = newItemTitle.trim().length > 15 && <div>title should be shorter</div>
     return (
         <div className={'inp-btn'}>
             <input placeholder={'enter your text'}
-                   value={newTaskTitle}
+                   value={newItemTitle}
                    onChange={onNewTitleChangeHandler}
                    onKeyDown={onKeyPressHandler}
                    className={error ? 'error' : ''}/>
@@ -53,7 +53,7 @@ export function AddItemForm (props:AddItemFormPropsType) {
                 disabled={isAddTaskNotPossible}
                 onClick={() => {
                     onClickHandler()
-                }}>Add task
+                }}>Add
             </button>
             {error && <div className={'error-message'}>{error}</div>}
             {titleTooLongWarning}

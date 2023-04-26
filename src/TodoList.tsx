@@ -41,7 +41,7 @@ props.changeTodoListTitle(props.id, newTitle)
     }
 
 const addItem = (title:string) => {
-    props.addTasks(title,props.id)
+    props.addTasks(props.id,title)
 }
 
     return (

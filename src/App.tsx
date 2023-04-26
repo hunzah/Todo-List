@@ -76,7 +76,6 @@ function App() {
 
         if (task) task.title = newTitle
         setTasksObj({...tasksObj})
-
     }
 
 
@@ -109,7 +108,7 @@ function App() {
 
 
     const addTodoList = (title: string) => {
-        const newTodoList: TodolistType = {id: todoListId2, title: title, filter: 'all'}
+        const newTodoList: TodolistType = {id: v1(), title: title, filter: 'all'}
         setTodoList([...todoLists, newTodoList])
 
     }
@@ -142,7 +141,6 @@ function App() {
                         filter={tl.filter}
                         removeTodoList={removeTodoList}
                         changeTodoListTitle={changeTodoListTitle}
-
                     />
                 })
             }
