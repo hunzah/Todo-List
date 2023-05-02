@@ -4,14 +4,14 @@ import {TextField} from '@mui/material';
 
 export type EditableSpan = {
     title: string
-    onChangeTitleHandler: (newValue: string)=> void
+    onChangeTitleHandler: (newValue: string) => void
 }
 
-export function EditableSpan(props:EditableSpan) {
+export function EditableSpan(props: EditableSpan) {
     const [editeMode, setEditeMode] = useState<boolean>(false)
-    const [title,setTitle] = useState ('')
+    const [title, setTitle] = useState(props.title)
 
-    const activateEditeMode=()=> {
+    const activateEditeMode = () => {
         setEditeMode(true)
         setTitle(props.title)
     }
@@ -19,23 +19,24 @@ export function EditableSpan(props:EditableSpan) {
         setEditeMode(false)
         props.onChangeTitleHandler(title)
     }
-    const onChangeHandler = (e:ChangeEvent<HTMLInputElement>) => {
+    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setTitle(e.currentTarget.value)
     }
     const onBlurHandler = () => {
-   activateViewMode();
+        activateViewMode();
     };
     const onKeyDownHandler = (e: KeyboardEvent<HTMLInputElement>) => {
         e.key === 'Enter' && activateViewMode();
     };
 
-    return editeMode?
+    return editeMode ?
         <TextField id="outlined-basic" label="Type value" variant="standard"
-        className={s.input}
-        value={title}
-        onChange={onChangeHandler}
-        onBlur={onBlurHandler}
-        onKeyDown={onKeyDownHandler}
+                   className={s.input}
+                   value={title}
+                   onChange={onChangeHandler}
+                   onBlur={onBlurHandler}
+                   onKeyDown={onKeyDownHandler}
+                   autoFocus
         />
         : <span onDoubleClick={activateEditeMode}>{props.title}</span>
 }

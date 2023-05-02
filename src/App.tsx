@@ -54,13 +54,12 @@ function App() {
 
 
     function addTasks(todoListId: string, title: string) {
-        console.log(todoListId)
-        console.log(title)
+
         const newTask: TaskType = {id: v1(), title: title, isDone: false};
         let tasks = tasksObj[todoListId]
-        console.log(tasks)
+
         let newTasks = [...tasks, newTask]
-        console.log(newTasks)
+
         tasksObj[todoListId] = newTasks
         setTasksObj({...tasksObj})
     }
