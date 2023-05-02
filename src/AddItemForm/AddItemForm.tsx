@@ -1,5 +1,6 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import s from './AddItem.module.css'
+import {Button} from '@mui/material';
 
 type AddItemFormPropsType = {
     addItem: (title: string) => void
@@ -51,12 +52,14 @@ export function AddItemForm (props:AddItemFormPropsType) {
                    onChange={onNewTitleChangeHandler}
                    onKeyDown={onKeyPressHandler}
                    className={error ? s.error : ''}/>
-            <button
+            <Button
+                variant='contained'
+                color ='primary'
                 disabled={isAddTaskNotPossible}
                 onClick={() => {
                     onClickHandler()
                 }}>{props.titleForButtons}
-            </button>
+            </Button>
             {error && <div className={s.errorMessage}>{error}</div>}
             {titleTooLongWarning}
         </div>

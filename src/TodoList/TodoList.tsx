@@ -3,6 +3,9 @@ import {FilterValueType} from '../App';
 import s from './TodoList.module.css'
 import {AddItemForm} from '../AddItemForm/AddItemForm';
 import {EditableSpan} from '../EditableSpan/EditableSpan';
+import {IconButton} from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
+
 
 
 type TodoListPropsType = {
@@ -50,7 +53,10 @@ const addItem = (title:string) => {
 
             <div className={s.closeButtonAndTitle}>
                 <h3> <EditableSpan title={props.title} onChangeTitleHandler={changeTodoListTitle}/></h3>
-                <button className={s.closeButton} onClick={removeTodoListHandler}>X</button>
+                {/*<button className={s.closeButton} onClick={removeTodoListHandler}>X</button>*/}
+                <IconButton onClick={removeTodoListHandler}>
+                    <DeleteIcon />
+                </IconButton>
             </div>
             <AddItemForm addItem={addItem} titleForButtons={'Add Task'}/>
             <ul>
