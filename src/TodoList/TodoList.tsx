@@ -3,7 +3,7 @@ import {FilterValueType} from '../App';
 import s from './TodoList.module.css'
 import {AddItemForm} from '../AddItemForm/AddItemForm';
 import {EditableSpan} from '../EditableSpan/EditableSpan';
-import {Button, IconButton} from '@mui/material';
+import {Button, Checkbox, IconButton} from '@mui/material';
 import {Delete} from '@mui/icons-material';
 
 
@@ -58,7 +58,7 @@ const TodoList = (props: TodoListPropsType) => {
                 </IconButton>
             </div>
             <AddItemForm addItem={addItem} titleForButtons={'Add Task'}/>
-            <ul>
+            <div>
                 {
                     props.tasks.map(t => {
                         const onClickRemoveHandler = () => props.removeTask(t.id, props.id)
@@ -74,10 +74,11 @@ const TodoList = (props: TodoListPropsType) => {
 
 
                         return (
-                            <li className={t.isDone ? s.isDone : ''} key={t.id}>
-                                <div className={s.checkboxTitle}><input className={s.checkbox} type="checkbox"
-                                                                        onChange={onChangeCheckBoxHandler}
-                                                                        checked={t.isDone}/>
+                            <div className={t.isDone ? s.isDone : ''} key={t.id}>
+                                <div className={s.checkboxTitle}>
+                                    <Checkbox className={s.checkbox}
+                                           onChange={onChangeCheckBoxHandler}
+                                           checked={t.isDone}/>
                                     <EditableSpan title={t.title} onChangeTitleHandler={onChangeTitleHandler}/>
                                 </div>
                                 <div className={s.deleteButtons}>
@@ -85,14 +86,14 @@ const TodoList = (props: TodoListPropsType) => {
                                         <Delete/>
                                     </IconButton>
                                 </div>
-                            </li>
+                            </div>
                         )
                     })}
 
-            </ul>
+            </div>
             <div className={s.filterButtons}>
                 <Button variant={props.filter === 'all' ? 'contained' : 'text'} onClick={onClickAllHandler}
-                        /*<Button  className={props.filter === 'all' ? s.activeFilter : ''} */
+                    /*<Button  className={props.filter === 'all' ? s.activeFilter : ''} */
                 >All
                 </Button>
 

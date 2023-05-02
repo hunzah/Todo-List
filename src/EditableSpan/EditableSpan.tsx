@@ -1,5 +1,6 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import s from './EditableSpan.module.css'
+import {TextField} from '@mui/material';
 
 export type EditableSpan = {
     title: string
@@ -21,16 +22,19 @@ export function EditableSpan(props:EditableSpan) {
     const onChangeHandler = (e:ChangeEvent<HTMLInputElement>) => {
         setTitle(e.currentTarget.value)
     }
-
+    const onBlurHandler = () => {
+   activateViewMode();
+    };
     const onKeyDownHandler = (e: KeyboardEvent<HTMLInputElement>) => {
         e.key === 'Enter' && activateViewMode();
     };
 
-    return editeMode? <input
+    return editeMode?
+        <TextField id="outlined-basic" label="Type value" variant="standard"
         className={s.input}
         value={title}
         onChange={onChangeHandler}
-        onBlur={activateViewMode}
+        onBlur={onBlurHandler}
         onKeyDown={onKeyDownHandler}
         />
         : <span onDoubleClick={activateEditeMode}>{props.title}</span>

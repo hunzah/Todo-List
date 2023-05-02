@@ -1,6 +1,7 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import s from './AddItem.module.css'
-import {Button, TextField} from '@mui/material';
+import {Button, IconButton, TextField} from '@mui/material';
+import {ControlPoint} from '@mui/icons-material';
 
 type AddItemFormPropsType = {
     addItem: (title: string) => void
@@ -43,28 +44,33 @@ export function AddItemForm(props: AddItemFormPropsType) {
         }
     }
 
-    const titleTooLongWarning = newItemTitle.trim().length > 20 &&
-        <div className={s.errorMessage}>title should be shorter</div>
+    // const titleTooLongWarning = newItemTitle.trim().length > 20 &&
+    //     <div className={s.errorMessage}>title should be shorter</div>
     return (
         <>
             <div className={s.inpBtn}>
                 <TextField id="outlined-basic" label="Type value" variant="outlined" error={!!error}
+                           helperText={!!error}
                            placeholder={'enter your text'}
                            value={newItemTitle}
                            onChange={onNewTitleChangeHandler}
                            onKeyDown={onKeyPressHandler}
-                           className={error ? s.error : ''}/>
-                <Button
-                    variant="contained"
+                    // className={error ? s.error : ''}
+                />
+                <IconButton
+                    // variant="contained"
                     color="primary"
+
                     disabled={isAddTaskNotPossible}
                     onClick={() => {
                         onClickHandler()
-                    }}>{props.titleForButtons}
-                </Button>
+                    }}>
+                    {/*{props.titleForButtons}*/}
+                    <ControlPoint/>
+                </IconButton>
             </div>
-            {error && <div className={s.errorMessage}>{error}</div>}
-            {titleTooLongWarning}
+            {/*{error && <div className={s.errorMessage}>{error}</div>}*/}
+            {/*{titleTooLongWarning}*/}
         </>
     )
 }

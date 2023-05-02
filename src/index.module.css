@@ -6,8 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /*background-image: url('../public/imgs for background/planet-bg.jpg');*/
-  background-size: 100%;
-  color: aquamarine;
+  /*background-size: 100%;*/
+  /*color: aquamarine;*/
 }
 
 code {
