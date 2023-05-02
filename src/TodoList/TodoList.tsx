@@ -3,8 +3,8 @@ import {FilterValueType} from '../App';
 import s from './TodoList.module.css'
 import {AddItemForm} from '../AddItemForm/AddItemForm';
 import {EditableSpan} from '../EditableSpan/EditableSpan';
-import {IconButton} from '@mui/material';
-import DeleteIcon from '@mui/icons-material/Delete';
+import {Button, IconButton} from '@mui/material';
+import {Delete} from '@mui/icons-material';
 
 
 
@@ -55,7 +55,7 @@ const addItem = (title:string) => {
                 <h3> <EditableSpan title={props.title} onChangeTitleHandler={changeTodoListTitle}/></h3>
                 {/*<button className={s.closeButton} onClick={removeTodoListHandler}>X</button>*/}
                 <IconButton onClick={removeTodoListHandler}>
-                    <DeleteIcon />
+                    <Delete />
                 </IconButton>
             </div>
             <AddItemForm addItem={addItem} titleForButtons={'Add Task'}/>
@@ -81,9 +81,9 @@ const addItem = (title:string) => {
                                     <EditableSpan title={t.title} onChangeTitleHandler = {onChangeTitleHandler}/>
                                 </div>
                                 <div className={s.deleteButtons}>
-                                    <button
-                                        onClick={onClickRemoveHandler}>Delete
-                                    </button>
+                                    <IconButton onClick={onClickRemoveHandler}>
+                                        <Delete />
+                                    </IconButton>
                                 </div>
                             </li>
                         )
@@ -91,14 +91,14 @@ const addItem = (title:string) => {
 
             </ul>
             <div className={s.filterButtons}>
-                <button className={props.filter === 'all' ? s.activeFilter : ''} onClick={onClickAllHandler}>All
-                </button>
-                <button className={props.filter === 'active' ? s.activeFilter : ''}
+                <Button className={props.filter === 'all' ? s.activeFilter : ''} onClick={onClickAllHandler}>All
+                </Button>
+                <Button className={props.filter === 'active' ? s.activeFilter : ''}
                         onClick={onClickActiveHandler}>Active
-                </button>
-                <button className={props.filter === 'completed' ? s.activeFilter : ''}
+                </Button>
+                <Button className={props.filter === 'completed' ? s.activeFilter : ''}
                         onClick={onClickCompletedHandler}>Completed
-                </button>
+                </Button>
             </div>
         </div>
     )
