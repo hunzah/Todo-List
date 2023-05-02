@@ -1,14 +1,14 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import s from './AddItem.module.css'
-import {Button} from '@mui/material';
+import {Button, TextField} from '@mui/material';
 
 type AddItemFormPropsType = {
     addItem: (title: string) => void
-    titleForButtons:string
+    titleForButtons: string
 }
 
 
-export function AddItemForm (props:AddItemFormPropsType) {
+export function AddItemForm(props: AddItemFormPropsType) {
     const [newItemTitle, setNewItemTitle] = useState('')
     const [error, setError] = useState<string | null>(null)
 
@@ -36,32 +36,35 @@ export function AddItemForm (props:AddItemFormPropsType) {
 
     const onClickHandler = () => {
         if (newItemTitle.trim() === '') {
-            // setError('Title is required')
-            setError('Введите текст')
+            setError('Title is required')
         } else {
             props.addItem(newItemTitle.trim())
             setNewItemTitle('')
         }
     }
 
-    const titleTooLongWarning = newItemTitle.trim().length > 20 && <div className={s.errorMessage}>title should be shorter</div>
+    const titleTooLongWarning = newItemTitle.trim().length > 20 &&
+        <div className={s.errorMessage}>title should be shorter</div>
     return (
-        <div className={s.inpBtn}>
-            <input placeholder={'enter your text'}
-                   value={newItemTitle}
-                   onChange={onNewTitleChangeHandler}
-                   onKeyDown={onKeyPressHandler}
-                   className={error ? s.error : ''}/>
-            <Button
-                variant='contained'
-                color ='primary'
-                disabled={isAddTaskNotPossible}
-                onClick={() => {
-                    onClickHandler()
-                }}>{props.titleForButtons}
-            </Button>
+        <>
+            <div className={s.inpBtn}>
+                <TextField id="outlined-basic" label="Type value" variant="outlined" error={!!error}
+                           placeholder={'enter your text'}
+                           value={newItemTitle}
+                           onChange={onNewTitleChangeHandler}
+                           onKeyDown={onKeyPressHandler}
+                           className={error ? s.error : ''}/>
+                <Button
+                    variant="contained"
+                    color="primary"
+                    disabled={isAddTaskNotPossible}
+                    onClick={() => {
+                        onClickHandler()
+                    }}>{props.titleForButtons}
+                </Button>
+            </div>
             {error && <div className={s.errorMessage}>{error}</div>}
             {titleTooLongWarning}
-        </div>
+        </>
     )
 }
