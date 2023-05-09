@@ -1,7 +1,8 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import s from './AddItem.module.css'
-import {Button, IconButton, TextField} from '@mui/material';
+import {TextField} from '@mui/material';
 import {ControlPoint} from '@mui/icons-material';
+import IconButton from '@mui/material/IconButton';
 
 type AddItemFormPropsType = {
     addItem: (title: string) => void

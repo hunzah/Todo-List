@@ -3,8 +3,10 @@ import {FilterValueType} from '../App';
 import s from './TodoList.module.css'
 import {AddItemForm} from '../AddItemForm/AddItemForm';
 import {EditableSpan} from '../EditableSpan/EditableSpan';
-import {Button, Checkbox, IconButton} from '@mui/material';
-import {Delete} from '@mui/icons-material';
+import {Checkbox} from '@mui/material';
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
+import IconButton from '@mui/material/IconButton';
 
 
 type TodoListPropsType = {
@@ -54,7 +56,7 @@ const TodoList = (props: TodoListPropsType) => {
                 <h3><EditableSpan title={props.title} onChangeTitleHandler={changeTodoListTitle}/></h3>
                 {/*<button className={s.closeButton} onClick={removeTodoListHandler}>X</button>*/}
                 <IconButton onClick={removeTodoListHandler}>
-                    <Delete/>
+                    <DeleteIcon/>
                 </IconButton>
             </div>
             <AddItemForm addItem={addItem} titleForButtons={'Add Task'}/>
@@ -83,7 +85,7 @@ const TodoList = (props: TodoListPropsType) => {
                                 </div>
                                 <div className={s.deleteButtons}>
                                     <IconButton onClick={onClickRemoveHandler}>
-                                        <Delete/>
+                                        <DeleteIcon/>
                                     </IconButton>
                                 </div>
                             </div>
