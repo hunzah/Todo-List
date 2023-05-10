@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/state/user-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/user-reducer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/user-reducer.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/user-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/user-reducer.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/user-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/user-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +111,7 @@
       <workItem from="1683085698257" duration="422000" />
       <workItem from="1683434461170" duration="612000" />
       <workItem from="1683644875051" duration="2452000" />
-      <workItem from="1683708788429" duration="5094000" />
+      <workItem from="1683708788429" duration="7252000" />
     </task>
     <servers />
   </component>
