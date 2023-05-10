@@ -3,7 +3,14 @@ import s from './App.module.css';
 import TodoList, {TaskType} from './TodoList/TodoList';
 import {v1} from 'uuid';
 import {AddItemForm} from './AddItemForm/AddItemForm';
-import {AppBar, Button, Container, Grid, IconButton, Paper, Toolbar, Typography} from '@mui/material';
+import Typography from '@mui/material/Typography';
+import Toolbar from '@mui/material/Toolbar';
+import Paper from '@mui/material/Paper';
+import IconButton from '@mui/material/IconButton';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import AppBar from '@mui/material/AppBar';
 import MenuIcon from '@mui/icons-material/Menu';
 
 export type FilterValueType =
@@ -138,7 +145,7 @@ function App() {
                 </Toolbar>
             </AppBar>
             <Container fixed>
-                <Grid container style ={{padding:'20px'}}>
+                <Grid container style={{padding: '20px'}}>
                     <AddItemForm addItem={addTodoList} titleForButtons={'Add Todo'}/>
                 </Grid>
                 <Grid container spacing={3}>

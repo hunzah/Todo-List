@@ -1,6 +1,6 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import s from './EditableSpan.module.css'
-import {TextField} from '@mui/material';
+import TextField from '@mui/material/TextField';
 
 export type EditableSpan = {
     title: string
