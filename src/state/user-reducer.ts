@@ -18,11 +18,11 @@ switch (action.type) {
     default: return state
 }}
 
-export const UserReducer = (state:UserType,action:{type:string}):UserType => {
+export const UserReducerAli = (state:UserType,action:{type:string}):UserType => {
     switch (action.type) {
-        case 'SUM-AGE' :
+        case 'Ali-SUM-AGE' :
             return {...state,age:state.age+=1}
-        case 'ADD-CHILD':
+        case 'Ali-ADD-CHILD':
             return {...state, childrenCount: state.childrenCount+=1}
         default: return state
     }}
