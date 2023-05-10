@@ -91,7 +91,7 @@ function App() {
 
 
     // Work with TodoLists
-    export const removeTodoList = (todoListId: string) => {
+    const removeTodoList = (todoListId: string) => {
         setTodoList(todoLists.filter(tl => tl.id !== todoListId))
 
         // delete tasksObj[todoListId]
