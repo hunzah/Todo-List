@@ -15,14 +15,10 @@ switch (action.type) {
         return {...state,age:state.age+=1}
     case 'ADD-CHILD':
         return {...state, childrenCount: state.childrenCount+=1}
+    case 'Ali-SUM-AGE' :
+        return {...state,age:state.age+=1}
+    case 'Ali-ADD-CHILD':
+        return {...state, childrenCount: state.childrenCount+=1}
     default: return state
 }}
 
-export const UserReducerAli = (state:UserType,action:{type:string}):UserType => {
-    switch (action.type) {
-        case 'Ali-SUM-AGE' :
-            return {...state,age:state.age+=1}
-        case 'Ali-ADD-CHILD':
-            return {...state, childrenCount: state.childrenCount+=1}
-        default: return state
-    }}
