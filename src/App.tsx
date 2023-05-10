@@ -16,11 +16,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 export type FilterValueType =
     'all' | 'completed' | 'active'
 
-type TodolistType = {
+export type TodolistType = {
     id: string, title: string, filter: FilterValueType
 }
 
-type TasksStateType = {
+export type TasksStateType = {
     [key: string]: TaskType[]
 }
 
@@ -91,7 +91,7 @@ function App() {
 
 
     // Work with TodoLists
-    const removeTodoList = (todoListId: string) => {
+    export const removeTodoList = (todoListId: string) => {
         setTodoList(todoLists.filter(tl => tl.id !== todoListId))
 
         // delete tasksObj[todoListId]

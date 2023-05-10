@@ -1,49 +1,14 @@
-import {UserReducer, UserType} from './user-reducer';
+import {v1} from 'uuid';
+import {TodolistReducer} from './todolist-reducer';
 
-test('user should increment only age', () => {
-    const user: UserType = {
-        age: 5,
-        name: 'Vova',
-        childrenCount:2
-    }
-    UserReducer(user, {type: 'SUM-AGE'})
-    expect(user.age).toBe(6)
-    expect(user.childrenCount).toBe(2)
 
-})
-test('user should increment only childrens', () => {
-
-    const user: UserType = {
-        age: 5,
-        name: 'Vova',
-        childrenCount:2
-    }
-     UserReducer(user, {type: 'ADD-CHILD'})
-    expect(user.age).toBe(5)
-    expect(user.childrenCount).toBe(3)
-
-})
-
-test('user should increment only age', () => {
-    const user: UserType = {
-        age: 45,
-        name: 'Ali',
-        childrenCount:5
-    }
-    UserReducer(user, {type: 'Ali-SUM-AGE'})
-    expect(user.age).toBe(46)
-    expect(user.childrenCount).toBe(5)
-
-})
-test('user should increment only childrens', () => {
-
-    const user: UserType = {
-        age: 45,
-        name: 'Ali',
-        childrenCount:5
-    }
-    UserReducer(user, {type: 'Ali-ADD-CHILD'})
-    expect(user.age).toBe(45)
-    expect(user.childrenCount).toBe(6)
+const todoListId1 = v1()
+const todoListId2 = v1()
+const startState = [
+    {id: todoListId1, title: 'What to learn', filter: 'all'},
+    {id: todoListId2, title: 'What to buy', filter: 'all'}]
+test('Todo should be deleted', () => {
+    TodolistReducer(startState,{type: 'REMOVE-TODO-HANDLER'},todoListId1)
+    expect(todoLists.length).toBe(todoLists.length - 1)
 
 })

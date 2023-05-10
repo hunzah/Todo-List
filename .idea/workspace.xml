@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/TodoList/todolist.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/user-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/user-reducer.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/user-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/user-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/todolist-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/todolist-reducer.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +43,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Work\todolist\src\TodoList" />
+    </key>
     <key name="es6.move.members.recent.items">
       <recent name="D:\Work\todolist\src\EditableSpanPropsType.tsx" />
     </key>
@@ -112,7 +115,7 @@
       <workItem from="1683085698257" duration="422000" />
       <workItem from="1683434461170" duration="612000" />
       <workItem from="1683644875051" duration="2452000" />
-      <workItem from="1683708788429" duration="8723000" />
+      <workItem from="1683708788429" duration="9920000" />
     </task>
     <servers />
   </component>
