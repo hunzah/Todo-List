@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/todolist-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/todolist-reducer.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +57,7 @@
       <recent name="D:\Work\todolist\src\AddItemForm" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.Todo should be deleted">
+  <component name="RunManager" selected="Jest.Todo title should be changed">
     <configuration name="Todo should be deleted" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -64,6 +68,32 @@
       <test-file value="$PROJECT_DIR$/src/TodoList/todolist-reducer.test.ts" />
       <test-names>
         <test-name value="Todo should be deleted" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Todo title should be changed" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/TodoList/todolist-reducer.test.ts" />
+      <test-names>
+        <test-name value="Todo title should be changed" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="renders learn react link" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/App.test.tsx" />
+      <test-names>
+        <test-name value="renders learn react link" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -82,7 +112,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.Todo title should be changed" />
         <item itemvalue="Jest.Todo should be deleted" />
+        <item itemvalue="Jest.renders learn react link" />
         <item itemvalue="Jest.testing reducer" />
       </list>
     </recent_temporary>
@@ -128,7 +160,7 @@
       <workItem from="1683644875051" duration="2452000" />
       <workItem from="1683708788429" duration="10207000" />
       <workItem from="1683741952459" duration="1316000" />
-      <workItem from="1683786439572" duration="303000" />
+      <workItem from="1683786439572" duration="5587000" />
     </task>
     <servers />
   </component>
