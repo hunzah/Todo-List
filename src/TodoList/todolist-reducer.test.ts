@@ -8,6 +8,7 @@ import {
 import {TodolistType} from '../App';
 
 
+
 test('Todo should be deleted', () => {
     const todoListId1 = v1()
     const todoListId2 = v1()
@@ -18,7 +19,6 @@ test('Todo should be deleted', () => {
 
     expect(newState?.length).toBe(1)
 })
-
 test('Todo should be added', () => {
 
     const todoListId1 = v1()
@@ -36,7 +36,6 @@ test('Todo should be added', () => {
     expect(newState[2]?.title).toBe('aaaaaa')
 
 })
-
 test('Todo title should be changed', () => {
 
     const todoListId1 = v1()
