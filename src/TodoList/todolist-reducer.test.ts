@@ -47,7 +47,6 @@ test('Todo title should be changed', () => {
     ]
 
     let action = {
-        type: 'CHANGE-TODO-TITLE',
         id: todoListId2,
         newTitle: 'New Title'
     }
