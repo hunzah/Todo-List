@@ -7,6 +7,7 @@ import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
+import {SuperCheckBox} from '../SuperCheckBox/SuperCheckBox';
 
 
 type TodoListPropsType = {
@@ -65,10 +66,12 @@ const TodoList = (props: TodoListPropsType) => {
                     props.tasks.map(t => {
                         const onClickRemoveHandler = () => props.removeTask(t.id, props.id)
 
-                        const onChangeCheckBoxHandler = (e: ChangeEvent<HTMLInputElement>) => {
-                            props.changeStatus(t.id, e.currentTarget.checked, props.id)
-
-                        }
+                        // const onChangeCheckBoxHandler = (e: ChangeEvent<HTMLInputElement>) => {
+                        //     props.changeStatus(t.id, e.currentTarget.checked, props.id)
+                        // }
+                        const onChangeCheckBoxHandler = (taskId: string, isDone: boolean) => {
+                            props.changeStatus(taskId, isDone, props.id);
+                        };
                         const onChangeTitleHandler = (newValue: string) => {
                             props.changeTaskTitle(t.id, newValue, props.id)
 
@@ -78,9 +81,10 @@ const TodoList = (props: TodoListPropsType) => {
                         return (
                             <div className={t.isDone ? s.isDone : ''} key={t.id}>
                                 <div className={s.checkboxTitle}>
-                                    <Checkbox className={s.checkbox}
-                                           onChange={onChangeCheckBoxHandler}
-                                           checked={t.isDone}/>
+                                    {/*<Checkbox className={s.checkbox}*/}
+                                    {/*       onChange={onChangeCheckBoxHandler}*/}
+                                    {/*       checked={t.isDone}/>*/}
+                                    <SuperCheckBox checked={t.isDone} callback={() => onChangeCheckBoxHandler(t.id, !t.isDone)} />
                                     <EditableSpan title={t.title} onChangeTitleHandler={onChangeTitleHandler}/>
                                 </div>
                                 <div className={s.deleteButtons}>

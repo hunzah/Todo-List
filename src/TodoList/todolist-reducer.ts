@@ -62,3 +62,5 @@ export const ChangeTodoTitleAC = (action:any):ChangeTodoTitleActionType =>{
 
 export const ChangeTodoFilterAC =  (action:any):ChangeTodoFilterActionType =>{
     return {type:'CHANGE-TODO-FILTER', id:action.id, newFilter:action.newFilter}}
+
+

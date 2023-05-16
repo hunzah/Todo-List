@@ -77,3 +77,4 @@ test('Todo filter should be changed', () => {
     expect(newState[1]?.filter).toBe('active')
 
 })
+
