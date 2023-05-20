@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/TodoList/todolist-reducer-tasks.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/todolist-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/todolist-reducer.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +31,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Work/incubator/React-TS-Project-SocialNetwork/my-app",
+    "last_opened_file_path": "D:/Work/todolist/src/TodoList",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -174,6 +177,12 @@
       <workItem from="1683863322604" duration="230000" />
       <workItem from="1684134122839" duration="3558000" />
       <workItem from="1684249118545" duration="6822000" />
+      <workItem from="1684258676997" duration="196000" />
+      <workItem from="1684295621905" duration="42000" />
+      <workItem from="1684403700707" duration="1194000" />
+      <workItem from="1684571005036" duration="56000" />
+      <workItem from="1684571113819" duration="403000" />
+      <workItem from="1684596842851" duration="945000" />
     </task>
     <servers />
   </component>
