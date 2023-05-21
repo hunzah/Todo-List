@@ -8,7 +8,7 @@ import {
 } from './todolist-reducer';
 import {TasksStateType, TodolistType} from '../App';
 import {useState} from 'react';
-import {action1AC, action2AC, action3AC, TasksReducer} from './todolist-reducer-tasks';
+import {removeTaskAC, addTaskAC, changeTaskStatusAC, TasksReducer} from './todolist-reducer-tasks';
 import {TaskType} from './TodoList';
 
 
@@ -29,7 +29,7 @@ test('Task should be deleted', () => {
         }
 
 
-    const endState = TasksReducer(startState, action1AC( '2', 'todoListId2'))
+    const endState = TasksReducer(startState, removeTaskAC( '2', 'todoListId2'))
 
     expect(endState['todoListId1'].length).toBe(3);
     expect(endState['todoListId2'].length).toBe(1);
@@ -50,13 +50,13 @@ test('Task should be added', () => {
             ]
         }
     const newTask: TaskType = {id: '4', title: 'aaa', isDone: false};
-        const endState = TasksReducer(startState,action2AC(newTask,'todoListId1'))
+        const endState = TasksReducer(startState,addTaskAC(newTask,'todoListId1'))
     expect(endState['todoListId1'].length).toBe(4);
     expect(endState['todoListId2'].length).toBe(2);
     expect(endState['todoListId1'][3]).toEqual({id: '4', title: 'aaa', isDone: false});
 
 })
-test('Task should be added', () => {
+test('Task filter should be changed', () => {
     const startState =
         {
             'todoListId1': [
@@ -70,7 +70,7 @@ test('Task should be added', () => {
 
             ]
         }
-    const endState = TasksReducer(startState,action3AC('3','todoListId1'))
+    const endState = TasksReducer(startState,changeTaskStatusAC('3','todoListId1'))
     expect(endState['todoListId1'].length).toBe(3);
     expect(endState['todoListId2'].length).toBe(2);
     expect(endState['todoListId1'][3].isDone).toBe('true');
