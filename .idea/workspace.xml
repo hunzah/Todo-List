@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/todolist-reducer-tasks.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/todolist-reducer-tasks.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoList/todolist-reducer-tasks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/todolist-reducer-tasks.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +55,20 @@
       <recent name="D:\Work\todolist\src\AddItemForm" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.Todo filter should be changed">
+  <component name="RunManager" selected="Jest.Task should be deleted">
+    <configuration name="Task should be deleted" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/TodoList/todolist-reducer-tasks.test.ts" />
+      <test-names>
+        <test-name value="Task should be deleted" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="Todo filter should be changed" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -107,26 +121,13 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="renders learn react link" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/App.test.tsx" />
-      <test-names>
-        <test-name value="renders learn react link" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.Task should be deleted" />
         <item itemvalue="Jest.Todo filter should be changed" />
         <item itemvalue="Jest.Todo should be added" />
         <item itemvalue="Jest.Todo title should be changed" />
         <item itemvalue="Jest.Todo should be deleted" />
-        <item itemvalue="Jest.renders learn react link" />
       </list>
     </recent_temporary>
   </component>
@@ -181,7 +182,7 @@
       <workItem from="1684571005036" duration="56000" />
       <workItem from="1684571113819" duration="403000" />
       <workItem from="1684596842851" duration="3788000" />
-      <workItem from="1684658024689" duration="617000" />
+      <workItem from="1684658024689" duration="1777000" />
     </task>
     <servers />
   </component>
@@ -198,17 +199,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/TodoList/todolist-reducer-tasks.ts</url>
-          <line>8</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
