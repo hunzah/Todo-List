@@ -1,5 +1,6 @@
-import {TasksStateType} from '../App';
+import {FilterValueType, TasksStateType} from '../App';
 import {TaskType} from './TodoList';
+import {AddTodoActionType} from './todolist-reducer';
 
 export type Action1Type = {
     type: 'REMOVE-TASK'
@@ -25,7 +26,7 @@ export type Action4Type = {
     newTitle:string
 }
 
-type ActionTypes = Action1Type | Action2Type | Action3Type | Action4Type
+type ActionTypes = Action1Type | Action2Type | Action3Type | Action4Type | AddTodoActionType
 
 
 export const TasksReducer = (state: TasksStateType, action: ActionTypes): TasksStateType => {
@@ -70,4 +71,7 @@ export const changeTaskStatusAC = (id: string, todoListId: string, isDone:boolea
 }
 export const changeTaskTitleAC = (id: string, todoListId: string, newTitle:string): Action4Type => {
     return {type: 'CHANGE-TASK-TITLE', todoListId: todoListId, id: id, newTitle:newTitle} as const
+}
+export const AddTodolistAC = (title:string): AddTodoActionType => {
+    return {type: 'CHANGE-TASK-TITLE',   id: v1(), title: title, filter: FilterValueType} as const
 }
