@@ -52,6 +52,9 @@ export const TasksReducer = (state: TasksStateType, action: ActionTypes): TasksS
             if (task1) task1.title = action.newTitle
             return copy
         default:
+        case'ADD-TODOLIST': {
+            return {..state, [action.todolistId]:[]}
+        }
             return state
 
     }

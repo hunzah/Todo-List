@@ -44,6 +44,7 @@ export const TodolistReducer = (state: TodolistType[], action: ActionTypes): Tod
                 }
                 return tl;
             });
+
         default:
             return state
     }
