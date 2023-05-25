@@ -1,6 +1,6 @@
-import {FilterValueType, TasksStateType} from '../App';
+import {TasksStateType} from '../App';
 import {TaskType} from './TodoList';
-import {AddTodoActionType} from './todolist-reducer';
+import {AddTodoActionType, RemoveTodoActionType} from './todolist-reducer';
 
 export type Action1Type = {
     type: 'REMOVE-TASK'
@@ -26,10 +26,10 @@ export type Action4Type = {
     newTitle:string
 }
 
-type ActionTypes = Action1Type | Action2Type | Action3Type | Action4Type | AddTodoActionType
+type ActionTypes = Action1Type | Action2Type | Action3Type | Action4Type | AddTodoActionType | RemoveTodoActionType
 
 
-export const TasksReducer = (state: TasksStateType, action: ActionTypes): TasksStateType => {
+export const tasksReducer = (state: TasksStateType, action: ActionTypes): TasksStateType => {
 
     switch (action.type) {
         case 'REMOVE-TASK':
@@ -51,10 +51,15 @@ export const TasksReducer = (state: TasksStateType, action: ActionTypes): TasksS
             const task1 = tasks1.find(t => t.id === action.id);
             if (task1) task1.title = action.newTitle
             return copy
-        default:
-        case'ADD-TODOLIST': {
-            return {..state, [action.todolistId]:[]}
+        case'ADD-TODO': {
+            return {...state, [action.todolistId]:[]}
         }
+        case'REMOVE-TODO': {
+             const copy = {...state}
+             delete copy[action.id]
+            return copy
+        }
+        default:
             return state
 
     }
@@ -74,7 +79,4 @@ export const changeTaskStatusAC = (id: string, todoListId: string, isDone:boolea
 }
 export const changeTaskTitleAC = (id: string, todoListId: string, newTitle:string): Action4Type => {
     return {type: 'CHANGE-TASK-TITLE', todoListId: todoListId, id: id, newTitle:newTitle} as const
-}
-export const AddTodolistAC = (title:string): AddTodoActionType => {
-    return {type: 'CHANGE-TASK-TITLE',   id: v1(), title: title, filter: FilterValueType} as const
 }
