@@ -34,7 +34,7 @@ test('New todo should be added', () => {
     const newState = todolistReducer(startState, addTodoAC('aaaaaa'))
     expect(newState?.length).toBe(3)
     expect(newState[2]?.filter).toBe('all')
-    expect(newState[2]?.title).toBe('aaaaaa')
+    expect(newState[0]?.title).toBe('aaaaaa')
 
 })
 test('Todo title should be changed', () => {
