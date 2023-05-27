@@ -52,19 +52,19 @@ export const todolistReducer = (state: TodolistType[], action: ActionTypes): Tod
     }
 }
 
-export const removeTodoAC =  ():RemoveTodoActionType =>{
-    return {type:'REMOVE-TODO',id:v1()} as const
+export const removeTodoAC =  (id:string):RemoveTodoActionType =>{
+    return {type:'REMOVE-TODO',id:id} as const
 }
 
 export const addTodoAC =  (title: string):AddTodoActionType =>{
     return {type:'ADD-TODO', todolistId: v1(), title, } as const
 }
 
-export const changeTodoTitleAC = (action:any):ChangeTodoTitleActionType =>{
-    return {type:'CHANGE-TODO-TITLE', id:action.id, newTitle:action.newTitle}}
+export const changeTodoTitleAC = (id:string,newTitle:string):ChangeTodoTitleActionType =>{
+    return {type:'CHANGE-TODO-TITLE', id:id, newTitle:newTitle}}
 
-export const changeTodoFilterAC =  (action:any):ChangeTodoFilterActionType =>{
-    return {type:'CHANGE-TODO-FILTER', id:action.id, newFilter:action.newFilter}}
+export const changeTodoFilterAC =  (id:string, newFilter:FilterValueType):ChangeTodoFilterActionType =>{
+    return {type:'CHANGE-TODO-FILTER', id:id, newFilter:newFilter}}
 
 
 
