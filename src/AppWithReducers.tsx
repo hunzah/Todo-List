@@ -39,6 +39,7 @@ function AppWithReducers() {
     const todoListId2 = v1()
 
 
+
     const [todoLists, dispatchToTodolistReducer] = useReducer(todolistReducer, [
         {id: todoListId1, title: 'What to learn', filter: 'all'},
         {id: todoListId2, title: 'What to buy', filter: 'all'}
