@@ -94,11 +94,6 @@ function AppWithRedux() {
 
     }
 
-    const addTodoList = (title: string) => {
-        const todoId = v1()
-        dispatchToTodolistReducer(addTodoAC(title,todoId))
-        dispatchToTasksReducer(addTodoAC(title,todoId))
-    }
 
     const changeTodoListTitle = (id: string, newTitle: string) => {
         dispatchToTodolistReducer(changeTodoTitleAC(id, newTitle))
