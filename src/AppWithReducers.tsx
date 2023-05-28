@@ -24,13 +24,13 @@ import {addTaskAC, changeTaskStatusAC, changeTaskTitleAC, removeTaskAC, tasksRed
 export type FilterValueType =
     'all' | 'completed' | 'active'
 
-export type TodolistType = {
-    id: string, title: string, filter: FilterValueType
-}
-
-export type TasksStateType = {
-    [key: string]: TaskType[]
-}
+// export type TodolistType = {
+//     id: string, title: string, filter: FilterValueType
+// }
+//
+// export type TasksStateType = {
+//     [key: string]: TaskType[]
+// }
 
 function AppWithReducers() {
 
@@ -94,9 +94,10 @@ function AppWithReducers() {
 
     }
 
-
     const addTodoList = (title: string) => {
-        dispatchToTodolistReducer(addTodoAC(title))
+        const todoId = v1()
+        dispatchToTodolistReducer(addTodoAC(title,todoId))
+        dispatchToTasksReducer(addTodoAC(title,todoId))
     }
 
     const changeTodoListTitle = (id: string, newTitle: string) => {
