@@ -1,6 +1,6 @@
 import {TasksStateType} from '../App';
 import {TaskType} from './TodoList';
-import {AddTodoActionType, RemoveTodoActionType} from './todolist-reducer';
+import {AddTodoActionType, RemoveTodoActionType, todoListId2, todoListId1} from './todolist-reducer';
 import {v1} from 'uuid';
 
 export type Action1Type = {
@@ -33,15 +33,14 @@ type ActionTypes = Action1Type | Action2Type | Action3Type | Action4Type | AddTo
 
 const initialState =
     {
-        'todoListId1': [
-            {id: '1', title: 'HTML', isDone: true},
-            {id: '2', title: 'CSS', isDone: true},
-            {id: '3', title: 'REACT/REDUX', isDone: false}
+        [todoListId1]: [
+            {id: v1(), title: 'HTML', isDone: true},
+            {id: v1(), title: 'CSS', isDone: true},
+            {id: v1(), title: 'REACT/REDUX', isDone: false}
         ],
-        'todoListId2': [
-            {id: '1', title: 'Bread', isDone: true},
-            {id: '2', title: 'Milk', isDone: false},
-
+        [todoListId2]: [
+            {id: v1(), title: 'Bread', isDone: true},
+            {id: v1(), title: 'Milk', isDone: false},
         ]
     }
 

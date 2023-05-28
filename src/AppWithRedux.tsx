@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react';
+import React from 'react';
 import s from './App.module.css';
 import TodoList, {TaskType} from './TodoList/TodoList';
 import {v1} from 'uuid';
@@ -12,16 +12,10 @@ import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
 import MenuIcon from '@mui/icons-material/Menu';
-import {
-    addTodoAC,
-    changeTodoFilterAC,
-    changeTodoTitleAC,
-    removeTodoAC,
-    todolistReducer
-} from './TodoList/todolist-reducer';
-import {addTaskAC, changeTaskStatusAC, changeTaskTitleAC, removeTaskAC, tasksReducer} from './TodoList/tasks-reducer';
+import {addTodoAC, changeTodoFilterAC, changeTodoTitleAC, removeTodoAC} from './TodoList/todolist-reducer';
+import {addTaskAC, changeTaskStatusAC, changeTaskTitleAC, removeTaskAC} from './TodoList/tasks-reducer';
 import {useDispatch, useSelector} from 'react-redux';
-import {AppRootStateType, store} from './store';
+import {AppRootStateType} from './store';
 
 export type FilterValueType =
     'all' | 'completed' | 'active'
@@ -38,11 +32,9 @@ export type TasksStateType = {
 function AppWithRedux() {
 
 
-    const todoListId1 = v1()
-    const todoListId2 = v1()
-
     const dispatch = useDispatch()
     const todoLists = useSelector<AppRootStateType, TodolistType[]>((state=> state.todolists))
+    console.log(todoLists)
     const tasksObj = useSelector<AppRootStateType, TasksStateType>((state=> state.tasks))
 
     // const [todoLists, dispatchToTodolistReducer] = useReducer(todolistReducer, [
@@ -96,13 +88,10 @@ function AppWithRedux() {
     // Work with TodoLists
     const removeTodoList = (todoListId: string) => {
         dispatch(removeTodoAC(todoListId))
-        dispatch(removeTodoAC(todoListId))
-
     }
 
     const addTodoList = (title: string) => {
         const todoId = v1()
-        dispatch(addTodoAC(title, todoId))
         dispatch(addTodoAC(title, todoId))
     }
 
@@ -152,7 +141,7 @@ function AppWithRedux() {
                         }
 
                         return (
-                            <Grid item key={tl.id}>
+                            <Grid item>
                                 <Paper style={{padding: '15px'}}>
                                     <TodoList
                                         key={tl.id}

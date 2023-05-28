@@ -24,8 +24,8 @@ export type ChangeTodoFilterActionType = {
 
 type ActionTypes = RemoveTodoActionType | AddTodoActionType | ChangeTodoTitleActionType | ChangeTodoFilterActionType
 
-const todoListId1 = v1()
-const todoListId2 = v1()
+export const todoListId1 = v1()
+export const todoListId2 = v1()
 
 const initialState: TodolistType[] = [
     {id: todoListId1, title: 'What to learn', filter: 'all'},
