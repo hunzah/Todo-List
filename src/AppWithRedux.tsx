@@ -13,7 +13,6 @@ import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
 import MenuIcon from '@mui/icons-material/Menu';
 import {addTodoAC, changeTodoFilterAC, changeTodoTitleAC, removeTodoAC} from './TodoList/todolist-reducer';
-import {addTaskAC, changeTaskStatusAC, changeTaskTitleAC, removeTaskAC} from './TodoList/tasks-reducer';
 import {useDispatch, useSelector} from 'react-redux';
 import {AppRootStateType} from './store';
 
@@ -33,56 +32,8 @@ function AppWithRedux() {
 
 
     const dispatch = useDispatch()
-    const todoLists = useSelector<AppRootStateType, TodolistType[]>((state=> state.todolists))
-    console.log(todoLists)
-    const tasksObj = useSelector<AppRootStateType, TasksStateType>((state=> state.tasks))
+    const todoLists = useSelector<AppRootStateType, TodolistType[]>((state => state.todolists))
 
-    // const [todoLists, dispatchToTodolistReducer] = useReducer(todolistReducer, [
-    //     {id: todoListId1, title: 'What to learn', filter: 'all'},
-    //     {id: todoListId2, title: 'What to buy', filter: 'all'}
-    // ])
-    //
-    // const [tasksObj, dispatchToTasksReducer] = useReducer(tasksReducer,
-    //     {
-    //         [todoListId1]: [
-    //             {id: v1(), title: 'HTML', isDone: true},
-    //             {id: v1(), title: 'CSS', isDone: true},
-    //             {id: v1(), title: 'REACT/REDUX', isDone: false}
-    //         ],
-    //         [todoListId2]: [
-    //             {id: v1(), title: 'Bread', isDone: true},
-    //             {id: v1(), title: 'Milk', isDone: false},
-    //
-    //         ]
-    //     }
-    // )
-
-
-    // Work With Tasks
-    function removeTask(id: string, todoListId: string) {
-        dispatch(removeTaskAC(id, todoListId))
-
-    }
-
-
-    function addTasks(todoListId: string, title: string) {
-
-        const newTask: TaskType = {id: v1(), title: title, isDone: false};
-        dispatch(addTaskAC(newTask, todoListId))
-
-    }
-
-
-    function changeStatus(taskId: string, isDone: boolean, todoListId: string) {
-        dispatch(changeTaskStatusAC(taskId, todoListId, isDone))
-
-
-    }
-
-    function changeTaskTitle(taskId: string, newTitle: string, todoListId: string) {
-        dispatch(changeTaskTitleAC(taskId, todoListId, newTitle))
-
-    }
 
 
     // Work with TodoLists
@@ -131,14 +82,7 @@ function AppWithRedux() {
 
                     {todoLists.map((tl) => {
 
-                        let tasksForTodoList = tasksObj[tl.id];
 
-                        if (tl.filter === 'completed') {
-                            tasksForTodoList = tasksForTodoList?.filter(t => t.isDone)
-                        }
-                        if (tl.filter === 'active') {
-                            tasksForTodoList = tasksForTodoList?.filter(t => !t.isDone)
-                        }
 
                         return (
                             <Grid item>
@@ -147,21 +91,19 @@ function AppWithRedux() {
                                         key={tl.id}
                                         id={tl.id}
                                         title={tl.title}
-                                        tasks={tasksForTodoList ? tasksForTodoList : []}
-                                        removeTask={removeTask}
+                                        // tasks={tasksForTodoList ? tasksForTodoList : []}
                                         changeFilter={changeFilter}
-                                        addTasks={addTasks}
-                                        changeStatus={changeStatus}
-                                        changeTaskTitle={changeTaskTitle}
                                         filter={tl.filter}
                                         removeTodoList={removeTodoList}
                                         changeTodoListTitle={changeTodoListTitle}
+                                        // addTasks={addTasks}
+                                        // changeStatus={changeStatus}
+                                        // changeTaskTitle={changeTaskTitle}
+                                        // removeTask={removeTask}
                                     />
                                 </Paper>
                             </Grid>)
                     })}
-
-
                 </Grid>
 
             </Container>

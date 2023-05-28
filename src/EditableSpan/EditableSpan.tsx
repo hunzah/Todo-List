@@ -5,6 +5,7 @@ import TextField from '@mui/material/TextField';
 export type EditableSpan = {
     title: string
     onChangeTitleHandler: (newValue: string) => void
+
 }
 
 export function EditableSpan(props: EditableSpan) {
