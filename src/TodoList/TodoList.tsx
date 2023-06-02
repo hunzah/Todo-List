@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {FilterValueType} from '../App';
 import s from './TodoList.module.css'
 import {AddItemForm} from '../AddItemForm/AddItemForm';
@@ -29,7 +29,7 @@ export type TaskType = {
     isDone: boolean;
 }
 
-const TodoList = (props: TodoListPropsType) => {
+const TodoList = React.memo( (props: TodoListPropsType) => {
 
     const dispatch = useDispatch()
     const tasksObj = useSelector<AppRootStateType, TaskType[]>((state => state.tasks[props.id]))
@@ -53,10 +53,10 @@ const TodoList = (props: TodoListPropsType) => {
         props.changeTodoListTitle(props.id, newTitle)
     }
 
-    const addItem = (title: string,) => {
+    const addItem = useCallback((title: string,) => {
         const newTask: TaskType = {id: v1(), title: title, isDone: false};
         dispatch(addTaskAC(newTask, props.id))
-    }
+    },[])
     let tasksForTodoList = tasksObj;
 
     if (props.filter === 'completed') {
@@ -126,7 +126,7 @@ const TodoList = (props: TodoListPropsType) => {
             </div>
         </div>
     )
-}
+})
 
 
 export default TodoList;

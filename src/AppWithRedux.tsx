@@ -35,25 +35,24 @@ function AppWithRedux() {
     const todoLists = useSelector<AppRootStateType, TodolistType[]>((state => state.todolists))
 
 
-
     // Work with TodoLists
-    const removeTodoList = (todoListId: string) => {
+    const removeTodoList = useCallback((todoListId: string) => {
         dispatch(removeTodoAC(todoListId))
-    }
+    }, [])
 
     const addTodoList = useCallback((title: string) => {
         const todoId = v1()
         dispatch(addTodoAC(title, todoId))
-    },[])
+    }, [])
 
-    const changeTodoListTitle = (id: string, newTitle: string) => {
+    const changeTodoListTitle = useCallback((id: string, newTitle: string) => {
         dispatch(changeTodoTitleAC(id, newTitle))
 
-    }
+    }, [])
 
-    function changeFilter(value: FilterValueType, todoListId: string) {
+    const changeFilter = useCallback((value: FilterValueType, todoListId: string) => {
         dispatch(changeTodoFilterAC(todoListId, value))
-    }
+    }, [])
 
     return (
         <div className={s.App}>
@@ -82,7 +81,7 @@ function AppWithRedux() {
 
                     {todoLists.map((tl) => {
                         return (
-                            <Grid item  key={tl.id}>
+                            <Grid item key={tl.id}>
                                 <Paper style={{padding: '15px'}}>
                                     <TodoList
                                         id={tl.id}
