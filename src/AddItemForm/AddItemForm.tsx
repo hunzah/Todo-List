@@ -10,7 +10,8 @@ type AddItemFormPropsType = {
 }
 
 
-export function AddItemForm(props: AddItemFormPropsType) {
+export const AddItemForm = React.memo((props: AddItemFormPropsType)=> {
+    console.log('item form was called')
     const [newItemTitle, setNewItemTitle] = useState('')
     const [error, setError] = useState<string | null>(null)
 
@@ -74,4 +75,4 @@ export function AddItemForm(props: AddItemFormPropsType) {
             {/*{titleTooLongWarning}*/}
         </>
     )
-}
+})

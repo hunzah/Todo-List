@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import s from './App.module.css';
 import TodoList, {TaskType} from './TodoList/TodoList';
 import {v1} from 'uuid';
@@ -41,10 +41,10 @@ function AppWithRedux() {
         dispatch(removeTodoAC(todoListId))
     }
 
-    const addTodoList = (title: string) => {
+    const addTodoList = useCallback((title: string) => {
         const todoId = v1()
         dispatch(addTodoAC(title, todoId))
-    }
+    },[])
 
     const changeTodoListTitle = (id: string, newTitle: string) => {
         dispatch(changeTodoTitleAC(id, newTitle))
@@ -81,14 +81,10 @@ function AppWithRedux() {
                 <Grid container spacing={3}>
 
                     {todoLists.map((tl) => {
-
-
-
                         return (
-                            <Grid item>
+                            <Grid item  key={tl.id}>
                                 <Paper style={{padding: '15px'}}>
                                     <TodoList
-                                        key={tl.id}
                                         id={tl.id}
                                         title={tl.title}
                                         // tasks={tasksForTodoList ? tasksForTodoList : []}
