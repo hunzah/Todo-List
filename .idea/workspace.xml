@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="code refactoring">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppWithReducers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithReducers.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppWithRedux.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditableSpan/EditableSpan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditableSpan/EditableSpan.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/TodoList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoList/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/tasks-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +45,7 @@
       <recent name="D:\Work\todolist\src\TodoList" />
     </key>
     <key name="es6.move.members.recent.items">
+      <recent name="D:\Work\todolist\src\TodoList\Task.tsx" />
       <recent name="D:\Work\todolist\src\EditableSpanPropsType.tsx" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -192,7 +187,7 @@
       <workItem from="1685284565682" duration="37000" />
       <workItem from="1685694047993" duration="9885000" />
       <workItem from="1685768561797" duration="31000" />
-      <workItem from="1685899948752" duration="4396000" />
+      <workItem from="1685899948752" duration="5253000" />
     </task>
     <task id="LOCAL-00001" summary="add todo reducer">
       <created>1684952046047</created>
@@ -306,7 +301,28 @@
       <option name="project" value="LOCAL" />
       <updated>1685710441524</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="code refactoring">
+      <created>1685904493949</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1685904493949</updated>
+    </task>
+    <task id="LOCAL-00018" summary="code refactoring">
+      <created>1685904555335</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1685904555335</updated>
+    </task>
+    <task id="LOCAL-00019" summary="code refactoring">
+      <created>1685904597430</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1685904597430</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

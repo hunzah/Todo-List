@@ -10,7 +10,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {AppRootStateType} from '../store';
 import {addTaskAC, removeTaskAC} from './tasks-reducer';
 import {v1} from 'uuid';
-import {Task} from './Task';
+import {Task} from './Task/Task';
 
 
 type TodoListPropsType = {

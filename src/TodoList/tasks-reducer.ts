@@ -53,7 +53,7 @@ export const tasksReducer = (state: TasksStateType = initialState, action: Actio
                     state[action.todoListId].filter(t => t.id !== action.id)
             }
         case 'ADD-TASK':
-            debugger
+
             return {...state, [action.todoListId]: [...state[action.todoListId], action.newTask]}
         case 'CHANGE-TASK-STATUS':
             return {...state,
