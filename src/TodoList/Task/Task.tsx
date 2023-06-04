@@ -24,7 +24,7 @@ export const Task = React.memo((props: TaskPropsType) => {
 
     const onChangeTitleHandler = useCallback((newValue: string) => {
         dispatch(changeTaskTitleAC(props.todolistId, props.task.id, newValue))
-    }, [props.task.id, props.todolistId,props.task.id])
+    }, [props.task.id, props.todolistId,])
 
     return (
         <div className={props.task.isDone ? s.isDone : ''} key={props.task.id}>

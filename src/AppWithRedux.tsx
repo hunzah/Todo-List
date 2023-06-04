@@ -86,15 +86,10 @@ function AppWithRedux() {
                                     <TodoList
                                         id={tl.id}
                                         title={tl.title}
-                                        // tasks={tasksForTodoList ? tasksForTodoList : []}
                                         changeFilter={changeFilter}
                                         filter={tl.filter}
                                         removeTodoList={removeTodoList}
                                         changeTodoListTitle={changeTodoListTitle}
-                                        // addTasks={addTasks}
-                                        // changeStatus={changeStatus}
-                                        // changeTaskTitle={changeTaskTitle}
-                                        // removeTask={removeTask}
                                     />
                                 </Paper>
                             </Grid>)

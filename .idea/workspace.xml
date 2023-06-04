@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="code refactoring">
-      <change beforePath="$PROJECT_DIR$/src/TodoList/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/tasks-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/Task/Task.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +49,7 @@
       <recent name="D:\Work\todolist\src\EditableSpanPropsType.tsx" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\todolist\src\TodoList\Task" />
       <recent name="D:\Work\todolist\public" />
       <recent name="D:\Work\todolist\src\TodoList" />
       <recent name="D:\Work\todolist\src\EditableSpan" />
@@ -187,7 +188,7 @@
       <workItem from="1685284565682" duration="37000" />
       <workItem from="1685694047993" duration="9885000" />
       <workItem from="1685768561797" duration="31000" />
-      <workItem from="1685899948752" duration="5253000" />
+      <workItem from="1685899948752" duration="5602000" />
     </task>
     <task id="LOCAL-00001" summary="add todo reducer">
       <created>1684952046047</created>
@@ -322,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685904597430</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="code refactoring">
+      <created>1685905654663</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1685905654663</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

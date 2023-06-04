@@ -97,5 +97,5 @@ export const changeTaskStatusAC = (id: string, todoListId: string, isDone: boole
     return {type: 'CHANGE-TASK-STATUS', todoListId: todoListId, id: id, isDone: isDone} as const
 }
 export const changeTaskTitleAC = (id: string, todoListId: string, newTitle: string): Action4Type => {
-    return {type: 'CHANGE-TASK-TITLE', todoListId: todoListId, id: id, newTitle: newTitle} as const
+    return {type: 'CHANGE-TASK-TITLE', id: id, todoListId: todoListId,  newTitle: newTitle} as const
 }
