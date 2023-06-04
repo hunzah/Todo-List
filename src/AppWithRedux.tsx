@@ -38,21 +38,21 @@ function AppWithRedux() {
     // Work with TodoLists
     const removeTodoList = useCallback((todoListId: string) => {
         dispatch(removeTodoAC(todoListId))
-    }, [])
+    }, [dispatch])
 
     const addTodoList = useCallback((title: string) => {
         const todoId = v1()
         dispatch(addTodoAC(title, todoId))
-    }, [])
+    }, [dispatch])
 
     const changeTodoListTitle = useCallback((id: string, newTitle: string) => {
         dispatch(changeTodoTitleAC(id, newTitle))
 
-    }, [])
+    }, [dispatch])
 
     const changeFilter = useCallback((value: FilterValueType, todoListId: string) => {
         dispatch(changeTodoFilterAC(todoListId, value))
-    }, [])
+    }, [dispatch])
 
     return (
         <div className={s.App}>

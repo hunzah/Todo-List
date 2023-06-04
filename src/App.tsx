@@ -166,12 +166,12 @@ function removeTask(id: string, todoListId: string) {
                                         key={tl.id}
                                         id={tl.id}
                                         title={tl.title}
-                                        tasks={tasksForTodoList ? tasksForTodoList : []}
-                                        removeTask={removeTask}
+                                        // tasks={tasksForTodoList ? tasksForTodoList : []}
+                                        // removeTask={removeTask}
                                         changeFilter={changeFilter}
-                                        addTasks={addTasks}
-                                        changeStatus={changeStatus}
-                                        changeTaskTitle={changeTaskTitle}
+                                        // addTasks={addTasks}
+                                        // changeStatus={changeStatus}
+                                        // changeTaskTitle={changeTaskTitle}
                                         filter={tl.filter}
                                         removeTodoList={removeTodoList}
                                         changeTodoListTitle={changeTodoListTitle}
