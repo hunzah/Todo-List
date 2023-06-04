@@ -80,6 +80,7 @@ const TodoList = React.memo((props: TodoListPropsType) => {
             <AddItemForm addItem={addTask} titleForButtons={'Add Task'}/>
             <div>{
                 tasksForTodoList.map(t => {
+                    console.log(t.id)
                     return <Task key={t.id} todolistId={props.id} task={t} />
                 })}
             </div>
@@ -88,7 +89,6 @@ const TodoList = React.memo((props: TodoListPropsType) => {
                 <Button variant={props.filter === 'all' ? 'contained' : 'text'} onClick={onClickAllHandler}
                 >All
                 </Button>
-
                 <Button
                     variant={props.filter === 'active' ? 'contained' : 'text'}
                     onClick={onClickActiveHandler}
@@ -97,7 +97,6 @@ const TodoList = React.memo((props: TodoListPropsType) => {
 
                 <Button
                     variant={props.filter === 'completed' ? 'contained' : 'text'}
-                    // className={props.filter === 'completed' ? s.activeFilter : ''}
                     onClick={onClickCompletedHandler}>Completed
                 </Button>
 
