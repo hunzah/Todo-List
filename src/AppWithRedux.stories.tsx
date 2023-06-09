@@ -1,6 +1,8 @@
 import {Meta} from '@storybook/react';
-import {AppWithRedux} from './AppWithRedux';
+import AppWithRedux from './AppWithRedux';
 import {action} from '@storybook/addon-actions';
+import {store} from './store';
+import {Provider} from 'react-redux';
 
 const meta: Meta = {
     title: 'AppWithRedux span Component',
@@ -13,8 +15,8 @@ const TitleChanged = action('title was changed')
 
 export const AppWithReduxExample = () => {
     return (
-        <>
-            <AppWithRedux title={'title'} onChangeTitleHandler={TitleChanged}/>
-        </>
+        <Provider store={store}>
+            <AppWithRedux />
+        </Provider>
     )
 }
