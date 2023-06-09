@@ -1,5 +1,3 @@
-import {useDispatch} from 'react-redux';
-import {changeTaskStatusAC, changeTaskTitleAC, removeTaskAC} from '../tasks-reducer';
 import React, {useCallback} from 'react';
 import s from '../TodoList.module.css';
 import {SuperCheckBox} from '../../SuperCheckBox/SuperCheckBox';
@@ -11,20 +9,23 @@ import {TaskType} from '../TodoList';
 type TaskPropsType = {
     task: TaskType
     todolistId: string
+    removeTask:(taskId:string,todolistId:string)=>void
+    changeTaskStatus:(taskId:string,todolistId:string,isDone:boolean)=>void
+    changeTaskTitle:(taskId:string,todolistId:string,newValue:string)=>void
 
 }
 export const Task = React.memo((props: TaskPropsType) => {
-    const dispatch = useDispatch()
 
-    const onClickRemoveHandler = () => dispatch(removeTaskAC(props.task.id, props.todolistId))
+
+    const onClickRemoveHandler = () => props.removeTask(props.task.id, props.todolistId)
 
     const onChangeCheckBoxHandler = (taskId: string, isDone: boolean,) => {
 
-        dispatch(changeTaskStatusAC(props.task.id, props.todolistId, isDone))
+        props.changeTaskStatus(props.task.id, props.todolistId, isDone)
     };
 
     const onChangeTitleHandler = useCallback((newValue: string) => {
-        dispatch(changeTaskTitleAC(props.task.id, props.todolistId,  newValue))
+        props.changeTaskTitle(props.task.id, props.todolistId, newValue)
     }, [props.task.id, props.todolistId,])
 
     return (

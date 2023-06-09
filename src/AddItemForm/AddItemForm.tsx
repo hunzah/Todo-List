@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 
 type AddItemFormPropsType = {
     addItem: (title: string) => void
-    titleForButtons: string
+    // titleForButtons: string
 }
 
 
@@ -46,8 +46,6 @@ export const AddItemForm = React.memo((props: AddItemFormPropsType)=> {
         }
     }
 
-    // const titleTooLongWarning = newItemTitle.trim().length > 20 &&
-    //     <div className={s.errorMessage}>title should be shorter</div>
     return (
         <>
             <div className={s.inpBtn}>
@@ -57,22 +55,16 @@ export const AddItemForm = React.memo((props: AddItemFormPropsType)=> {
                            value={newItemTitle}
                            onChange={onNewTitleChangeHandler}
                            onKeyDown={onKeyPressHandler}
-                    // className={error ? s.error : ''}
                 />
                 <IconButton
-                    // variant="contained"
                     color="primary"
-
                     disabled={isAddTaskNotPossible}
                     onClick={() => {
                         onClickHandler()
                     }}>
-                    {/*{props.titleForButtons}*/}
                     <ControlPoint/>
                 </IconButton>
             </div>
-            {/*{error && <div className={s.errorMessage}>{error}</div>}*/}
-            {/*{titleTooLongWarning}*/}
         </>
     )
 })

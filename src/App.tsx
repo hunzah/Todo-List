@@ -144,7 +144,7 @@ function removeTask(id: string, todoListId: string) {
             </AppBar>
             <Container fixed>
                 <Grid container style={{padding: '20px'}}>
-                    <AddItemForm addItem={addTodoList} titleForButtons={'Add Todo'}/>
+                    <AddItemForm addItem={addTodoList} />
                 </Grid>
                 <Grid container spacing={3}>
 
@@ -166,12 +166,7 @@ function removeTask(id: string, todoListId: string) {
                                         key={tl.id}
                                         id={tl.id}
                                         title={tl.title}
-                                        // tasks={tasksForTodoList ? tasksForTodoList : []}
-                                        // removeTask={removeTask}
                                         changeFilter={changeFilter}
-                                        // addTasks={addTasks}
-                                        // changeStatus={changeStatus}
-                                        // changeTaskTitle={changeTaskTitle}
                                         filter={tl.filter}
                                         removeTodoList={removeTodoList}
                                         changeTodoListTitle={changeTodoListTitle}

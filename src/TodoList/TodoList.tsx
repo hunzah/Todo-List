@@ -8,7 +8,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 import {useDispatch, useSelector} from 'react-redux';
 import {AppRootStateType} from '../store';
-import {addTaskAC} from './tasks-reducer';
+import {addTaskAC, changeTaskStatusAC, changeTaskTitleAC, removeTaskAC} from './tasks-reducer';
 import {v1} from 'uuid';
 import {Task} from './Task/Task';
 
@@ -36,9 +36,15 @@ const TodoList = React.memo((props: TodoListPropsType) => {
 
 
     // Work With Tasks
-    // function removeTask(id: string, todoListId: string) {
-    //     dispatch(removeTaskAC(id, todoListId))
-    // }
+    function removeTask(id: string, todoListId: string) {
+        dispatch(removeTaskAC(id, todoListId))
+    }
+    function changeTaskStatus(id: string, todoListId: string,isDone:boolean) {
+        dispatch(changeTaskStatusAC(id, todoListId,isDone))
+    }
+    function changeTaskTitle(id: string, todoListId: string, newTitle:string) {
+        dispatch(changeTaskTitleAC(id, todoListId,newTitle))
+    }
 
 
     const onClickAllHandler = useCallback(() => props.changeFilter('all', props.id), [props.changeFilter, props.id])
@@ -77,11 +83,13 @@ const TodoList = React.memo((props: TodoListPropsType) => {
                     <DeleteIcon/>
                 </IconButton>
             </div>
-            <AddItemForm addItem={addTask} titleForButtons={'Add Task'}/>
+            <AddItemForm addItem={addTask}/>
             <div>{
                 tasksForTodoList.map(t => {
-                    console.log(t.id)
-                    return <Task key={t.id} todolistId={props.id} task={t} />
+                    return <Task key={t.id} todolistId={props.id} task={t}
+                    removeTask={removeTask}
+                    changeTaskStatus={changeTaskStatus}
+                    changeTaskTitle={changeTaskTitle}/>
                 })}
             </div>
 
