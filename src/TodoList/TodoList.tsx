@@ -8,7 +8,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 import {useDispatch, useSelector} from 'react-redux';
 import {AppRootStateType} from '../store';
-import {addTaskAC, removeTaskAC} from './tasks-reducer';
+import {addTaskAC} from './tasks-reducer';
 import {v1} from 'uuid';
 import {Task} from './Task/Task';
 
@@ -36,9 +36,9 @@ const TodoList = React.memo((props: TodoListPropsType) => {
 
 
     // Work With Tasks
-    function removeTask(id: string, todoListId: string) {
-        dispatch(removeTaskAC(id, todoListId))
-    }
+    // function removeTask(id: string, todoListId: string) {
+    //     dispatch(removeTaskAC(id, todoListId))
+    // }
 
 
     const onClickAllHandler = useCallback(() => props.changeFilter('all', props.id), [props.changeFilter, props.id])
