@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="add AppWithRedux">
-      <change afterPath="$PROJECT_DIR$/src/stories/ReduxStoreProviderDecorator.stories.tsx" afterDir="false" />
+    <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppWithRedux.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stories/ReduxStoreProviderDecorator.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/stories/ReduxStoreProviderDecorator.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +32,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Work/todolist",
+    "last_opened_file_path": "D:/Work/todolist/src/stories",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -120,8 +122,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start" />
         <item itemvalue="npm.storybook" />
+        <item itemvalue="npm.start" />
         <item itemvalue="Jest.new property with new array should be added when new todolist is added" />
         <item itemvalue="Jest.New todo should be added" />
         <item itemvalue="Jest.ids should be equals" />
@@ -194,7 +196,11 @@
       <workItem from="1685947514534" duration="35000" />
       <workItem from="1686150176320" duration="1331000" />
       <workItem from="1686198546985" duration="23000" />
-      <workItem from="1686292198192" duration="8019000" />
+      <workItem from="1686292198192" duration="13133000" />
+      <workItem from="1686395602809" duration="240000" />
+      <workItem from="1686395986276" duration="1237000" />
+      <workItem from="1686403132001" duration="16000" />
+      <workItem from="1686565328833" duration="2116000" />
     </task>
     <task id="LOCAL-00001" summary="add todo reducer">
       <created>1684952046047</created>
@@ -385,7 +391,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686300765434</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="commit">
+      <created>1686302802539</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1686302802539</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,7 +422,6 @@
     <MESSAGE value="code refactor" />
     <MESSAGE value="add redux" />
     <MESSAGE value="add use selector crate store" />
-    <MESSAGE value="commit" />
     <MESSAGE value="add useMemo and use Callback" />
     <MESSAGE value="code optimization" />
     <MESSAGE value="code refactoring" />
@@ -417,6 +429,8 @@
     <MESSAGE value="ADD STORYBOOK" />
     <MESSAGE value="add EditableSpan.stories.tsx and Task.stories.tsx" />
     <MESSAGE value="add AppWithRedux" />
-    <option name="LAST_COMMIT_MESSAGE" value="add AppWithRedux" />
+    <MESSAGE value="add decorator" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
 </project>

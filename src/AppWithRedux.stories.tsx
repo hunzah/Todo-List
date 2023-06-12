@@ -1,22 +1,19 @@
 import {Meta} from '@storybook/react';
 import AppWithRedux from './AppWithRedux';
-import {action} from '@storybook/addon-actions';
-import {store} from './store';
 import {Provider} from 'react-redux';
+import {store} from './store';
 
 const meta: Meta = {
     title: 'AppWithRedux span Component',
-    component: AppWithRedux
+    component: AppWithRedux,
+    decorators: [
+        (Story) => (
+            <Provider store={store}><Story/></Provider>
+        ),
+    ],
 }
 export default meta
 
-const TitleChanged = action('title was changed')
-
-
 export const AppWithReduxExample = () => {
-    return (
-        <Provider store={store}>
-            <AppWithRedux />
-        </Provider>
-    )
+    return <AppWithRedux/>
 }
