@@ -1,16 +1,11 @@
 import {Meta} from '@storybook/react';
 import AppWithRedux from './AppWithRedux';
-import {Provider} from 'react-redux';
-import {store} from './store';
+import {ReduxStoreProviderDecorator} from './stories/ReduxStoreProviderDecorator.stories';
 
 const meta: Meta = {
     title: 'AppWithRedux span Component',
     component: AppWithRedux,
-    decorators: [
-        (Story) => (
-            <Provider store={store}><Story/></Provider>
-        ),
-    ],
+    decorators: [ReduxStoreProviderDecorator],
 }
 export default meta
 
