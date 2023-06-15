@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/integration/AddItemForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/integration/AddItemForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/integration/jest.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/integration/jest.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/integration/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/integration/setupTests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration/AddItemForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/integration/AddItemForm.test.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,30 +58,30 @@
       <recent name="D:\Work\todolist\src\EditableSpan" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.new property with new array should be added when new todolist is added">
-    <configuration name="New todo should be added" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.addItemForm (1)">
+    <configuration name="addItemForm (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
+      <working-dir value="$PROJECT_DIR$/integration" />
       <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/TodoList/todolist-reducer.test.ts" />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/integration/AddItemForm.test.js" />
       <test-names>
-        <test-name value="New todo should be added" />
+        <test-name value="addItemForm" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="ids should be equals" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="addItemForm" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
+      <working-dir value="$PROJECT_DIR$/integration" />
       <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/state/todolists-and-tasks-reducer.test.ts" />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/integration/AddItemForm.js" />
       <test-names>
-        <test-name value="ids should be equals" />
+        <test-name value="addItemForm" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -123,11 +120,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.addItemForm (1)" />
+        <item itemvalue="Jest.addItemForm" />
         <item itemvalue="npm.storybook" />
         <item itemvalue="npm.start" />
         <item itemvalue="Jest.new property with new array should be added when new todolist is added" />
-        <item itemvalue="Jest.New todo should be added" />
-        <item itemvalue="Jest.ids should be equals" />
       </list>
     </recent_temporary>
   </component>
@@ -204,7 +201,7 @@
       <workItem from="1686565328833" duration="5975000" />
       <workItem from="1686759192002" duration="4357000" />
       <workItem from="1686812074056" duration="432000" />
-      <workItem from="1686822129222" duration="1220000" />
+      <workItem from="1686822129222" duration="2776000" />
     </task>
     <task id="LOCAL-00001" summary="add todo reducer">
       <created>1684952046047</created>
@@ -416,7 +413,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686812485320</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="commit">
+      <created>1686827638010</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1686827638010</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
