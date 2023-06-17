@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="add snapshots and tests">
-      <change afterPath="$PROJECT_DIR$/integration/__image_snapshots__/add-item-form-test-js-add-item-form-base-example-visually-looks-correct-1-snap.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/AddItemForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/integration/AddItemForm.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/integration/setupTests.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +200,8 @@
       <workItem from="1686565328833" duration="5975000" />
       <workItem from="1686759192002" duration="4357000" />
       <workItem from="1686812074056" duration="432000" />
-      <workItem from="1686822129222" duration="3099000" />
+      <workItem from="1686822129222" duration="3522000" />
+      <workItem from="1687022600908" duration="607000" />
     </task>
     <task id="LOCAL-00001" summary="add todo reducer">
       <created>1684952046047</created>
@@ -429,7 +427,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686832335787</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="add snapshots and tests">
+      <created>1686832357791</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1686832357791</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
