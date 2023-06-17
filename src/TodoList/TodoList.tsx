@@ -39,11 +39,13 @@ const TodoList = React.memo((props: TodoListPropsType) => {
     function removeTask(id: string, todoListId: string) {
         dispatch(removeTaskAC(id, todoListId))
     }
-    function changeTaskStatus(id: string, todoListId: string,isDone:boolean) {
-        dispatch(changeTaskStatusAC(id, todoListId,isDone))
+
+    function changeTaskStatus(id: string, todoListId: string, isDone: boolean) {
+        dispatch(changeTaskStatusAC(id, todoListId, isDone))
     }
-    function changeTaskTitle(id: string, todoListId: string, newTitle:string) {
-        dispatch(changeTaskTitleAC(id, todoListId,newTitle))
+
+    function changeTaskTitle(id: string, todoListId: string, newTitle: string) {
+        dispatch(changeTaskTitleAC(id, todoListId, newTitle))
     }
 
 
@@ -87,9 +89,9 @@ const TodoList = React.memo((props: TodoListPropsType) => {
             <div>{
                 tasksForTodoList.map(t => {
                     return <Task key={t.id} todolistId={props.id} task={t}
-                    removeTask={removeTask}
-                    changeTaskStatus={changeTaskStatus}
-                    changeTaskTitle={changeTaskTitle}/>
+                                 removeTask={removeTask}
+                                 changeTaskStatus={changeTaskStatus}
+                                 changeTaskTitle={changeTaskTitle}/>
                 })}
             </div>
 
@@ -112,7 +114,6 @@ const TodoList = React.memo((props: TodoListPropsType) => {
         </div>
     )
 })
-
 
 
 export default TodoList;

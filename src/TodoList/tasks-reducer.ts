@@ -1,6 +1,6 @@
 import {TasksStateType} from '../App';
 import {TaskType} from './TodoList';
-import {AddTodoActionType, RemoveTodoActionType, todoListId2, todoListId1} from './todolist-reducer';
+import {AddTodoActionType, RemoveTodoActionType, todoListId1, todoListId2} from './todolist-reducer';
 import {v1} from 'uuid';
 
 export type Action1Type = {
@@ -56,7 +56,8 @@ export const tasksReducer = (state: TasksStateType = initialState, action: Actio
 
             return {...state, [action.todoListId]: [...state[action.todoListId], action.newTask]}
         case 'CHANGE-TASK-STATUS':
-            return {...state,
+            return {
+                ...state,
                 [action.todoListId]: [...state[action.todoListId].map(task => task.id === action.id ? {
                     ...task,
                     isDone: action.isDone
@@ -64,8 +65,10 @@ export const tasksReducer = (state: TasksStateType = initialState, action: Actio
             }
         case 'CHANGE-TASK-TITLE':
             console.log(action.id)
-        return {...state,[action.todoListId]:[...state[action.todoListId].map(task=>task.id===action.id?
-            {...task, title:action.newTitle} : task)]}
+            return {
+                ...state, [action.todoListId]: [...state[action.todoListId].map(task => task.id === action.id ?
+                    {...task, title: action.newTitle} : task)]
+            }
         case'ADD-TODO': {
             return {...state, [action.todolistId]: []}
         }
@@ -93,5 +96,5 @@ export const changeTaskStatusAC = (id: string, todoListId: string, isDone: boole
     return {type: 'CHANGE-TASK-STATUS', todoListId: todoListId, id: id, isDone: isDone} as const
 }
 export const changeTaskTitleAC = (id: string, todoListId: string, newTitle: string): Action4Type => {
-    return {type: 'CHANGE-TASK-TITLE',  todoListId: todoListId, id: id,  newTitle: newTitle} as const
+    return {type: 'CHANGE-TASK-TITLE', todoListId: todoListId, id: id, newTitle: newTitle} as const
 }
