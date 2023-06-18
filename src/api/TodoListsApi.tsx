@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {ChangeEvent, useEffect, useState} from 'react';
 import {todoListsAPI, TodoListsType} from './todolistsAPI';
 
 // const meta: Meta = {
@@ -18,47 +18,67 @@ const settings = {
 export const GetTodoLists = () => {
     const [state, setState] = useState<TodoListsType[]>()
     useEffect(() => {
-        todoListsAPI.createTodoLists().then((res) => {
+        todoListsAPI.getTodoLists().then((res) => {
             return setState(res.data);
         })
     }, [])
-    return <div>{JSON.stringify(state)}</div>
+    return <div>
+        {JSON.stringify(state)}
+    </div>
 }
 
 export const PostTodoLists = () => {
     const [state, setState] = useState<{ item: TodoListsType }>()
-    useEffect(() => {
-            todoListsAPI.putTodoLists()
-                .then((res) => {
-                    setState(res.data.data)
-                })
-        }, []
-    )
-    return <div>{JSON.stringify(state)}</div>
+    const [todoListId, setTodolistId] = useState<string>('')
+    function handler() {
+        todoListsAPI.putTodoLists()
+            .then((res) => {
+                setState(res.data.data)
+            })
+    }
+    return(
+        <div>
+        {JSON.stringify(state)}
+        <input value={todoListId} onChange={(e:ChangeEvent<HTMLInputElement>)=> {setTodolistId(e.currentTarget.value)}}/>
+            <button onClick={handler}>add TodoList </button>
+    </div>)
 }
 
 export const DeleteTodoLists = () => {
     const [state, setState] = useState<{}>({name: 'Bob'})
-    useEffect(() => {
-            todoListsAPI.deleteTodoLists('hg')
-                .then((res) => {
-                    setState(res.data.data)
-                })
-        }, []
-    )
-    return <div>{JSON.stringify(state)}</div>
+    const [todoListId, setTodolistId] = useState<string>('')
+    function handler() {
+        todoListsAPI.deleteTodoLists('hg')
+            .then((res) => {
+                setState(res.data.data)
+            })
+    }
+
+    return(
+        <div>
+            {JSON.stringify(state)}
+            <input value={todoListId} onChange={(e)=> {setTodolistId(e.currentTarget.value)}}/>
+            <button onClick={handler}>add TodoList </button>
+        </div>)
 }
 
 export const PutTodoLists = () => {
     const [state, setState] = useState<{}>({name: 'Bob'})
-    useEffect(() => {
-            todoListsAPI.postTodoLists()
-                .then((res) => {
-                    setState(res.data.data)
-                })
-        }, []
-    )
-    return <div>{JSON.stringify(state)}</div>
+    const [todoListId, setTodolistId] = useState<string>('')
+
+    function handler() {
+        todoListsAPI.postTodoLists(todoListId)
+            .then((res) => {
+                setState(res.data.data)
+            })
+    }
+
+    return(
+        <div>
+            {JSON.stringify(state)}
+            <input value={todoListId} onChange={(e)=> {setTodolistId(e.currentTarget.value)}}/>
+            <button onClick={handler}>add TodoList </button>
+        </div>)
 }
 
 export const GetTasks = () => {
