@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/src/api/TodoListsApi.stories.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/TodoListsApi.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/TodoListsApi.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/TodoListsApi.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/todolistsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolistsAPI.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,10 +55,10 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Work\todolist\src\api" />
+      <recent name="D:\Work\todolist\src" />
       <recent name="D:\Work\todolist" />
       <recent name="D:\Work\todolist\src\TodoList\Task" />
       <recent name="D:\Work\todolist\public" />
-      <recent name="D:\Work\todolist\src\TodoList" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.addItemForm (1)">
@@ -203,7 +206,7 @@
       <workItem from="1686812074056" duration="432000" />
       <workItem from="1686822129222" duration="3522000" />
       <workItem from="1687022600908" duration="2112000" />
-      <workItem from="1687059060921" duration="12511000" />
+      <workItem from="1687059060921" duration="22073000" />
     </task>
     <task id="LOCAL-00001" summary="add todo reducer">
       <created>1684952046047</created>
@@ -513,7 +516,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687071730880</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="commit">
+      <created>1687072873195</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1687072873195</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
