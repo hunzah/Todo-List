@@ -1,5 +1,31 @@
-import {useEffect, useState} from 'react';
 import axios from 'axios/index';
+
+
+type TodoListsType = {
+    id: string
+    title: string
+    addedDate: string
+    order: number
+}
+
+type CreateTodoListsResponseType = {
+    resultCode: number
+    messages: string[]
+    data: {
+        item: TodoListsType
+    }
+}
+type DeleteTodoListsResponseType = {
+    resultCode: number
+    messages: string[]
+    data: {}
+}
+type UpdateTodoListsResponseType = {
+    resultCode: number
+    messages: string[]
+    data: {}
+}
+
 
 const settings = {
     withCredentials: true,
@@ -8,10 +34,21 @@ const settings = {
     }
 }
 
-const [state, setState] = useState({name: 'Bob'})
 
 export const todoListsAPI = {
-    getTodoLists() {
-        return axios.get('https://social-network.samuraijs.com/api/1.1/todo-lists/', settings)
+    createTodoLists() {
+        return axios.get<TodoListsType[]>('https://social-network.samuraijs.com/api/1.1/todo-lists/', settings)
+    },
+    putTodoLists() {
+        return axios.post<CreateTodoListsResponseType>('https://social-network.samuraijs.com/api/1.1/todo-lists/',
+            {title: 'Заголовок'}, settings)
+    },
+    deleteTodoLists() {
+        return axios.get<DeleteTodoListsResponseType>('https://social-network.samuraijs.com/api/1.1/todo-lists/',
+            settings)
+    },
+    postTodoLists() {
+        return axios.put<UpdateTodoListsResponseType>('https://social-network.samuraijs.com/api/1.1/todo-lists/',
+            {title: 'aaaa'}, settings)
     }
 }

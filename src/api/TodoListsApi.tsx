@@ -1,14 +1,13 @@
-import {Meta} from '@storybook/react';
 import {useEffect, useState} from 'react';
-import axios from 'axios';
-import {todoListsAPI} from '../api/todolistsAPI';
+import {todoListsAPI} from './todolistsAPI';
+import {Meta} from '@storybook/react';
 
-const meta: Meta = {
-    title: 'Example/Get/Post/Delete/Put,',
-};
-
-
-export default meta;
+// const meta: Meta = {
+//     title: 'Example/Get/Post/Delete/Put,',
+// };
+//
+//
+// export default meta;
 
 const settings = {
     withCredentials: true,
@@ -20,7 +19,7 @@ const settings = {
 export const GetTodoLists = () => {
     const [state, setState] = useState({name: 'Bob'})
     useEffect(() => {
-        todoListsAPI.getTodoLists().then((res: any) => {
+        todoListsAPI.createTodoLists().then((res: any) => {
             return setState(res);
         })
     }, [])
@@ -30,7 +29,7 @@ export const GetTodoLists = () => {
 export const PostTodoLists = () => {
     const [state, setState] = useState({name: 'Bob'})
     useEffect(() => {
-            axios.post('https://social-network.samuraijs.com/api/1.1/todo-lists/', {title: 'Заголовок'}, settings)
+            todoListsAPI.putTodoLists()
                 .then((res) => {
                     setState(res.data)
                 })
@@ -42,7 +41,7 @@ export const PostTodoLists = () => {
 export const DeleteTodoLists = () => {
     const [state, setState] = useState({name: 'Bob'})
     useEffect(() => {
-            axios.delete('https://social-network.samuraijs.com/api/1.1/todo-lists/',)
+            todoListsAPI.deleteTodoLists()
                 .then((res) => {
                     setState(res.data)
                 })
@@ -54,7 +53,7 @@ export const DeleteTodoLists = () => {
 export const PutTodoLists = () => {
     const [state, setState] = useState({name: 'Bob'})
     useEffect(() => {
-            axios.put('https://social-network.samuraijs.com/api/1.1/todo-lists/', {title: 'aaaa'}, settings)
+            todoListsAPI.postTodoLists()
                 .then((res) => {
                     setState(res.data)
                 })
