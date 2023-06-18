@@ -1,10 +1,14 @@
 import {Meta} from '@storybook/react';
 import {useEffect, useState} from 'react';
 import axios from 'axios';
+import {todoListsAPI} from '../api/todolistsAPI';
 
 const meta: Meta = {
     title: 'Example/Get/Post/Delete/Put,',
 };
+
+
+export default meta;
 
 const settings = {
     withCredentials: true,
@@ -13,17 +17,13 @@ const settings = {
     }
 }
 
-export default meta;
-
 export const GetTodoLists = () => {
     const [state, setState] = useState({name: 'Bob'})
     useEffect(() => {
-            axios.get('https://social-network.samuraijs.com/api/1.1/todo-lists/', settings)
-                .then((res) => {
-                    setState(res.data)
-                })
-        }, []
-    )
+        todoListsAPI.getTodoLists().then((res: any) => {
+            return setState(res);
+        })
+    }, [])
     return <div>{JSON.stringify(state)}</div>
 }
 
