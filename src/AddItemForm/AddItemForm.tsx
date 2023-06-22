@@ -16,6 +16,8 @@ export const AddItemForm = React.memo((addItem: AddItemFormPropsType) => {
         onClickHandler,
         isAddTaskNotPossible
     } = useAddItemForm(addItem)
+
+
     return (
         <>
             <div className={s.inpBtn}>

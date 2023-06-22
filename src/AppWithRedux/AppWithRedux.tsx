@@ -1,8 +1,7 @@
-import React, {useCallback} from 'react';
-import s from './App.module.css';
-import TodoList, {TaskType} from './TodoList/TodoList';
-import {v1} from 'uuid';
-import {AddItemForm} from './AddItemForm/AddItemForm';
+import React from 'react';
+import s from '../App.module.css';
+import TodoList, {TaskType} from '../TodoList/TodoList';
+import {AddItemForm} from '../AddItemForm/AddItemForm';
 import Typography from '@mui/material/Typography';
 import Toolbar from '@mui/material/Toolbar';
 import Paper from '@mui/material/Paper';
@@ -12,9 +11,7 @@ import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
 import MenuIcon from '@mui/icons-material/Menu';
-import {addTodoAC, changeTodoFilterAC, changeTodoTitleAC, removeTodoAC} from './TodoList/todolist-reducer';
-import {useDispatch, useSelector} from 'react-redux';
-import {AppRootStateType} from './store';
+import {useAppWithRedux} from './hooks/useAppWithRedux';
 
 export type FilterValueType =
     'all' | 'completed' | 'active'
@@ -27,32 +24,15 @@ export type TasksStateType = {
     [key: string]: TaskType[]
 }
 
-
 function AppWithRedux() {
 
-
-    const dispatch = useDispatch()
-    const todoLists = useSelector<AppRootStateType, TodolistType[]>((state => state.todolists))
-
-
-    // Work with TodoLists
-    const removeTodoList = useCallback((todoListId: string) => {
-        dispatch(removeTodoAC(todoListId))
-    }, [dispatch])
-
-    const addTodoList = useCallback((title: string) => {
-        const todoId = v1()
-        dispatch(addTodoAC(title, todoId))
-    }, [dispatch])
-
-    const changeTodoListTitle = useCallback((id: string, newTitle: string) => {
-        dispatch(changeTodoTitleAC(id, newTitle))
-
-    }, [dispatch])
-
-    const changeFilter = useCallback((value: FilterValueType, todoListId: string) => {
-        dispatch(changeTodoFilterAC(todoListId, value))
-    }, [dispatch])
+    const {
+        addTodoList,
+        todoLists,
+        changeFilter,
+        removeTodoList,
+        changeTodoListTitle
+    } = useAppWithRedux()
 
     return (
         <div className={s.App}>

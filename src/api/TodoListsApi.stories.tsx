@@ -1,7 +1,6 @@
 import {ChangeEvent, useEffect, useState} from 'react';
 import {todoListsAPI, TodoListsType} from './todolistsAPI';
 import {Meta} from '@storybook/react';
-import axios from 'axios';
 
 export default {
     title: 'Get-Post-Delete-Put-Requests',
@@ -169,6 +168,7 @@ export const PutTasks = () => {
     const [state, setState] = useState<any>()
     const [taskId, setTaskId] = useState<string>('')
     const [todoListId, setTodolistId] = useState<string>('')
+
     function onClickHandler() {
         todoListsAPI.putTasks(todoListId, taskId)
             .then((res) => {

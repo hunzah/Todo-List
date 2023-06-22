@@ -1,7 +1,7 @@
 import {AppRootStateType, store} from '../store';
 import {Provider} from 'react-redux';
 import {Meta} from '@storybook/react';
-import AppWithRedux from '../AppWithRedux';
+import AppWithRedux from '../AppWithRedux/AppWithRedux';
 import {ReactNode} from 'react';
 import {v1} from 'uuid';
 import {combineReducers, legacy_createStore} from 'redux';

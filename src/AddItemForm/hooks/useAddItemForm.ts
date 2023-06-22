@@ -1,15 +1,8 @@
 import {ChangeEvent, KeyboardEvent, useState} from 'react';
 
-
-
-
-
 export type AddItemFormPropsType = {
     addItem: (title: string) => void
 }
-
-
-
 
 export const useAddItemForm = (props:AddItemFormPropsType) => {
 

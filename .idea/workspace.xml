@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/src/AddItemForm/hooks/useAddItemForm.ts" afterDir="false" />
+    <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="add custom hooks">
+      <change afterPath="$PROJECT_DIR$/src/AppWithRedux/hooks/useAppWithRedux.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AddItemForm/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddItemForm/AddItemForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddItemForm/hooks/useAddItemForm.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddItemForm/hooks/useAddItemForm.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppWithRedux.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppWithRedux.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/TodoListsApi.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/TodoListsApi.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stories/ReduxStoreProviderDecorator.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/stories/ReduxStoreProviderDecorator.stories.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,22 +31,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Work/todolist&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;nodejs.jest.jest_package&quot;: &quot;D:/Work/todolist/node_modules/react-scripts&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Work\\todolist\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Work/todolist",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "nodejs.jest.jest_package": "D:/Work/todolist/node_modules/react-scripts",
+    "nodejs_package_manager_path": "yarn",
+    "ts.external.directory.path": "D:\\Work\\todolist\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Work\todolist\src\stories" />
@@ -52,11 +58,11 @@
       <recent name="D:\Work\todolist\src\EditableSpanPropsType.tsx" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\todolist\src\AppWithRedux" />
       <recent name="D:\Work\todolist\src\AddItemForm" />
       <recent name="D:\Work\todolist\src\api" />
       <recent name="D:\Work\todolist\src" />
       <recent name="D:\Work\todolist" />
-      <recent name="D:\Work\todolist\src\TodoList\Task" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.addItemForm (1)">
@@ -122,9 +128,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.storybook" />
+        <item itemvalue="npm.start" />
         <item itemvalue="Jest.addItemForm (1)" />
         <item itemvalue="Jest.addItemForm" />
-        <item itemvalue="npm.start" />
         <item itemvalue="Jest.new property with new array should be added when new todolist is added" />
       </list>
     </recent_temporary>
@@ -204,7 +210,8 @@
       <workItem from="1686812074056" duration="432000" />
       <workItem from="1686822129222" duration="3522000" />
       <workItem from="1687022600908" duration="2112000" />
-      <workItem from="1687059060921" duration="23149000" />
+      <workItem from="1687059060921" duration="24851000" />
+      <workItem from="1687442733532" duration="2562000" />
     </task>
     <task id="LOCAL-00001" summary="add todo reducer">
       <created>1684952046047</created>
@@ -528,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687088953639</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="add custom hooks">
+      <created>1687093797061</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1687093797061</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -563,6 +577,7 @@
     <MESSAGE value="add snapshots and tests" />
     <MESSAGE value="add api" />
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="add custom hooks" />
+    <option name="LAST_COMMIT_MESSAGE" value="add custom hooks" />
   </component>
 </project>
