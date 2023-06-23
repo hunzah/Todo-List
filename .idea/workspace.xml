@@ -208,14 +208,7 @@
       <workItem from="1687442733532" duration="4408000" />
       <workItem from="1687494770879" duration="101000" />
       <workItem from="1687500402501" duration="250000" />
-      <workItem from="1687501438544" duration="1031000" />
-    </task>
-    <task id="LOCAL-00001" summary="add todo reducer">
-      <created>1684952046047</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1684952046047</updated>
+      <workItem from="1687501438544" duration="1770000" />
     </task>
     <task id="LOCAL-00002" summary="commit">
       <created>1684952413056</created>
@@ -553,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687457831301</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="commit">
+      <created>1687504454654</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1687504454654</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

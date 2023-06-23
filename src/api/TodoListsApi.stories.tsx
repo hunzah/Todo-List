@@ -183,9 +183,12 @@ export const PutTasks = () => {
     return (
         <div>
             {JSON.stringify(state)}
-            <input value={todoListId} onChange={(e) => {setTodolistId(e.currentTarget.value)}}/>
-            <input value={taskId} onChange={(e) => {setTaskId(e.currentTarget.value)}}/>
-            <input value={title} onChange={(e) => {setTitle(e.currentTarget.value)}}/>
+            <input value={todoListId} onChange={(e) => {setTodolistId(e.currentTarget.value)}}
+            placeholder={'TodolistId'}/>
+            <input value={taskId} onChange={(e) => {setTaskId(e.currentTarget.value)}}
+            placeholder={'TaskId'}/>
+            <input value={title} onChange={(e) => {setTitle(e.currentTarget.value)}}
+            placeholder={'Title'}/>
             <button onClick={onClickHandler}>Update Task</button>
         </div>)
 }
