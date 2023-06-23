@@ -4,10 +4,7 @@
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="code refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppWithReducers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithReducers.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppWithRedux/hooks/useAppWithRedux.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux/hooks/useAppWithRedux.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/TodoList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/todolistsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolistsAPI.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -212,14 +209,7 @@
       <workItem from="1687442733532" duration="4408000" />
       <workItem from="1687494770879" duration="101000" />
       <workItem from="1687500402501" duration="250000" />
-      <workItem from="1687501438544" duration="3390000" />
-    </task>
-    <task id="LOCAL-00004" summary="add tests">
-      <created>1684992842761</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1684992842761</updated>
+      <workItem from="1687501438544" duration="5556000" />
     </task>
     <task id="LOCAL-00005" summary="add useReducer">
       <created>1685180354635</created>
@@ -557,7 +547,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687505452299</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="code refactoring">
+      <created>1687506315681</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1687506315681</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
