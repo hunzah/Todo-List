@@ -60,7 +60,7 @@ const TodoList = React.memo((props: TodoListPropsType) => {
     const addTask = useCallback((title: string) => {
         const newTask: TaskType = {
             id: v1(), title: title,
-            status: TaskStatus.InProgress, todoListId: props.id,
+            status: TaskStatus.New, todoListId: props.id,
             startDate: '', addedDate: '', order: 0, priority: TaskPriorities.low,
              deadline: '' +
                 '', description: ''
@@ -75,7 +75,7 @@ const TodoList = React.memo((props: TodoListPropsType) => {
         tasksForTodoList = tasksForTodoList?.filter(t => t.status===TaskStatus.Completed)
     }
     if (props.filter === 'active') {
-        tasksForTodoList = tasksForTodoList?.filter(t => t.status===TaskStatus.InProgress)
+        tasksForTodoList = tasksForTodoList?.filter(t => t.status===TaskStatus.InProgress || t.status===TaskStatus.New)
     }
 
     return (
