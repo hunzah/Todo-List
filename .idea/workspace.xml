@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppWithRedux/hooks/useAppWithRedux.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux/hooks/useAppWithRedux.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/TodoListsApi.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/TodoListsApi.stories.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/todolistsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolistsAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,14 +213,7 @@
       <workItem from="1687442733532" duration="4408000" />
       <workItem from="1687494770879" duration="101000" />
       <workItem from="1687500402501" duration="250000" />
-      <workItem from="1687501438544" duration="1770000" />
-    </task>
-    <task id="LOCAL-00002" summary="commit">
-      <created>1684952413056</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1684952413056</updated>
+      <workItem from="1687501438544" duration="2709000" />
     </task>
     <task id="LOCAL-00003" summary="commit">
       <created>1684952838152</created>
@@ -553,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687504454654</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="commit">
+      <created>1687504627916</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1687504627916</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -13,12 +13,12 @@ import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
 import MenuIcon from '@mui/icons-material/Menu';
 
-export type FilterValueType =
-    'all' | 'completed' | 'active'
-
-export type TodolistType = {
-    id: string, title: string, filter: FilterValueType
-}
+// export type FilterValueType =
+//     'all' | 'completed' | 'active'
+//
+// export type TodolistType = {
+//     id: string, title: string, filter: FilterValueType
+// }
 
 export type TasksStateType = {
     [key: string]: TaskType[]

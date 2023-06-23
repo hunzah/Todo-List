@@ -1,19 +1,18 @@
 import axios from 'axios';
-import {useState} from 'react';
 
 
-export type TodoListsType = {
+export type TodoListType = {
     id: string
     title: string
-    addedDate: string
-    order: number
+    addedDate?: string
+    order?: number
 }
 
 type CreateTodoListsResponseType = {
     resultCode: number
     messages: string[]
     data: {
-        item: TodoListsType
+        item: TodoListType
     }
 }
 type ResponseType<D> = {
@@ -59,7 +58,7 @@ const instance = axios.create({
 
 export const todoListsAPI = {
     getTodoLists() {
-        return instance.get<TodoListsType[]>(`todo-lists`)
+        return instance.get<TodoListType[]>(`todo-lists`)
     },
 
     postTodoLists(title: string) {
@@ -67,7 +66,7 @@ export const todoListsAPI = {
     },
 
     putTodoLists(todolistId: string) {
-        return instance.put<ResponseType<{ item: TodoListsType }>>(`todo-lists/${todolistId}`)
+        return instance.put<ResponseType<{ item: TodoListType }>>(`todo-lists/${todolistId}`)
     },
     deleteTodoLists(todolistId: string) {
         return instance.delete<ResponseType<{}>>(`todo-lists/${todolistId}`,
