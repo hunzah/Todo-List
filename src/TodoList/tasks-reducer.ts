@@ -30,7 +30,7 @@ export type Action4Type = {
 type ActionTypes = Action1Type | Action2Type | Action3Type | Action4Type | AddTodoActionType | RemoveTodoActionType
 
 
-const initialState =
+const initialState: TasksStateType =
     {
         [todoListId1]: [
             {

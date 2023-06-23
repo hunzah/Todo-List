@@ -11,7 +11,7 @@ type TaskPropsType = {
     task: TaskType
     todolistId: string
     removeTask:(taskId:string,todolistId:string)=>void
-    changeTaskStatus:(taskId:string,todolistId:string,status: TaskStatus)=>void
+    changeTaskStatus:(taskId:string,todolistId:string,status:TaskStatus)=>void
     changeTaskTitle:(taskId:string,todolistId:string,newValue:string)=>void
 
 }
@@ -20,9 +20,9 @@ export const Task = React.memo((props: TaskPropsType) => {
 
     const onClickRemoveHandler = () => props.removeTask(props.task.id, props.todolistId)
 
-    const onChangeCheckBoxHandler = (taskId: string, status: TaskStatus) => {
-
-        props.changeTaskStatus(props.task.id, props.todolistId, status)
+    const onChangeCheckBoxHandler = (taskId: string, isDone: boolean) => {
+        let status = isDone ? TaskStatus.Completed : TaskStatus.New;
+        props.changeTaskStatus(props.task.id, props.todolistId, status);
     };
 
     const onChangeTitleHandler = useCallback((newValue: string) => {
@@ -33,7 +33,7 @@ export const Task = React.memo((props: TaskPropsType) => {
         <div className={props.task.status === TaskStatus.Completed? s.isDone : ''} key={props.task.id}>
             <div className={s.checkboxTitle}>
                 <SuperCheckBox checked={props.task.status === TaskStatus.Completed}
-                               callback={() => onChangeCheckBoxHandler(props.task.id, props.task.status)}/>
+                               callback={(isDone) => onChangeCheckBoxHandler(props.task.id,isDone )}/>
                 <EditableSpan title={props.task.title} onChangeTitleHandler={onChangeTitleHandler}/>
             </div>
             <div className={s.deleteButtons}>
