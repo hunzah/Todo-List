@@ -102,11 +102,11 @@ export const GetTasks = () => {
     useEffect(() => {
         todoListsAPI.getTasks(todoListId).then((res: any) => {
             setState(res.data.items)
-            // alert(res.data.items)
+
         })
     })
 
-    // PutTasks(state,setState)
+
     return (
         <div>
             {JSON.stringify(state)}
@@ -118,6 +118,12 @@ export const PostTasks = () => {
     const [state, setState] = useState<any>()
     const [todoListId, setTodolistId] = useState<string>('')
     const [title, setTitle] = useState<string>('')
+    const [description, setDescription] = useState<string>('')
+    const [completed, setCompleted] = useState<string>('')
+    const [status ,setStatus] = useState<string>('')
+    const [priority, setPriority] = useState<string>('')
+    const [startDate, setStartDate] = useState<string>('')
+    const [deadline, setDeadline] = useState<string>('')
 
     function onClickHandler() {
         todoListsAPI.postTasks(todoListId, title)
@@ -129,12 +135,9 @@ export const PostTasks = () => {
     return (
         <div>
             {JSON.stringify(state)}
-            <input value={todoListId} onChange={(e) => {
-                setTodolistId(e.currentTarget.value)
-            }} placeholder={'enter todoListId'}/>
-            <input value={title} onChange={(e) => {
-                setTitle(e.currentTarget.value)
-            }} placeholder={'enter title'}/>
+            <input value={todoListId} onChange={(e) => {setTodolistId(e.currentTarget.value)}} placeholder={'enter todoListId'}/>
+            <input value={title} onChange={(e) => {setTitle(e.currentTarget.value)}} placeholder={'enter title'}/>
+
             <button onClick={onClickHandler}>Add Task</button>
         </div>)
 }
@@ -165,12 +168,13 @@ export const DeleteTasks = () => {
 }
 
 export const PutTasks = () => {
+    const [title, setTitle] = useState<string>('')
     const [state, setState] = useState<any>()
     const [taskId, setTaskId] = useState<string>('')
     const [todoListId, setTodolistId] = useState<string>('')
 
     function onClickHandler() {
-        todoListsAPI.putTasks(todoListId, taskId)
+        todoListsAPI.update(todoListId, taskId, title)
             .then((res) => {
                 setState(res.data.data)
             })
@@ -179,12 +183,9 @@ export const PutTasks = () => {
     return (
         <div>
             {JSON.stringify(state)}
-            <input value={todoListId} onChange={(e) => {
-                setTodolistId(e.currentTarget.value)
-            }}/>
-            <input value={taskId} onChange={(e) => {
-                setTaskId(e.currentTarget.value)
-            }}/>
+            <input value={todoListId} onChange={(e) => {setTodolistId(e.currentTarget.value)}}/>
+            <input value={taskId} onChange={(e) => {setTaskId(e.currentTarget.value)}}/>
+            <input value={title} onChange={(e) => {setTitle(e.currentTarget.value)}}/>
             <button onClick={onClickHandler}>Update Task</button>
         </div>)
 }

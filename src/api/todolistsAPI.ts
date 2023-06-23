@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {useState} from 'react';
 
 
 export type TodoListsType = {
@@ -30,12 +31,6 @@ const settings = {
 }
 
 
-const instance = axios.create({
-    baseURL: `https://social-network.samuraijs.com/api/1.1/`,
-    ...settings
-})
-
-
 type TaskResponseType<D = {}> = {
     data: D
     totalCount: number
@@ -56,6 +51,11 @@ type TaskType = {
     addedDate: string
 }
 
+
+const instance = axios.create({
+    baseURL: `https://social-network.samuraijs.com/api/1.1/`,
+    ...settings
+})
 
 export const todoListsAPI = {
     getTodoLists() {
@@ -83,9 +83,9 @@ export const todoListsAPI = {
     deleteTasks(todolistId: string, taskId: string) {
         return instance.delete<TaskResponseType>(`todo-lists/${todolistId}/tasks/${taskId}`)
     },
-    putTasks(todolistId: string, taskId: string) {
+    update(todolistId: string, taskId: string,title:string) {
         const updatedTask = {
-            title: 'Updated Task',
+            title: title,
             description: null,
             completed: true,
             status: 0,
