@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react';
+import React, {useState} from 'react';
 import s from './App.module.css';
 import TodoList, {TaskType} from './TodoList/TodoList';
 import {v1} from 'uuid';
@@ -12,13 +12,8 @@ import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
 import MenuIcon from '@mui/icons-material/Menu';
+import {FilterValueType, TodolistDomainType} from './TodoList/todolist-reducer';
 
-// export type FilterValueType =
-//     'all' | 'completed' | 'active'
-//
-// export type TodolistType = {
-//     id: string, title: string, filter: FilterValueType
-// }
 
 export type TasksStateType = {
     [key: string]: TaskType[]
@@ -31,9 +26,9 @@ function App() {
     const todoListId2 = v1()
 
 
-    const [todoLists, setTodoList] = useState<TodolistType[]>([
-        {id: todoListId1, title: 'What to learn', filter: 'all'},
-        {id: todoListId2, title: 'What to buy', filter: 'all'}
+    const [todoLists, setTodoList] = useState<TodolistDomainType[]>([
+        {id: todoListId1, title: 'What to learn', filter: 'all', addedDate: '', order: 0},
+        {id: todoListId2, title: 'What to buy', filter: 'all', addedDate: '', order: 0}
     ])
 
     const [tasksObj, setTasksObj] = useState<TasksStateType>(
@@ -52,7 +47,7 @@ function App() {
     )
 
     // Work With Tasks
-function removeTask(id: string, todoListId: string) {
+    function removeTask(id: string, todoListId: string) {
         const tasks = tasksObj[todoListId]
         tasksObj[todoListId] = tasks.filter(t => t.id !== id)
 
@@ -118,7 +113,13 @@ function removeTask(id: string, todoListId: string) {
 
     const addTodoList = (title: string) => {
         const newTodoListId = v1()
-        const newTodoList: TodolistType = {id: newTodoListId, title: title, filter: 'all'}
+        const newTodoList: TodolistDomainType = {
+            id: newTodoListId,
+            title: title,
+            filter: 'all',
+            addedDate: '',
+            order: 0
+        }
         setTodoList([...todoLists, newTodoList])
         setTasksObj(prev => ({...prev, [newTodoListId]: []}))
     }
@@ -144,7 +145,7 @@ function removeTask(id: string, todoListId: string) {
             </AppBar>
             <Container fixed>
                 <Grid container style={{padding: '20px'}}>
-                    <AddItemForm addItem={addTodoList} />
+                    <AddItemForm addItem={addTodoList}/>
                 </Grid>
                 <Grid container spacing={3}>
 

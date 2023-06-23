@@ -4,8 +4,8 @@ import axios from 'axios';
 export type TodoListType = {
     id: string
     title: string
-    addedDate?: string
-    order?: number
+    addedDate: string
+    order: number
 }
 
 type CreateTodoListsResponseType = {

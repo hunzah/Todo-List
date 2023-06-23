@@ -16,21 +16,11 @@ import {
     addTodoAC,
     changeTodoFilterAC,
     changeTodoTitleAC,
-    removeTodoAC,
-    todolistReducer
+    removeTodoAC, TodolistDomainType,
+    todoListReducer
 } from './TodoList/todolist-reducer';
 import {addTaskAC, changeTaskStatusAC, changeTaskTitleAC, removeTaskAC, tasksReducer} from './TodoList/tasks-reducer';
 
-export type FilterValueType =
-    'all' | 'completed' | 'active'
-
-// export type TodolistType = {
-//     id: string, title: string, filter: FilterValueType
-// }
-//
-// export type TasksStateType = {
-//     [key: string]: TaskType[]
-// }
 
 function AppWithReducers() {
 
@@ -40,7 +30,7 @@ function AppWithReducers() {
 
 
 
-    const [todoLists, dispatchToTodolistReducer] = useReducer(todolistReducer, [
+    const [todoLists, dispatchToTodolistReducer] = useReducer<TodolistDomainType>(todoListReducer, [
         {id: todoListId1, title: 'What to learn', filter: 'all'},
         {id: todoListId2, title: 'What to buy', filter: 'all'}
     ])
