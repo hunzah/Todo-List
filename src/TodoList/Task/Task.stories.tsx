@@ -1,6 +1,7 @@
 import {Meta} from '@storybook/react';
 import {Task} from './Task';
 import {action} from '@storybook/addon-actions';
+import {TaskPriorities, TaskStatus} from '../../api/todolistsAPI';
 
 const meta: Meta = {
     title: 'Task Component',
@@ -14,16 +15,27 @@ const taskWasRemoved = action('task  was removed')
 
 export const TaskExample = () => {
     return (
-        <><Task task={{id: '1', isDone: true, title: 'Task Title'}} todolistId="todolistId1"
-                 changeTaskTitle={taskTitleChanged}
-                 changeTaskStatus={taskStatusChanged}
-                 removeTask={taskWasRemoved}
+        <><Task task={{
+            id: '1', status: TaskStatus.Completed, title: 'Task Title', todoListId: 'todoListId1',
+            startDate: '', addedDate: '', order: 0, priority: TaskPriorities.low,
+            deadline: '' +
+                '', description: ''
+        }} todolistId="todolistId1"
+                changeTaskTitle={taskTitleChanged}
+                changeTaskStatus={taskStatusChanged}
+                removeTask={taskWasRemoved}
         />
-            <Task task={{id: '1', isDone: true, title: 'Task2 Title'}} todolistId="todolistId2"
-                 changeTaskTitle={taskTitleChanged}
-                 changeTaskStatus={taskStatusChanged}
-                 removeTask={taskWasRemoved}
-        />
+            <Task task={{
+                id: '1', status: TaskStatus.Completed, title: 'Task2 Title',
+                todoListId: 'todolistId2',
+                startDate: '', addedDate: '', order: 0, priority: TaskPriorities.low,
+                deadline: '' +
+                    '', description: ''
+            }} todolistId="todolistId2"
+                  changeTaskTitle={taskTitleChanged}
+                  changeTaskStatus={taskStatusChanged}
+                  removeTask={taskWasRemoved}
+            />
         </>
     )
 }

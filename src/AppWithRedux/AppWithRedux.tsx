@@ -1,6 +1,6 @@
 import React from 'react';
 import s from '../App.module.css';
-import TodoList, {TaskType} from '../TodoList/TodoList';
+import TodoList from '../TodoList/TodoList';
 import {AddItemForm} from '../AddItemForm/AddItemForm';
 import Typography from '@mui/material/Typography';
 import Toolbar from '@mui/material/Toolbar';
@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
 import MenuIcon from '@mui/icons-material/Menu';
 import {useAppWithRedux} from './hooks/useAppWithRedux';
+import {TaskType} from '../api/todolistsAPI';
 
 
 

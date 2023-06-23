@@ -3,9 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="code refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddItemForm/hooks/useAddItemForm.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddItemForm/hooks/useAddItemForm.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppWithReducers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithReducers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SuperCheckBox/SuperCheckBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SuperCheckBox/SuperCheckBox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/Task/Task.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/Task/Task.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/Task/Task.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/Task/TaskRedux.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/Task/TaskRedux.stories.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoList/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/TodoList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/todolistsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolistsAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/tasks-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/tasks-reducer.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/tasks-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/todolist-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/todolist-reducer.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/todolists-and-tasks-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/todolists-and-tasks-reducer.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stories/ReduxStoreProviderDecorator.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/stories/ReduxStoreProviderDecorator.stories.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,8 +133,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.storybook" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.storybook" />
         <item itemvalue="Jest.addItemForm (1)" />
         <item itemvalue="Jest.addItemForm" />
         <item itemvalue="Jest.new property with new array should be added when new todolist is added" />
@@ -209,14 +220,7 @@
       <workItem from="1687442733532" duration="4408000" />
       <workItem from="1687494770879" duration="101000" />
       <workItem from="1687500402501" duration="250000" />
-      <workItem from="1687501438544" duration="5556000" />
-    </task>
-    <task id="LOCAL-00005" summary="add useReducer">
-      <created>1685180354635</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1685180354635</updated>
+      <workItem from="1687501438544" duration="9838000" />
     </task>
     <task id="LOCAL-00006" summary="code refactor">
       <created>1685181117370</created>
@@ -554,7 +558,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687506315681</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="code refactoring">
+      <created>1687510506184</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1687510506184</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -4,7 +4,7 @@ export type AddItemFormPropsType = {
     addItem: (title: string) => void
 }
 
-export const useAddItemForm = (props:AddItemFormPropsType) => {
+export const useAddItemForm = (props: AddItemFormPropsType) => {
 
     const [newItemTitle, setNewItemTitle] = useState('')
     const [error, setError] = useState<string | null>(null)
@@ -38,7 +38,7 @@ export const useAddItemForm = (props:AddItemFormPropsType) => {
             setNewItemTitle('')
         }
     }
-    return({
+    return ({
         newItemTitle,
         error,
         onNewTitleChangeHandler,

@@ -1,5 +1,4 @@
 import React, {useCallback} from 'react';
-import {FilterValueType} from '../App';
 import s from './TodoList.module.css'
 import {AddItemForm} from '../AddItemForm/AddItemForm';
 import {EditableSpan} from '../EditableSpan/EditableSpan';
@@ -11,6 +10,8 @@ import {AppRootStateType} from '../store';
 import {addTaskAC, changeTaskStatusAC, changeTaskTitleAC, removeTaskAC} from './tasks-reducer';
 import {v1} from 'uuid';
 import {Task} from './Task/Task';
+import {FilterValueType} from './todolist-reducer';
+import {TaskPriorities, TaskStatus, TaskType} from '../api/todolistsAPI';
 
 
 type TodoListPropsType = {
@@ -23,11 +24,6 @@ type TodoListPropsType = {
 
 }
 
-export type TaskType = {
-    id: string;
-    title: string;
-    isDone: boolean;
-}
 
 const TodoList = React.memo((props: TodoListPropsType) => {
 
@@ -40,8 +36,8 @@ const TodoList = React.memo((props: TodoListPropsType) => {
         dispatch(removeTaskAC(id, todoListId))
     }
 
-    function changeTaskStatus(id: string, todoListId: string, isDone: boolean) {
-        dispatch(changeTaskStatusAC(id, todoListId, isDone))
+    function changeTaskStatus(id: string, todoListId: string, status: TaskStatus) {
+        dispatch(changeTaskStatusAC(id, todoListId, status))
     }
 
     function changeTaskTitle(id: string, todoListId: string, newTitle: string) {
@@ -61,8 +57,14 @@ const TodoList = React.memo((props: TodoListPropsType) => {
         props.changeTodoListTitle(props.id, newTitle)
     }, [props.changeTodoListTitle, props.id])
 
-    const addTask = useCallback((title: string,) => {
-        const newTask: TaskType = {id: v1(), title: title, isDone: false};
+    const addTask = useCallback((title: string) => {
+        const newTask: TaskType = {
+            id: v1(), title: title,
+            status: TaskStatus.InProgress, todoListId: props.id,
+            startDate: '', addedDate: '', order: 0, priority: TaskPriorities.low,
+             deadline: '' +
+                '', description: ''
+        };
         dispatch(addTaskAC(newTask, props.id))
     }, [props.id])
 
@@ -70,10 +72,10 @@ const TodoList = React.memo((props: TodoListPropsType) => {
     let tasksForTodoList = tasksObj;
 
     if (props.filter === 'completed') {
-        tasksForTodoList = tasksForTodoList?.filter(t => t.isDone)
+        tasksForTodoList = tasksForTodoList?.filter(t => t.status===TaskStatus.Completed)
     }
     if (props.filter === 'active') {
-        tasksForTodoList = tasksForTodoList?.filter(t => !t.isDone)
+        tasksForTodoList = tasksForTodoList?.filter(t => t.status===TaskStatus.InProgress)
     }
 
     return (
