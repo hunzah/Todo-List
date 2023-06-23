@@ -84,11 +84,11 @@ test('Task title should be changed', () => {
 
 test('new property with new array should be added when new todolist is added', () => {
 
-    const action = addTodoAC('new todolist', 'todolistId3')
+    const action = addTodoAC('new todolist', 'todoListId3')
     const endState = tasksReducer(startState, action)
 
     const keys = Object.keys(endState)
-    const newKey = keys.find(k => k != 'todolistId1' && k != 'todolistId2')
+    const newKey = keys.find(k => k != 'todoListId1' && k != 'todoListId2')
     if (!newKey) {
         throw Error('new key should be added')
     }
@@ -99,9 +99,9 @@ test('new property with new array should be added when new todolist is added', (
 
 
 test('property with todolistId should be deleted', () => {
-    const action = removeTodoAC('todolistId2');
+    const action = removeTodoAC('todoListId2');
     const endState = tasksReducer(startState, action)
     const keys = Object.keys(endState);
     expect(keys.length).toBe(1);
-    expect(endState['todolistId2']).not.toBeDefined();
+    expect(endState['todoListId2']).not.toBeDefined();
 });
