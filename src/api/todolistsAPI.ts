@@ -8,13 +8,7 @@ export type TodoListType = {
     order: number
 }
 
-type CreateTodoListsResponseType = {
-    resultCode: number
-    messages: string[]
-    data: {
-        item: TodoListType
-    }
-}
+
 type ResponseType<D> = {
     resultCode: number
     messages: string[]
@@ -30,18 +24,20 @@ const settings = {
 }
 
 
-type TaskResponseType<D = {}> = {
+export type TaskResponseType<D = {}> = {
     data: D
     totalCount: number
     error: string | null
 
 }
+
 export enum TaskStatus {
     New,
     InProgress,
     Completed,
     Draft
 }
+
 export enum TaskPriorities {
     low,
     Middle,
@@ -49,6 +45,7 @@ export enum TaskPriorities {
     Urgently,
     Later
 }
+
 export type TaskType = {
     description: string
     title: string

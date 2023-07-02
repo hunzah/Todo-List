@@ -1,5 +1,6 @@
 import {v1} from 'uuid';
-import {TodoListType} from '../api/todolistsAPI';
+import {todoListsAPI, TodoListType} from '../api/todolistsAPI';
+import {Dispatch} from 'redux';
 
 
 export type TodolistDomainType = TodoListType & {
@@ -12,32 +13,40 @@ export type FilterValueType =
 export type RemoveTodoActionType = {
     type: 'REMOVE-TODO'
     id: string
-
 }
+
 export type AddTodoActionType = {
     type: 'ADD-TODO'
     todolistId: string,
     title: string
 }
+
 export type ChangeTodoTitleActionType = {
     type: 'CHANGE-TODO-TITLE'
     newTitle: string
     id: string
 }
+
 export type ChangeTodoFilterActionType = {
     type: 'CHANGE-TODO-FILTER'
     newFilter: FilterValueType
     id: string
 }
 
-type ActionTypes = RemoveTodoActionType | AddTodoActionType | ChangeTodoTitleActionType | ChangeTodoFilterActionType
+export type setTodoACType = {
+    type: 'SET-TODO'
+    todo: TodoListType[]
+}
+
+type ActionTypes = RemoveTodoActionType | AddTodoActionType |
+    ChangeTodoTitleActionType | ChangeTodoFilterActionType |
+    setTodoACType
 
 export const todoListId1 = v1()
 export const todoListId2 = v1()
 
 const initialState: TodolistDomainType[] = [
-    {id: todoListId1, title: 'What to learn', filter: 'all', addedDate: '', order: 0},
-    {id: todoListId2, title: 'What to buy', filter: 'all', addedDate: '', order: 0}
+
 ]
 
 
@@ -62,7 +71,8 @@ export const todoListReducer = (state: TodolistDomainType[] = initialState, acti
                 }
                 return tl;
             });
-
+        case 'SET-TODO':
+            return action.todo.map(tl => ({ ...tl, filter: 'all'}));
         default:
             return state
     }
@@ -84,6 +94,13 @@ export const changeTodoFilterAC = (id: string, newFilter: FilterValueType): Chan
     return {type: 'CHANGE-TODO-FILTER', id: id, newFilter: newFilter}
 }
 
+export const setTodoAC = (todo: TodoListType[]): setTodoACType => {
+    return {type: 'SET-TODO', todo: todo}
+}
 
-
+export const fetchTodoListsTC = () => (dispatch: Dispatch) => {
+    todoListsAPI.getTodoLists().then(res => {
+        dispatch(setTodoAC(res.data));
+    });
+};
 

@@ -3,7 +3,7 @@ import {
     addTodoAC,
     changeTodoFilterAC,
     changeTodoTitleAC,
-    removeTodoAC,
+    removeTodoAC, setTodoAC,
     TodolistDomainType,
     todoListReducer
 } from './todolist-reducer';
@@ -59,4 +59,7 @@ test('Todo filter should be changed', () => {
     expect(newState[1]?.filter).toBe('active')
 
 })
-
+test('Todolist should be set',()=>{
+    let newState = todoListReducer([],setTodoAC(startState))
+    expect(newState.length).toBe(2)
+})

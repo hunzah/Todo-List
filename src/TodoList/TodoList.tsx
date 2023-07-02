@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import s from './TodoList.module.css'
 import {AddItemForm} from '../AddItemForm/AddItemForm';
 import {EditableSpan} from '../EditableSpan/EditableSpan';
@@ -7,7 +7,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 import {useDispatch, useSelector} from 'react-redux';
 import {AppRootStateType} from '../store';
-import {addTaskAC, changeTaskStatusAC, changeTaskTitleAC, removeTaskAC} from './tasks-reducer';
+import {addTaskAC, changeTaskStatusAC, changeTaskTitleAC, fetchTasksTC, removeTaskAC} from './tasks-reducer';
 import {v1} from 'uuid';
 import {Task} from './Task/Task';
 import {FilterValueType} from './todolist-reducer';
@@ -29,6 +29,11 @@ const TodoList = React.memo((props: TodoListPropsType) => {
 
     const dispatch = useDispatch()
     const tasksObj = useSelector<AppRootStateType, TaskType[]>((state => state.tasks[props.id]))
+
+    useEffect(() => {
+        // @ts-ignore
+        dispatch(fetchTasksTC(props.id))
+    }, [dispatch])
 
 
     // Work With Tasks
@@ -99,17 +104,21 @@ const TodoList = React.memo((props: TodoListPropsType) => {
 
             <div className={s.filterButtons}>
                 <Button variant={props.filter === 'all' ? 'contained' : 'text'} onClick={onClickAllHandler}
+                        // color={'secondary'}
                 >All
                 </Button>
                 <Button
                     variant={props.filter === 'active' ? 'contained' : 'text'}
                     onClick={onClickActiveHandler}
+                    // color={'error'}
                 >Active
                 </Button>
 
                 <Button
                     variant={props.filter === 'completed' ? 'contained' : 'text'}
-                    onClick={onClickCompletedHandler}>Completed
+                    onClick={onClickCompletedHandler}
+                    // color={'success'}
+                    >Completed
                 </Button>
 
             </div>

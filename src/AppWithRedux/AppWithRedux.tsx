@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from '../App.module.css';
 import TodoList from '../TodoList/TodoList';
 import {AddItemForm} from '../AddItemForm/AddItemForm';
@@ -13,7 +13,9 @@ import AppBar from '@mui/material/AppBar';
 import MenuIcon from '@mui/icons-material/Menu';
 import {useAppWithRedux} from './hooks/useAppWithRedux';
 import {TaskType} from '../api/todolistsAPI';
-
+import {fetchTodoListsTC} from '../TodoList/todolist-reducer';
+import {useDispatch} from 'react-redux';
+import {fetchTasksTC} from '../TodoList/tasks-reducer';
 
 
 export type TasksStateType = {
@@ -29,6 +31,12 @@ function AppWithRedux() {
         removeTodoList,
         changeTodoListTitle
     } = useAppWithRedux()
+    const dispatch = useDispatch()
+    useEffect(() => {
+        // @ts-ignore
+        dispatch(fetchTodoListsTC())
+    }, [dispatch])
+
 
     return (
         <div className={s.App}>
