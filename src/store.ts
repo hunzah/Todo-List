@@ -9,8 +9,9 @@ export type AppRootStateType = ReturnType<typeof rootReducer>
 
 const rootReducer = combineReducers({
     todoLists: todoListReducer,
-    tasks: tasksReducer})
-export const store  = createStore(rootReducer, applyMiddleware(thunkMiddleware))
+    tasks: tasksReducer
+})
+export const store = createStore(rootReducer, applyMiddleware(thunkMiddleware))
 
 // @ts-ignore
 window.store = store

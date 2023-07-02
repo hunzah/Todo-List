@@ -21,7 +21,6 @@ type TodoListPropsType = {
     filter: FilterValueType
     removeTodoList: (todoListId: string) => void
     changeTodoListTitle: (id: string, newTitle: string) => void
-
 }
 
 
@@ -67,7 +66,7 @@ const TodoList = React.memo((props: TodoListPropsType) => {
             id: v1(), title: title,
             status: TaskStatus.New, todoListId: props.id,
             startDate: '', addedDate: '', order: 0, priority: TaskPriorities.low,
-             deadline: '' +
+            deadline: '' +
                 '', description: ''
         };
         dispatch(addTaskAC(newTask, props.id))
@@ -77,10 +76,10 @@ const TodoList = React.memo((props: TodoListPropsType) => {
     let tasksForTodoList = tasksObj;
 
     if (props.filter === 'completed') {
-        tasksForTodoList = tasksForTodoList?.filter(t => t.status===TaskStatus.Completed)
+        tasksForTodoList = tasksForTodoList?.filter(t => t.status === TaskStatus.Completed)
     }
     if (props.filter === 'active') {
-        tasksForTodoList = tasksForTodoList?.filter(t => t.status===TaskStatus.InProgress || t.status===TaskStatus.New)
+        tasksForTodoList = tasksForTodoList?.filter(t => t.status === TaskStatus.InProgress || t.status === TaskStatus.New)
     }
 
     return (
@@ -104,7 +103,7 @@ const TodoList = React.memo((props: TodoListPropsType) => {
 
             <div className={s.filterButtons}>
                 <Button variant={props.filter === 'all' ? 'contained' : 'text'} onClick={onClickAllHandler}
-                        // color={'secondary'}
+                    // color={'secondary'}
                 >All
                 </Button>
                 <Button
@@ -118,7 +117,7 @@ const TodoList = React.memo((props: TodoListPropsType) => {
                     variant={props.filter === 'completed' ? 'contained' : 'text'}
                     onClick={onClickCompletedHandler}
                     // color={'success'}
-                    >Completed
+                >Completed
                 </Button>
 
             </div>
