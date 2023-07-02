@@ -15,7 +15,6 @@ import {useAppWithRedux} from './hooks/useAppWithRedux';
 import {TaskType} from '../api/todolistsAPI';
 import {fetchTodoListsTC} from '../TodoList/todolist-reducer';
 import {useDispatch} from 'react-redux';
-import {fetchTasksTC} from '../TodoList/tasks-reducer';
 
 
 export type TasksStateType = {
@@ -31,6 +30,7 @@ function AppWithRedux() {
         removeTodoList,
         changeTodoListTitle
     } = useAppWithRedux()
+
     const dispatch = useDispatch()
     useEffect(() => {
         // @ts-ignore
