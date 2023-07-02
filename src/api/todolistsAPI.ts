@@ -25,7 +25,7 @@ const settings = {
 
 
 export type TaskResponseType<D = {}> = {
-    data: D
+    items: D
     totalCount: number
     error: string | null
 
@@ -83,7 +83,7 @@ export const todoListsAPI = {
     },
 
     getTasks(todolistId: string) {
-        return instance.get<TaskResponseType<TaskType>>(`todo-lists/${todolistId}/tasks`)
+        return instance.get<TaskResponseType<TaskType[]>>(`todo-lists/${todolistId}/tasks`)
     },
     postTasks(todolistId: string, title: string) {
         return instance.post<TaskResponseType>(`todo-lists/${todolistId}/tasks`, {title: title})
