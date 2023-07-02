@@ -45,9 +45,7 @@ type ActionTypes = RemoveTodoActionType | AddTodoActionType |
 export const todoListId1 = v1()
 export const todoListId2 = v1()
 
-const initialState: TodolistDomainType[] = [
-
-]
+const initialState: TodolistDomainType[] = []
 
 
 export const todoListReducer = (state: TodolistDomainType[] = initialState, action: ActionTypes): TodolistDomainType[] => {

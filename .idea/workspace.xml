@@ -3,16 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="code refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/TodoList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList/tasks-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/tasks-reducer.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoList/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/tasks-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList/todolist-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/todolist-reducer.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/todolistsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolistsAPI.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +60,7 @@
       <recent name="D:\Work\todolist" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.task should be added to todolist ">
+  <component name="RunManager" selected="Jest.task should be added to todoListId">
     <configuration name="Todolist should be set" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -94,6 +87,19 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="task should be added to todoListId" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/TodoList/tasks-reducer.test.ts" />
+      <test-names>
+        <test-name value="task should be added to todoListId" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="task should be added to todolist " type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -105,16 +111,6 @@
       <test-names>
         <test-name value="task should be added to todolist " />
       </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
       <method v="2" />
     </configuration>
     <configuration name="storybook" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -129,11 +125,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.task should be added to todoListId" />
         <item itemvalue="Jest.task should be added to todolist " />
         <item itemvalue="npm.storybook" />
         <item itemvalue="Jest.empty array should be added when todolist was set " />
         <item itemvalue="Jest.Todolist should be set" />
-        <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
   </component>
@@ -222,14 +218,7 @@
       <workItem from="1688206832136" duration="2252000" />
       <workItem from="1688220739794" duration="4483000" />
       <workItem from="1688239600002" duration="10000" />
-      <workItem from="1688279982986" duration="15048000" />
-    </task>
-    <task id="LOCAL-00010" summary="add use selector crate store">
-      <created>1685256222351</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1685256222351</updated>
+      <workItem from="1688279982986" duration="17463000" />
     </task>
     <task id="LOCAL-00011" summary="commit">
       <created>1685265200381</created>
@@ -567,7 +556,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687527536197</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="code refactoring">
+      <created>1688304016923</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1688304016923</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -152,9 +152,8 @@ export const setTasksAC = (todoListId: string, tasks: TaskType[]): Action5Type =
     return {type: 'SET-TASKS', todoListId: todoListId, tasks: tasks} as const
 }
 export const fetchTasksTC = (todoListId:string)=>()=> {
-   todoListsAPI.getTasks().then(res=>{
-       // @ts-ignore
-       setTasksAC(todoListId,res.data)
+   todoListsAPI.getTasks(todoListId).then(res=>{
+       setTasksAC(todoListId,res.data.items)
    })
 
 }
