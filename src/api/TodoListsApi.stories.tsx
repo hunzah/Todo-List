@@ -132,7 +132,7 @@ export const PostTasks = () => {
     function onClickHandler() {
         todoListsAPI.postTasks(todoListId, title)
             .then((res) => {
-                setState(res.data.data)
+                setState(res.data.items)
             })
     }
 
@@ -184,7 +184,7 @@ export const PutTasks = () => {
     function onClickHandler() {
         todoListsAPI.update(todoListId, taskId, title)
             .then((res) => {
-                setState(res.data.data)
+                setState(res.data.items)
             })
     }
 

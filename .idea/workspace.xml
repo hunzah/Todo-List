@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="code refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/TodoListsApi.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/TodoListsApi.stories.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,14 +216,7 @@
       <workItem from="1688206832136" duration="2252000" />
       <workItem from="1688220739794" duration="4483000" />
       <workItem from="1688239600002" duration="10000" />
-      <workItem from="1688279982986" duration="19403000" />
-    </task>
-    <task id="LOCAL-00014" summary="add useMemo and use Callback">
-      <created>1685698013529</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1685698013529</updated>
+      <workItem from="1688279982986" duration="20638000" />
     </task>
     <task id="LOCAL-00015" summary="code optimization">
       <created>1685700813918</created>
@@ -560,7 +554,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688308013816</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="code refactoring">
+      <created>1688311651020</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1688311651020</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
