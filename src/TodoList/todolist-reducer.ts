@@ -96,7 +96,7 @@ export const setTodoAC = (todo: TodoListType[]): setTodoACType => {
     return {type: 'SET-TODO', todo: todo}
 }
 
-export const fetchTodoListsTC = () => (dispatch: Dispatch) => {
+export const fetchTodoListsTC = ():any => (dispatch: Dispatch) => {
     todoListsAPI.getTodoLists().then(res => {
         dispatch(setTodoAC(res.data));
     });

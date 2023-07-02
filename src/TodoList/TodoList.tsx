@@ -30,9 +30,9 @@ const TodoList = React.memo((props: TodoListPropsType) => {
     const tasksObj = useSelector<AppRootStateType, TaskType[]>((state => state.tasks[props.id]))
 
     useEffect(() => {
-        // @ts-ignore
+        console.log(props.id)
         dispatch(fetchTasksTC(props.id))
-    }, [dispatch])
+    }, [props.id])
 
 
     // Work With Tasks
