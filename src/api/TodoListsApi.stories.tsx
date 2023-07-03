@@ -99,7 +99,6 @@ export const GetTasks = () => {
     const [state, setState] = useState<any>()
     const [todoListId, setTodoListId] = useState<string>('')
 
-    // const [title, setTitle] = useState<string>('')
 
     function onClickHandler() {
         todoListsAPI.getTasks(todoListId).then((res: any) => {
@@ -130,7 +129,7 @@ export const PostTasks = () => {
     const [deadline, setDeadline] = useState<string>('')
 
     function onClickHandler() {
-        todoListsAPI.postTasks(todoListId, title)
+        todoListsAPI.postTask(todoListId, title)
             .then((res) => {
                 setState(res.data.data.item)
             })
@@ -156,7 +155,7 @@ export const DeleteTasks = () => {
     const [todoListId, setTodolistId] = useState<string>('')
 
     function onClickHandler() {
-        todoListsAPI.deleteTasks(todoListId, taskId)
+        todoListsAPI.deleteTask(todoListId, taskId)
             .then((res) => {
                 setState(res.data)
             })
@@ -182,9 +181,9 @@ export const PutTasks = () => {
     const [todoListId, setTodolistId] = useState<string>('')
 
     function onClickHandler() {
-        todoListsAPI.update(todoListId, taskId, title)
+        todoListsAPI.putTask(todoListId, taskId, title)
             .then((res) => {
-                setState(res.data.items)
+                setState(res.data.data.item)
             })
     }
 

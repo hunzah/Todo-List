@@ -25,7 +25,8 @@ const settings = {
 
 
 export type TaskResponseType<D = {}> = {
-    items: D
+    items: TaskType[];
+    item: D
     totalCount: number
     error: string | null
 
@@ -56,7 +57,7 @@ export type TaskType = {
     id: string
     todoListId: string
     order: number
-    addedDate: string
+    addedDate: Date | string
 }
 
 const instance = axios.create({
@@ -84,13 +85,13 @@ export const todoListsAPI = {
     getTasks(todolistId: string) {
         return instance.get<TaskResponseType<TaskType[]>>(`todo-lists/${todolistId}/tasks`)
     },
-    postTasks(todolistId: string, title: string) {
+    postTask(todolistId: string, title: string) {
         return instance.post<ResponseType<{ item: TaskType }>>(`todo-lists/${todolistId}/tasks`, {title: title})
     },
-    deleteTasks(todolistId: string, taskId: string) {
+    deleteTask(todolistId: string, taskId: string) {
         return instance.delete<TaskResponseType>(`todo-lists/${todolistId}/tasks/${taskId}`)
     },
-    update(todolistId: string, taskId: string, title: string) {
+    putTask(todolistId: string, taskId: string, title: string) {
         const updatedTask: TaskType = {
             title: title,
             id: taskId,
@@ -101,9 +102,9 @@ export const todoListsAPI = {
             startDate: '',
             deadline: '',
             order: 0,
-            addedDate: ''
+            addedDate: new Date()
         }
-        return instance.put<TaskResponseType>(`todo-lists/${todolistId}/tasks/${taskId}`, updatedTask)
+        return instance.put<ResponseType<{item:TaskType}>>(`todo-lists/${todolistId}/tasks/${taskId}`, updatedTask)
     },
 }
 

@@ -23,8 +23,8 @@ export type Action3Type = {
 }
 export type Action4Type = {
     type: 'CHANGE-TASK-TITLE'
-    id: string
     todoListId: string
+    id: string
     newTitle: string
 }
 export type Action5Type = {
@@ -97,9 +97,8 @@ export const tasksReducer = (state: TasksStateType = initialState, action: Actio
                 } : task)]
             }
         case 'CHANGE-TASK-TITLE':
-            console.log(action.id)
-            return {
-                ...state, [action.todoListId]: [...state[action.todoListId].map(task => task.id === action.id ?
+            return {...state,
+                [action.todoListId]: [...state[action.todoListId].map(task => task.id === action.id ?
                     {...task, title: action.newTitle} : task)]
             }
         case'ADD-TODO': {
@@ -131,29 +130,19 @@ export const removeTaskAC = (id: string, todoListId: string): Action1Type => {
     return {type: 'REMOVE-TASK', todoListId: todoListId, id: id,} as const
 }
 
-export const deleteTaskTC = (id: string, todoListId: string): any => (dispatch: Dispatch) => {
-    todoListsAPI.deleteTasks(todoListId, id).then(res => {
-        dispatch(removeTaskAC(id, todoListId));
-    });
-};
 
 export const addTaskAC = (newTask: TaskType): Action2Type => {
     if (newTask && newTask.todoListId) {
-        return { type: 'ADD-TASK', todoListId: newTask.todoListId, newTask: newTask } as const;
+        return {type: 'ADD-TASK', todoListId: newTask.todoListId, newTask: newTask} as const;
     }
     throw new Error('Invalid task object');
-};
-export const addTaskTC = (newTask: TaskType, todoListId: string): any => (dispatch:Dispatch) => {
-    todoListsAPI.postTasks(todoListId, newTask.title).then(res => {
-        dispatch(addTaskAC(res.data.data.item));
-    });
 };
 
 export const changeTaskStatusAC = (id: string, todoListId: string, status: TaskStatus): Action3Type => {
     return {type: 'CHANGE-TASK-STATUS', todoListId: todoListId, id: id, status: status} as const
 }
-export const changeTaskTitleAC = (id: string, todoListId: string, newTitle: string): Action4Type => {
-    return {type: 'CHANGE-TASK-TITLE', todoListId: todoListId, id: id, newTitle: newTitle} as const
+export const changeTaskTitleAC = (todoListId: string, id:string, title: string): Action4Type => {
+    return {type: 'CHANGE-TASK-TITLE', todoListId: todoListId, id: id, newTitle: title} as const
 }
 export const setTasksAC = (todoListId: string, tasks: TaskType[]): Action5Type => {
     return {type: 'SET-TASKS', todoListId: todoListId, tasks: tasks} as const
@@ -162,5 +151,21 @@ export const setTasksAC = (todoListId: string, tasks: TaskType[]): Action5Type =
 export const fetchTasksTC = (todoListId: string): any => (dispatch: Dispatch) => {
     todoListsAPI.getTasks(todoListId).then(res => {
         dispatch(setTasksAC(todoListId, res.data.items));
+    });
+};
+export const addTaskTC = (newTask: TaskType, todoListId: string): any => (dispatch: Dispatch) => {
+    todoListsAPI.postTask(todoListId, newTask.title).then(res => {
+        dispatch(addTaskAC(res.data.data.item));
+    });
+};
+export const deleteTaskTC = (id: string, todoListId: string): any => (dispatch: Dispatch) => {
+    todoListsAPI.deleteTask(todoListId, id).then(res => {
+        dispatch(removeTaskAC(id, todoListId));
+    });
+};
+export const changeTaskTitleTC = (id: string, todoListId: string,  title: string): any => (dispatch: Dispatch) => {
+    todoListsAPI.putTask(todoListId, id, title).then(res => {
+        dispatch(changeTaskTitleAC(todoListId,id, res.data.data.item.title));
+        console.log(res.data)
     });
 };

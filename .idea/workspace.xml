@@ -3,18 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="add thunks">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AddItemForm/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddItemForm/AddItemForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppWithRedux/hooks/useAppWithRedux.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux/hooks/useAppWithRedux.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditableSpan/EditableSpan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditableSpan/EditableSpan.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/Task/Task.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoList/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/TodoList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList/tasks-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/tasks-reducer.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoList/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/tasks-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList/todolist-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/todolist-reducer.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/TodoListsApi.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/TodoListsApi.stories.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/todolistsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolistsAPI.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/todolists-and-tasks-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/todolists-and-tasks-reducer.test.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +21,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2NdJpO2ertNhr7XreizkzS7MKQ6" />
   <component name="ProjectViewState">
@@ -229,14 +222,7 @@
       <workItem from="1688239600002" duration="10000" />
       <workItem from="1688279982986" duration="21889000" />
       <workItem from="1688358643354" duration="1999000" />
-      <workItem from="1688360682266" duration="11281000" />
-    </task>
-    <task id="LOCAL-00022" summary="debugging">
-      <created>1685907633869</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1685907633869</updated>
+      <workItem from="1688360682266" duration="16489000" />
     </task>
     <task id="LOCAL-00023" summary="debugging">
       <created>1685907643268</created>
@@ -574,7 +560,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688366552280</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="add thunks">
+      <created>1688375537275</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1688375537275</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

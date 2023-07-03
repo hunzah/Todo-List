@@ -4,7 +4,7 @@ import {useCallback} from 'react';
 import {
     addTodoAC, addTodoTC,
     changeTodoFilterAC,
-    changeTodoTitleAC, changeTodoTitleTC,
+    changeTodoTitleAC,
     FilterValueType,
     removeTodoTC,
     TodolistDomainType
@@ -23,13 +23,12 @@ export const useAppWithRedux = () => {
     }, [dispatch])
 
     const addTodoList = useCallback((title: string) => {
-        console.log(title)
         // const todoId = v1()
         dispatch(addTodoTC(title))
     }, [dispatch])
 
     const changeTodoListTitle = useCallback((id: string, newTitle: string) => {
-        dispatch(changeTodoTitleTC(id, newTitle))
+        dispatch(changeTodoTitleAC(id, newTitle))
 
     }, [dispatch])
 
