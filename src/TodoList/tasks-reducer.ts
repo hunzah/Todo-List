@@ -118,7 +118,6 @@ export const tasksReducer = (state: TasksStateType = initialState, action: Actio
             return copy
         }
         case 'SET-TASKS': {
-            debugger
             return {...state, [action.todoListId]: action.tasks}
         }
         default:
@@ -131,6 +130,12 @@ export const tasksReducer = (state: TasksStateType = initialState, action: Actio
 export const removeTaskAC = (id: string, todoListId: string): Action1Type => {
     return {type: 'REMOVE-TASK', todoListId: todoListId, id: id,} as const
 }
+
+export const deleteTaskTC = (id: string, todoListId: string): any => (dispatch: Dispatch) => {
+    todoListsAPI.deleteTasks(todoListId, id).then(res => {
+        dispatch(removeTaskAC(id, todoListId));
+    });
+};
 
 export const addTaskAC = (newTask: TaskType, todoListId: string): Action2Type => {
     return {type: 'ADD-TASK', todoListId: todoListId, newTask: newTask} as const

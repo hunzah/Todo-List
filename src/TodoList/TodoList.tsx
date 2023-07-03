@@ -7,7 +7,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 import {useDispatch, useSelector} from 'react-redux';
 import {AppRootStateType} from '../store';
-import {addTaskAC, changeTaskStatusAC, changeTaskTitleAC, fetchTasksTC, removeTaskAC} from './tasks-reducer';
+import {addTaskAC, changeTaskStatusAC, changeTaskTitleAC, deleteTaskTC, fetchTasksTC} from './tasks-reducer';
 import {v1} from 'uuid';
 import {Task} from './Task/Task';
 import {FilterValueType} from './todolist-reducer';
@@ -36,9 +36,13 @@ const TodoList = React.memo((props: TodoListPropsType) => {
 
 
     // Work With Tasks
-    function removeTask(id: string, todoListId: string) {
-        dispatch(removeTaskAC(id, todoListId))
-    }
+    // function removeTask(id: string, todoListId: string) {
+    //     dispatch(removeTaskAC(id, todoListId))
+    // }
+    // @ts-ignore
+    // useEffect((id: string, todoListId: string) => {
+    //     dispatch(deleteTaskTC(id,todoListId))
+    // }, [props.id, dispatch])
 
     function changeTaskStatus(id: string, todoListId: string, status: TaskStatus) {
         dispatch(changeTaskStatusAC(id, todoListId, status))
@@ -95,7 +99,7 @@ const TodoList = React.memo((props: TodoListPropsType) => {
             <div>{
                 tasksForTodoList.map(t => {
                     return <Task key={t.id} todolistId={props.id} task={t}
-                                 removeTask={removeTask}
+                                 removeTask={deleteTaskTC}
                                  changeTaskStatus={changeTaskStatus}
                                  changeTaskTitle={changeTaskTitle}/>
                 })}

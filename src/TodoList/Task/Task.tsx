@@ -1,10 +1,12 @@
-import React, {useCallback} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import s from '../TodoList.module.css';
 import {SuperCheckBox} from '../../SuperCheckBox/SuperCheckBox';
 import {EditableSpan} from '../../EditableSpan/EditableSpan';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import {TaskStatus, TaskType} from '../../api/todolistsAPI';
+import {deleteTaskTC} from '../tasks-reducer';
+import {useDispatch} from 'react-redux';
 
 
 type TaskPropsType = {
@@ -17,8 +19,10 @@ type TaskPropsType = {
 }
 export const Task = React.memo((props: TaskPropsType) => {
 
-
-    const onClickRemoveHandler = () => props.removeTask(props.task.id, props.todolistId)
+const dispatch = useDispatch()
+    const onClickRemoveHandler = () => {
+            dispatch(deleteTaskTC(props.task.id,props.todolistId))
+    }
 
     const onChangeCheckBoxHandler = (taskId: string, isDone: boolean) => {
         let status = isDone ? TaskStatus.Completed : TaskStatus.New;

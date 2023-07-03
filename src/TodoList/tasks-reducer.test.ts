@@ -135,5 +135,4 @@ test('task should be added to todoListId', () => {
     expect(keys[0]).toBe('todoListId1');
     expect(endState['todoListId1'].length).toBe(3);
     expect(endState['todoListId2'].length).toBe(0);
-
 });
