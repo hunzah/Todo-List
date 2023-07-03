@@ -63,7 +63,7 @@ test('Task should be added', () => {
         deadline: '' +
             '', description: ''
     };
-    const endState = tasksReducer(startState, addTaskAC(newTask, 'todoListId1'))
+    const endState = tasksReducer(startState, addTaskAC(newTask))
     expect(endState['todoListId1'].length).toBe(4);
     expect(endState['todoListId2'].length).toBe(2);
     expect(endState['todoListId1'][3]).toEqual({

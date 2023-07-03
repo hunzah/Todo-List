@@ -7,7 +7,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 import {useDispatch, useSelector} from 'react-redux';
 import {AppRootStateType} from '../store';
-import {addTaskAC, changeTaskStatusAC, changeTaskTitleAC, deleteTaskTC, fetchTasksTC} from './tasks-reducer';
+import {addTaskAC, addTaskTC, changeTaskStatusAC, changeTaskTitleAC, deleteTaskTC, fetchTasksTC} from './tasks-reducer';
 import {v1} from 'uuid';
 import {Task} from './Task/Task';
 import {FilterValueType} from './todolist-reducer';
@@ -30,7 +30,6 @@ const TodoList = React.memo((props: TodoListPropsType) => {
     const tasksObj = useSelector<AppRootStateType, TaskType[]>((state => state.tasks[props.id]))
 
     useEffect(() => {
-        console.log(props.id)
         dispatch(fetchTasksTC(props.id))
     }, [props.id, dispatch])
 
@@ -74,7 +73,7 @@ const TodoList = React.memo((props: TodoListPropsType) => {
             deadline: '' +
                 '', description: ''
         };
-        dispatch(addTaskAC(newTask, props.id))
+        dispatch(addTaskTC(newTask, props.id))
     }, [props.id])
 
 
