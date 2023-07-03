@@ -19,9 +19,9 @@ type TaskPropsType = {
 }
 export const Task = React.memo((props: TaskPropsType) => {
 
-const dispatch = useDispatch()
+
     const onClickRemoveHandler = () => {
-            dispatch(deleteTaskTC(props.task.id,props.todolistId))
+           props.removeTask(props.task.id,props.todolistId)
     }
 
     const onChangeCheckBoxHandler = (taskId: string, isDone: boolean) => {

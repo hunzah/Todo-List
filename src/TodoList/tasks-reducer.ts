@@ -140,6 +140,12 @@ export const deleteTaskTC = (id: string, todoListId: string): any => (dispatch: 
 export const addTaskAC = (newTask: TaskType, todoListId: string): Action2Type => {
     return {type: 'ADD-TASK', todoListId: todoListId, newTask: newTask} as const
 }
+export const addTaskTC = (newTask: TaskType, todoListId: string, title): any => (dispatch: Dispatch) => {
+    todoListsAPI.postTasks(todoListId, newTask).then(res => {
+        dispatch(addTaskAC(newTask, todoListId));
+    });
+};
+
 
 export const changeTaskStatusAC = (id: string, todoListId: string, status: TaskStatus): Action3Type => {
     return {type: 'CHANGE-TASK-STATUS', todoListId: todoListId, id: id, status: status} as const

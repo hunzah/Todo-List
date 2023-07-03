@@ -36,9 +36,10 @@ const TodoList = React.memo((props: TodoListPropsType) => {
 
 
     // Work With Tasks
-    // function removeTask(id: string, todoListId: string) {
-    //     dispatch(removeTaskAC(id, todoListId))
-    // }
+    function removeTask(id: string, todoListId: string) {
+        dispatch(deleteTaskTC(id, todoListId))
+    }
+
     // @ts-ignore
     // useEffect((id: string, todoListId: string) => {
     //     dispatch(deleteTaskTC(id,todoListId))
@@ -99,7 +100,7 @@ const TodoList = React.memo((props: TodoListPropsType) => {
             <div>{
                 tasksForTodoList.map(t => {
                     return <Task key={t.id} todolistId={props.id} task={t}
-                                 removeTask={deleteTaskTC}
+                                 removeTask={removeTask}
                                  changeTaskStatus={changeTaskStatus}
                                  changeTaskTitle={changeTaskTitle}/>
                 })}
