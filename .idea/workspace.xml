@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="code refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/TodoList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoList/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/tasks-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,19 +59,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Jest.task should be added to todoListId">
-    <configuration name="Todolist should be set" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/TodoList/todolist-reducer.test.ts" />
-      <test-names>
-        <test-name value="Todolist should be set" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <configuration name="empty array should be added when todolist was set " type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -114,6 +98,16 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="storybook" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -126,11 +120,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
         <item itemvalue="Jest.task should be added to todoListId" />
         <item itemvalue="Jest.task should be added to todolist " />
         <item itemvalue="npm.storybook" />
         <item itemvalue="Jest.empty array should be added when todolist was set " />
-        <item itemvalue="Jest.Todolist should be set" />
       </list>
     </recent_temporary>
   </component>
@@ -219,14 +213,8 @@
       <workItem from="1688206832136" duration="2252000" />
       <workItem from="1688220739794" duration="4483000" />
       <workItem from="1688239600002" duration="10000" />
-      <workItem from="1688279982986" duration="21495000" />
-    </task>
-    <task id="LOCAL-00016" summary="code refactoring">
-      <created>1685710441524</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1685710441524</updated>
+      <workItem from="1688279982986" duration="21889000" />
+      <workItem from="1688358643354" duration="654000" />
     </task>
     <task id="LOCAL-00017" summary="code refactoring">
       <created>1685904493949</created>
@@ -564,7 +552,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688315515286</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="code refactoring">
+      <created>1688316218852</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1688316218853</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
