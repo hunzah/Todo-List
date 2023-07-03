@@ -91,7 +91,7 @@ test('Task title should be changed', () => {
 
 test('new property with new array should be added when new todolist is added', () => {
 
-    const action = addTodoAC('new todolist', 'todoListId3')
+    const action = addTodoAC({id: 'todolistId', title: 'shdip shdip', addedDate: '', order: 0})
     const endState = tasksReducer(startState, action)
 
     const keys = Object.keys(endState)

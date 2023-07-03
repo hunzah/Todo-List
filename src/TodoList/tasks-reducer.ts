@@ -103,7 +103,7 @@ export const tasksReducer = (state: TasksStateType = initialState, action: Actio
                     {...task, title: action.newTitle} : task)]
             }
         case'ADD-TODO': {
-            return {...state, [action.todolistId]: []}
+            return {...state, [action.todoList.id]: []}
         }
         case'REMOVE-TODO': {
             const copy = {...state}
@@ -138,14 +138,16 @@ export const deleteTaskTC = (id: string, todoListId: string): any => (dispatch: 
 };
 
 export const addTaskAC = (newTask: TaskType): Action2Type => {
-    return {type: 'ADD-TASK', todoListId: newTask.todoListId, newTask: newTask} as const
-}
-export const addTaskTC = (newTask: TaskType, title: string): any => (dispatch: Dispatch) => {
-    todoListsAPI.postTasks(newTask.todoListId, title).then(res => {
-        dispatch(addTaskAC(res.data.items));
+    if (newTask && newTask.todoListId) {
+        return { type: 'ADD-TASK', todoListId: newTask.todoListId, newTask: newTask } as const;
+    }
+    throw new Error('Invalid task object');
+};
+export const addTaskTC = (newTask: TaskType, todoListId: string): any => (dispatch:Dispatch) => {
+    todoListsAPI.postTasks(todoListId, newTask.title).then(res => {
+        dispatch(addTaskAC(res.data.data.item));
     });
 };
-
 
 export const changeTaskStatusAC = (id: string, todoListId: string, status: TaskStatus): Action3Type => {
     return {type: 'CHANGE-TASK-STATUS', todoListId: todoListId, id: id, status: status} as const

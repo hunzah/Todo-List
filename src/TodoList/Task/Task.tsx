@@ -1,12 +1,10 @@
-import React, {useCallback, useEffect} from 'react';
+import React, {useCallback} from 'react';
 import s from '../TodoList.module.css';
 import {SuperCheckBox} from '../../SuperCheckBox/SuperCheckBox';
 import {EditableSpan} from '../../EditableSpan/EditableSpan';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import {TaskStatus, TaskType} from '../../api/todolistsAPI';
-import {deleteTaskTC} from '../tasks-reducer';
-import {useDispatch} from 'react-redux';
 
 
 type TaskPropsType = {

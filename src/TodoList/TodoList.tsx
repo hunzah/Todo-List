@@ -67,15 +67,19 @@ const TodoList = React.memo((props: TodoListPropsType) => {
 
     const addTask = useCallback((title: string) => {
         const newTask: TaskType = {
-            id: v1(), title: title,
-            status: TaskStatus.New, todoListId: props.id,
-            startDate: '', addedDate: '', order: 0, priority: TaskPriorities.low,
-            deadline: '' +
-                '', description: ''
+            id: v1(),
+            title: title,
+            status: TaskStatus.New,
+            todoListId: props.id,
+            startDate: '',
+            addedDate: '',
+            order: 0,
+            priority: TaskPriorities.low,
+            deadline: '',
+            description: ''
         };
         dispatch(addTaskTC(newTask, props.id))
     }, [props.id])
-
 
     let tasksForTodoList = tasksObj;
 

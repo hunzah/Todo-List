@@ -31,7 +31,7 @@ export const PostTodoLists = () => {
     const [title, setTodolistTitle] = useState<string>('')
 
     function handler() {
-        todoListsAPI.postTodoLists(title)
+        todoListsAPI.postTodoList(title)
             .then((res) => {
                 setState(res.data.data)
             })
@@ -48,13 +48,13 @@ export const PostTodoLists = () => {
 }
 
 
-export const PutTodoLists = () => {
+export const PutTodoList = () => {
     const [state, setState] = useState<any>()
     const [title, setTodolistTitle] = useState<string>('')
     const [todoListId, setTodolistId] = useState<string>('')
 
     function handler() {
-        todoListsAPI.putTodoLists(todoListId)
+        todoListsAPI.putTodoList(todoListId,title )
             .then((res) => {
                 setState(res.data.data)
             })
@@ -78,8 +78,8 @@ export const DeleteTodoLists = () => {
     const [todoListId, setTodolistId] = useState<string>('')
 
     function handler() {
-        todoListsAPI.deleteTodoLists(todoListId)
-            .then((res) => {
+        todoListsAPI.deleteTodoList(todoListId)
+            .then((res:any) => {
                 setState(res.data.data)
             })
     }
@@ -132,7 +132,7 @@ export const PostTasks = () => {
     function onClickHandler() {
         todoListsAPI.postTasks(todoListId, title)
             .then((res) => {
-                setState(res.data.items)
+                setState(res.data.data.item)
             })
     }
 

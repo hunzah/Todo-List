@@ -27,6 +27,8 @@ export const AddItemForm = React.memo((addItem: AddItemFormPropsType) => {
                            value={newItemTitle}
                            onChange={onNewTitleChangeHandler}
                            onKeyDown={onKeyPressHandler}
+                           type={'text'}
+                           autoComplete='off'
                 />
                 <IconButton
                     color="primary"
