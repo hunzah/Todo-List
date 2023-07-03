@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="code refactoring">
+    <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="add thunks">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/Task/Task.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/TodoList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoList/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/tasks-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -217,14 +215,7 @@
       <workItem from="1688239600002" duration="10000" />
       <workItem from="1688279982986" duration="21889000" />
       <workItem from="1688358643354" duration="1999000" />
-      <workItem from="1688360682266" duration="357000" />
-    </task>
-    <task id="LOCAL-00018" summary="code refactoring">
-      <created>1685904555335</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1685904555335</updated>
+      <workItem from="1688360682266" duration="1784000" />
     </task>
     <task id="LOCAL-00019" summary="code refactoring">
       <created>1685904597430</created>
@@ -562,7 +553,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688359511338</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="add thunks">
+      <created>1688361468660</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1688361468662</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,6 +596,7 @@
     <MESSAGE value="add custom hooks" />
     <MESSAGE value="commit" />
     <MESSAGE value="code refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="code refactoring" />
+    <MESSAGE value="add thunks" />
+    <option name="LAST_COMMIT_MESSAGE" value="add thunks" />
   </component>
 </project>
