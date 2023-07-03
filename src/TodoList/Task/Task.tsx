@@ -4,14 +4,14 @@ import {SuperCheckBox} from '../../SuperCheckBox/SuperCheckBox';
 import {EditableSpan} from '../../EditableSpan/EditableSpan';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
-import {TaskStatus, TaskType} from '../../api/todolistsAPI';
+import {TaskStatusType, TaskType} from '../../api/todolistsAPI';
 
 
 type TaskPropsType = {
     task: TaskType
     todolistId: string
     removeTask:(taskId:string,todolistId:string)=>void
-    changeTaskStatus:(taskId:string,todolistId:string,status:TaskStatus)=>void
+    changeTaskStatus:(taskId:string,todolistId:string,status:TaskStatusType)=>void
     changeTaskTitle:(taskId:string,todolistId:string,newValue:string)=>void
 
 }
@@ -23,7 +23,7 @@ export const Task = React.memo((props: TaskPropsType) => {
     }
 
     const onChangeCheckBoxHandler = (taskId: string, isDone: boolean) => {
-        let status = isDone ? TaskStatus.Completed : TaskStatus.New;
+        let status = isDone ? TaskStatusType.Completed : TaskStatusType.New;
         props.changeTaskStatus(props.task.id, props.todolistId, status);
     };
 
@@ -32,9 +32,9 @@ export const Task = React.memo((props: TaskPropsType) => {
     }, [props.task.id, props.todolistId,])
 
     return (
-        <div className={props.task.status === TaskStatus.Completed? s.isDone : ''} key={props.task.id}>
+        <div className={props.task.status === TaskStatusType.Completed? s.isDone : ''} key={props.task.id}>
             <div className={s.checkboxTitle}>
-                <SuperCheckBox checked={props.task.status === TaskStatus.Completed}
+                <SuperCheckBox checked={props.task.status === TaskStatusType.Completed}
                                callback={(isDone) => onChangeCheckBoxHandler(props.task.id,isDone )}/>
                 <EditableSpan title={props.task.title} onChangeTitleHandler={onChangeTitleHandler}/>
             </div>

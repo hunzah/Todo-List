@@ -13,7 +13,7 @@ import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
 import MenuIcon from '@mui/icons-material/Menu';
 import {FilterValueType, TodolistDomainType} from './TodoList/todolist-reducer';
-import {TaskPriorities, TaskStatus, TaskType} from './api/todolistsAPI';
+import {TaskPriorities, TaskStatusType, TaskType} from './api/todolistsAPI';
 
 
 export type TasksStateType = {
@@ -36,19 +36,19 @@ function App() {
         {
             [todoListId1]: [
                 {
-                    id: v1(), title: 'HTML', status: TaskStatus.Completed, todoListId: todoListId1,
+                    id: v1(), title: 'HTML', status: TaskStatusType.Completed, todoListId: todoListId1,
                     startDate: '', addedDate: '', order: 0, priority: TaskPriorities.low,
                     deadline: '' +
                         '', description: ''
                 },
                 {
-                    id: v1(), title: 'CSS', status: TaskStatus.Completed, todoListId: todoListId1,
+                    id: v1(), title: 'CSS', status: TaskStatusType.Completed, todoListId: todoListId1,
                     startDate: '', addedDate: '', order: 0, priority: TaskPriorities.low,
                     deadline: '' +
                         '', description: ''
                 },
                 {
-                    id: v1(), title: 'REACT/REDUX', status: TaskStatus.InProgress, todoListId: todoListId1,
+                    id: v1(), title: 'REACT/REDUX', status: TaskStatusType.InProgress, todoListId: todoListId1,
                     startDate: '', addedDate: '', order: 0, priority: TaskPriorities.low,
                     deadline: '' +
                         '', description: ''
@@ -56,13 +56,13 @@ function App() {
             ],
             [todoListId2]: [
                 {
-                    id: v1(), title: 'Bread', status: TaskStatus.Completed, todoListId: todoListId1,
+                    id: v1(), title: 'Bread', status: TaskStatusType.Completed, todoListId: todoListId1,
                     startDate: '', addedDate: '', order: 0, priority: TaskPriorities.low,
                     deadline: '' +
                         '', description: ''
                 },
                 {
-                    id: v1(), title: 'Milk', status: TaskStatus.InProgress, todoListId: todoListId1,
+                    id: v1(), title: 'Milk', status: TaskStatusType.InProgress, todoListId: todoListId1,
                     startDate: '', addedDate: '', order: 0, priority: TaskPriorities.low,
                     deadline: '' +
                         '', description: ''
@@ -84,7 +84,7 @@ function App() {
     function addTasks(todoListId: string, title: string) {
 
         const newTask: TaskType = {
-            id: v1(), title: title, status: TaskStatus.New, todoListId: todoListId,
+            id: v1(), title: title, status: TaskStatusType.New, todoListId: todoListId,
             startDate: '', addedDate: '', order: 0, priority: TaskPriorities.low,
             deadline: '' +
                 '', description: ''
@@ -102,7 +102,7 @@ function App() {
         const tasks = tasksObj[todoListId]
         const task = tasks.find(t => t.id === taskId)
 
-        if (task) task.status = TaskStatus.Completed
+        if (task) task.status = TaskStatusType.Completed
         setTasksObj({...tasksObj})
 
     }
@@ -185,10 +185,10 @@ function App() {
                         let tasksForTodoList = tasksObj[tl.id];
 
                         if (tl.filter === 'completed') {
-                            tasksForTodoList = tasksForTodoList?.filter(t => t.status === TaskStatus.Completed)
+                            tasksForTodoList = tasksForTodoList?.filter(t => t.status === TaskStatusType.Completed)
                         }
                         if (tl.filter === 'active') {
-                            tasksForTodoList = tasksForTodoList?.filter(t => t.status === TaskStatus.InProgress)
+                            tasksForTodoList = tasksForTodoList?.filter(t => t.status === TaskStatusType.InProgress)
                         }
 
                         return (

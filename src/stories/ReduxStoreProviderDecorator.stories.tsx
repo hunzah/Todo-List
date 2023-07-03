@@ -7,7 +7,7 @@ import {v1} from 'uuid';
 import {combineReducers, legacy_createStore} from 'redux';
 import {tasksReducer} from '../TodoList/tasks-reducer';
 import {todoListReducer} from '../TodoList/todolist-reducer';
-import {TaskPriorities, TaskStatus} from '../api/todolistsAPI';
+import {TaskPriorities, TaskStatusType} from '../api/todolistsAPI';
 
 
 const meta: Meta = {
@@ -29,13 +29,13 @@ const initialGlobalState = {
     tasks: {
         ['todolistId1']: [
             {
-                id: v1(), title: 'HTML', status: TaskStatus.Completed, todoListId: 'todolistId1',
+                id: v1(), title: 'HTML', status: TaskStatusType.Completed, todoListId: 'todolistId1',
                 startDate: '', addedDate: '', order: 0, priority: TaskPriorities.low,
                 deadline: '' +
                     '', description: ''
             },
             {
-                id: v1(), title: 'JS', status: TaskStatus.Completed, todoListId: 'todolistId1',
+                id: v1(), title: 'JS', status: TaskStatusType.Completed, todoListId: 'todolistId1',
                 startDate: '', addedDate: '', order: 0, priority: TaskPriorities.low,
                 deadline: '' +
                     '', description: ''
@@ -43,13 +43,13 @@ const initialGlobalState = {
         ],
         ['todolistId2']: [
             {
-                id: v1(), title: 'Milk', status: TaskStatus.InProgress, todoListId: 'todolistId2',
+                id: v1(), title: 'Milk', status: TaskStatusType.InProgress, todoListId: 'todolistId2',
                 startDate: '', addedDate: '', order: 0, priority: TaskPriorities.low,
                 deadline: '' +
                     '', description: ''
             },
             {
-                id: v1(), title: 'React Book', status: TaskStatus.Completed, todoListId: 'todolistId2',
+                id: v1(), title: 'React Book', status: TaskStatusType.Completed, todoListId: 'todolistId2',
                 startDate: '', addedDate: '', order: 0, priority: TaskPriorities.low,
                 deadline: '' +
                     '', description: ''
