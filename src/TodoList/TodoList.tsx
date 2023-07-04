@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 import {useDispatch, useSelector} from 'react-redux';
-import {AppRootStateType} from '../store';
+import {AppRootStateType, ThunkDispatchType} from '../store';
 import {addTaskTC, deleteTaskTC, fetchTasksTC, updateTaskTC} from './tasks-reducer';
 import {v1} from 'uuid';
 import {Task} from './Task/Task';
@@ -26,7 +26,7 @@ type TodoListPropsType = {
 
 const TodoList = React.memo((props: TodoListPropsType) => {
 
-    const dispatch = useDispatch()
+    const dispatch:ThunkDispatchType = useDispatch()
     const tasksObj = useSelector<AppRootStateType, TaskType[]>((state => state.tasks[props.id]))
 
     useEffect(() => {

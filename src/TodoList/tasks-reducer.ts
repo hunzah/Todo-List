@@ -1,5 +1,5 @@
 import {TasksStateType} from '../App';
-import {AddTodoActionType, RemoveTodoActionType, setTodoACType} from './todolist-reducer';
+import {AddTodoActionType, RemoveTodoActionType, SetTodoACType} from './todolist-reducer';
 import {
     TaskPriorities,
     TaskStatusType,
@@ -9,7 +9,7 @@ import {
     UpdateTaskModelType
 } from '../api/todolistsAPI';
 import {Dispatch} from 'redux';
-import {AppRootStateType} from '../store';
+import {AppActionTypes, AppRootStateType, AppThunk} from '../store';
 
 export type Action1Type = {
     type: 'REMOVE-TASK'
@@ -34,9 +34,9 @@ export type Action5Type = {
     todoListId: string
 }
 
-type ActionTypes = Action1Type | Action2Type |
+export type TaskActionTypes = Action1Type | Action2Type |
     Action4Type | AddTodoActionType | RemoveTodoActionType |
-    setTodoACType | Action5Type
+    SetTodoACType | Action5Type
 
 
 const initialState: TasksStateType =
@@ -79,7 +79,7 @@ const initialState: TasksStateType =
     }
 
 
-export const tasksReducer = (state: TasksStateType = initialState, action: ActionTypes): TasksStateType => {
+export const tasksReducer = (state: TasksStateType = initialState, action: TaskActionTypes): TasksStateType => {
 
     switch (action.type) {
         case 'REMOVE-TASK':
@@ -141,19 +141,19 @@ export const setTasksAC = (todoListId: string, tasks: TaskType[]): Action5Type =
     return {type: 'SET-TASKS', todoListId: todoListId, tasks: tasks} as const
 }
 
-export const fetchTasksTC = (todoListId: string): any => (dispatch: Dispatch) => {
+export const fetchTasksTC = (todoListId: string): AppThunk => (dispatch: Dispatch<AppActionTypes>) => {
     todoListsAPI.getTasks(todoListId).then(res => {
         dispatch(setTasksAC(todoListId, res.data.items));
     });
 };
 
-export const addTaskTC = (newTask: TaskType, todoListId: string): any => (dispatch: Dispatch) => {
+export const addTaskTC = (newTask: TaskType, todoListId: string): AppThunk => (dispatch: Dispatch<AppActionTypes>) => {
     todoListsAPI.postTask(todoListId, newTask.title).then(res => {
         dispatch(addTaskAC(res.data.data.item));
     });
 };
 
-export const deleteTaskTC = (id: string, todoListId: string): any => (dispatch: Dispatch) => {
+export const deleteTaskTC = (id: string, todoListId: string): AppThunk => (dispatch: Dispatch<AppActionTypes>) => {
     todoListsAPI.deleteTask(todoListId, id).then(res => {
         dispatch(removeTaskAC(id, todoListId));
     });
@@ -169,8 +169,8 @@ export type UpdateDomainTaskModelType = {
     deadline?: string
 }
 
-export const updateTaskTC = (id: string, todoListId: string, domainModel: UpdateDomainTaskModelType): any =>
-    (dispatch: Dispatch, getState: () => AppRootStateType) => {
+export const updateTaskTC = (id: string, todoListId: string, domainModel: UpdateDomainTaskModelType): AppThunk =>
+    (dispatch: Dispatch<AppActionTypes>, getState: () => AppRootStateType) => {
 
 
         const state = getState()
@@ -180,8 +180,9 @@ export const updateTaskTC = (id: string, todoListId: string, domainModel: Update
             return
         }
 
+        console.log(task, "TASK")
         const updatedTask: UpdateTaskModelType = {
-            title: task.description,
+            title: task.title,
             description: task.description,
             status: task.status,
             priority: task.priority,
@@ -191,6 +192,7 @@ export const updateTaskTC = (id: string, todoListId: string, domainModel: Update
         }
 
         todoListsAPI.putTask(todoListId, id, updatedTask).then(res => {
+            console.log(res.data)
             dispatch(updateTaskAC(todoListId, id, res.data.data.item));
         });
     };

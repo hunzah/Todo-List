@@ -15,6 +15,7 @@ import {useAppWithRedux} from './hooks/useAppWithRedux';
 import {TaskType} from '../api/todolistsAPI';
 import {fetchTodoListsTC} from '../TodoList/todolist-reducer';
 import {useDispatch} from 'react-redux';
+import {ThunkDispatchType} from '../store';
 
 
 export type TasksStateType = {
@@ -31,7 +32,7 @@ function AppWithRedux() {
         changeTodoListTitle
     } = useAppWithRedux()
 
-    const dispatch = useDispatch()
+    const dispatch: ThunkDispatchType = useDispatch();
     useEffect(() => {
         dispatch(fetchTodoListsTC())
     }, [dispatch])
