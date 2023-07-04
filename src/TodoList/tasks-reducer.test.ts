@@ -1,10 +1,4 @@
-import {
-    addTaskAC,
-    updateTaskAC,
-    removeTaskAC,
-    setTasksAC,
-    tasksReducer
-} from './tasks-reducer';
+import {addTaskAC, removeTaskAC, setTasksAC, tasksReducer, updateTaskAC} from './tasks-reducer';
 import {addTodoAC, removeTodoAC, setTodoAC, todoListId1, todoListId2} from './todolist-reducer';
 import {TaskPriorities, TaskStatusType, TaskType} from '../api/todolistsAPI';
 import {TasksStateType} from '../App';
@@ -73,16 +67,40 @@ test('Task should be added', () => {
     });
 
 })
-test('Task filter should be changed', () => {
-
-    const endState = tasksReducer(startState, updateTaskAC('3', 'todoListId1', {status: TaskStatusType.Completed}))
+test('Task status should be changed', () => {
+    const Task: TaskType = {
+        id: 'todoListId1',
+        startDate: '',
+        addedDate: '',
+        order: 0,
+        priority: 0,
+        deadline: '',
+        description: '',
+        todoListId: '3',
+        title: '',
+        status: TaskStatusType.Completed
+    }
+    const endState = tasksReducer(startState, updateTaskAC('todoListId1','3',  Task))
     expect(endState['todoListId1'].length).toBe(3);
     expect(endState['todoListId2'].length).toBe(2);
     expect(endState['todoListId1'][2].status).toBe(TaskStatusType.Completed);
 })
-test('Task title should be changed', () => {
 
-    const endState = tasksReducer(startState, updateTaskAC('3', 'todoListId1', {title:'new Title'}))
+
+test('Task title should be changed', () => {
+    const Task: TaskType = {
+        id: 'todoListId1',
+        startDate: '',
+        addedDate: '',
+        order: 0,
+        priority: 0,
+        deadline: '',
+        description: '',
+        todoListId: '3',
+        title: 'new Title',
+        status: 0
+    }
+    const endState = tasksReducer(startState, updateTaskAC('todoListId1','3',  Task))
     expect(endState['todoListId1'].length).toBe(3);
     expect(endState['todoListId2'].length).toBe(2);
     expect(endState['todoListId1'][2].title).toBe('new Title');
