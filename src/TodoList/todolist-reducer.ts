@@ -17,7 +17,7 @@ export type RemoveTodoActionType = {
 
 export type AddTodoActionType = {
     type: 'ADD-TODO'
-    // todolistId: string,
+    // todoListId: string,
     // title: string
     todoList: TodoListType
 }

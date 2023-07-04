@@ -60,6 +60,15 @@ export type TaskType = {
     addedDate: Date | string
 }
 
+export type UpdateTaskModelType = {
+    title: string
+    description: string
+    status: TaskStatusType
+    priority: TaskPriorities
+    startDate: string
+    deadline: string
+}
+
 const instance = axios.create({
     baseURL: `https://social-network.samuraijs.com/api/1.1/`,
     ...settings
@@ -91,8 +100,7 @@ export const todoListsAPI = {
     deleteTask(todolistId: string, taskId: string) {
         return instance.delete<TaskResponseType>(`todo-lists/${todolistId}/tasks/${taskId}`)
     },
-    putTask(todolistId: string, taskId: string, updatedTask: TaskType) {
-
+    putTask(todolistId: string, taskId: string, updatedTask: UpdateTaskModelType) {
         return instance.put<ResponseType<{item:TaskType}>>(`todo-lists/${todolistId}/tasks/${taskId}`, updatedTask)
     },
 }

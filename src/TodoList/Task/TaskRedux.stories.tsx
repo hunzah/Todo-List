@@ -28,7 +28,7 @@ const TaskReduxWrap = () => {
     return <Task removeTask={()=>{}}
                  changeTaskStatus={()=>{}}
                  changeTaskTitle={()=>{}}
-                 task={task} todolistId={todolistID} />
+                 task={task} todoListId={todolistID} />
 }
 
 export const AppWithReduxStory: Story = {

@@ -1,5 +1,5 @@
 import {ChangeEvent, useEffect, useState} from 'react';
-import {todoListsAPI, TodoListType} from './todolistsAPI';
+import {todoListsAPI, TodoListType, UpdateTaskModelType} from './todolistsAPI';
 import {Meta} from '@storybook/react';
 
 export default {
@@ -179,9 +179,16 @@ export const PutTasks = () => {
     const [state, setState] = useState<any>()
     const [taskId, setTaskId] = useState<string>('')
     const [todoListId, setTodolistId] = useState<string>('')
-
+    const updatedTask: UpdateTaskModelType = {
+        title: title,
+        description: '',
+        status: 0,
+        priority: 1,
+        startDate: '',
+        deadline: '',
+    }
     function onClickHandler() {
-        todoListsAPI.putTask(todoListId, taskId, title)
+        todoListsAPI.putTask(todoListId, taskId, updatedTask)
             .then((res) => {
                 setState(res.data.data.item)
             })

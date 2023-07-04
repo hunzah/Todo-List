@@ -7,15 +7,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 import {useDispatch, useSelector} from 'react-redux';
 import {AppRootStateType} from '../store';
-import {
-    addTaskAC,
-    addTaskTC,
-    changeTaskStatusAC,
-    changeTaskTitleAC,
-    changeTaskTitleTC,
-    deleteTaskTC,
-    fetchTasksTC
-} from './tasks-reducer';
+import {addTaskTC, deleteTaskTC, fetchTasksTC, updateTaskTC} from './tasks-reducer';
 import {v1} from 'uuid';
 import {Task} from './Task/Task';
 import {FilterValueType} from './todolist-reducer';
@@ -48,11 +40,13 @@ const TodoList = React.memo((props: TodoListPropsType) => {
     }
 
     function changeTaskStatus(id: string, todoListId: string, status: TaskStatusType) {
-        dispatch(changeTaskStatusAC(id, todoListId, status))
+        console.log('task id: ',id, 'todolist id: ',todoListId)
+        dispatch(updateTaskTC(id, todoListId, {status: status}))
     }
 
     function changeTaskTitle(id: string, todoListId: string, newTitle: string) {
-        dispatch(changeTaskTitleTC(id, todoListId, newTitle))
+        console.log('task id: ',id, 'todolist id: ',todoListId)
+        dispatch(updateTaskTC(id, todoListId, {title: newTitle}))
     }
 
 
@@ -105,7 +99,7 @@ const TodoList = React.memo((props: TodoListPropsType) => {
             <AddItemForm addItem={addTask}/>
             <div>{
                 tasksForTodoList.map(t => {
-                    return <Task key={t.id} todolistId={props.id} task={t}
+                    return <Task key={t.id} todoListId={props.id} task={t}
                                  removeTask={removeTask}
                                  changeTaskStatus={changeTaskStatus}
                                  changeTaskTitle={changeTaskTitle}/>
@@ -114,20 +108,20 @@ const TodoList = React.memo((props: TodoListPropsType) => {
 
             <div className={s.filterButtons}>
                 <Button variant={props.filter === 'all' ? 'contained' : 'text'} onClick={onClickAllHandler}
-                    // color={'secondary'}
+
                 >All
                 </Button>
                 <Button
                     variant={props.filter === 'active' ? 'contained' : 'text'}
                     onClick={onClickActiveHandler}
-                    // color={'error'}
+
                 >Active
                 </Button>
 
                 <Button
                     variant={props.filter === 'completed' ? 'contained' : 'text'}
                     onClick={onClickCompletedHandler}
-                    // color={'success'}
+
                 >Completed
                 </Button>
 
