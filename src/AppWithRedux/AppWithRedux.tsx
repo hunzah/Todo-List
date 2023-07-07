@@ -18,6 +18,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {ThunkDispatchType} from '../store';
 import LinearProgress from '@mui/material/LinearProgress';
 import {RequestStatusType} from './app.reducer';
+import {ErrorSnackbar} from '../components/ErrorSnackbar/ErrorSnackbar';
 
 
 export type TasksStateType = {
@@ -43,6 +44,7 @@ function AppWithRedux() {
 
     return (
         <div className={s.App}>
+            <ErrorSnackbar/>
             <AppBar position="static">
                 <Toolbar>
                     <IconButton
@@ -85,6 +87,7 @@ function AppWithRedux() {
                     })}
                 </Grid>
             </Container>
+
         </div>
     );
 }
