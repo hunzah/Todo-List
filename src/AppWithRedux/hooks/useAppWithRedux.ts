@@ -13,7 +13,7 @@ import {
 export const useAppWithRedux = () => {
 
     const dispatch:ThunkDispatchType = useDispatch()
-    const todoLists = useSelector<AppRootStateType, TodolistDomainType[]>((state => state.todoLists))
+    const todoLists = useSelector<AppRootStateType, TodolistDomainType[]>(state => state.todoLists)
 
 
     // Work with TodoLists

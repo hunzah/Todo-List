@@ -14,8 +14,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import {useAppWithRedux} from './hooks/useAppWithRedux';
 import {TaskType} from '../api/todolistsAPI';
 import {fetchTodoListsTC} from '../TodoList/todolist-reducer';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {ThunkDispatchType} from '../store';
+import LinearProgress from '@mui/material/LinearProgress';
+import {RequestStatusType} from './app.reducer';
 
 
 export type TasksStateType = {
@@ -37,6 +39,7 @@ function AppWithRedux() {
         dispatch(fetchTodoListsTC())
     }, [dispatch])
 
+    const status = useSelector<RequestStatusType>(state => state.app.status)
 
     return (
         <div className={s.App}>
@@ -56,7 +59,9 @@ function AppWithRedux() {
                     </Typography>
                     <Button color="inherit">Login</Button>
                 </Toolbar>
+
             </AppBar>
+            {status && <LinearProgress/>}
             <Container fixed>
                 <Grid container style={{padding: '20px'}}>
                     <AddItemForm addItem={addTodoList}/>
@@ -79,7 +84,6 @@ function AppWithRedux() {
                             </Grid>)
                     })}
                 </Grid>
-
             </Container>
         </div>
     );
