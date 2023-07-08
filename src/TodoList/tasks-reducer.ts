@@ -10,6 +10,7 @@ import {
 } from '../api/todolistsAPI';
 import {Dispatch} from 'redux';
 import {AppActionTypes, AppRootStateType, AppThunk} from '../store';
+import {SetErrorAC, SetErrorACType} from '../AppWithRedux/app.reducer';
 
 export type Action1Type = {
     type: 'REMOVE-TASK'
@@ -79,7 +80,7 @@ const initialState: TasksStateType =
     }
 
 
-export const tasksReducer = (state: TasksStateType = initialState, action: TaskActionTypes): TasksStateType => {
+export const tasksReducer = (state: TasksStateType = initialState, action: TaskActionTypes | SetErrorACType): TasksStateType => {
 
     switch (action.type) {
         case 'REMOVE-TASK':
@@ -147,9 +148,17 @@ export const fetchTasksTC = (todoListId: string): AppThunk => (dispatch: Dispatc
     });
 };
 
-export const addTaskTC = (newTask: TaskType, todoListId: string): AppThunk => (dispatch: Dispatch<AppActionTypes>) => {
+export const addTaskTC = (newTask: TaskType, todoListId: string): AppThunk => (dispatch: Dispatch<AppActionTypes | SetErrorACType>) => {
     todoListsAPI.postTask(todoListId, newTask.title).then(res => {
-        dispatch(addTaskAC(res.data.data.item));
+        if(res.data.resultCode  ===0){
+            dispatch(addTaskAC(res.data.data.item));
+        }else {
+           if(res.data.messages.length){
+               dispatch(SetErrorAC(res.data.messages[0]))
+           } else
+               dispatch(SetErrorAC('aaaaaaaaaa'))
+        }
+
     });
 };
 

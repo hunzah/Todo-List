@@ -7,7 +7,11 @@ const initialState = {
 
 type InitialStateType = typeof initialState
 
-type ActionsType = ReturnType<typeof SetErrorAC> | ReturnType<typeof SetStatusAC>
+type ActionsType = SetErrorACType | ReturnType<typeof SetStatusAC>
+
+
+export type SetErrorACType = ReturnType<typeof SetErrorAC>
+
 
 export const appReducer = (state: InitialStateType = initialState, action: ActionsType): InitialStateType => {
     switch (action.type) {
