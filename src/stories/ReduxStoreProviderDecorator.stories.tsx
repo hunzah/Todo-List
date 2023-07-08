@@ -55,6 +55,10 @@ const initialGlobalState = {
                     '', description: ''
             },
         ]
+    },
+    app: {
+        error: null,
+        status: 'idle'
     }
 };
 
