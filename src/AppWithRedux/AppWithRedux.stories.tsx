@@ -8,7 +8,8 @@ const meta: Meta = {
     decorators: [ReduxStoreProviderDecoratorStories],
 }
 export default meta
-
+//
 export const AppWithReduxExample = () => {
+
     return <AppWithRedux demo={true}/>
 }

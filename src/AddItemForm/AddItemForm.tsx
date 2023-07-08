@@ -10,7 +10,7 @@ type PropsType = {
     disabled?: boolean
 }
 export const AddItemForm = React.memo(({addItem, disabled = false}: PropsType) => {
-
+    console.log(disabled)
     const {
         newItemTitle,
         error,
@@ -20,22 +20,10 @@ export const AddItemForm = React.memo(({addItem, disabled = false}: PropsType) =
     } = useAddItemForm(addItem)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     return (
         <>
             <div className={s.inpBtn}>
-                <TextField id="outlined-basic" label="Type value" variant="outlined" error={!!error}
+                <TextField id="outlined-basic" label="Type value" variant="standard" error={!!error}
                            helperText={!!error}
                            placeholder={'enter your text'}
                            value={newItemTitle}
@@ -44,13 +32,14 @@ export const AddItemForm = React.memo(({addItem, disabled = false}: PropsType) =
                            type={'text'}
                            autoComplete="off"
                            disabled={disabled}
+
                 />
                 <IconButton
                     color="primary"
-                    disabled={disabled}
                     onClick={() => {
                         onClickHandler()
-                    }}>
+                    }}
+                    disabled={disabled}>
                     <ControlPoint/>
                 </IconButton>
             </div>

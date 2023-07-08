@@ -1,7 +1,7 @@
 import {v1} from 'uuid';
 import {
     addTodoAC,
-    ChangeTodoEntityStatusAC,
+    changeTodoEntityStatusAC,
     changeTodoFilterAC,
     changeTodoTitleAC,
     removeTodoAC,
@@ -64,7 +64,7 @@ describe('Todo list reducer tests', () => {
         expect(newState.length).toBe(2)
     })
     test('Todo list should be disabled when the status is "loading"', () => {
-        let newState = todoListReducer(startState, ChangeTodoEntityStatusAC(todoListId2, 'loading'))
+        let newState = todoListReducer(startState, changeTodoEntityStatusAC(todoListId2, 'loading'))
         expect(newState.length).toBe(2)
     })
 })

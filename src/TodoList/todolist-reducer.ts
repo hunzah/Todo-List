@@ -8,8 +8,7 @@ export type TodolistDomainType = TodoListType & {
     filter: FilterValueType
     entityStatus: RequestStatusType
 }
-export type FilterValueType =
-    'all' | 'completed' | 'active'
+export type FilterValueType = 'all' | 'completed' | 'active'
 
 
 export type RemoveTodoActionType = {
@@ -19,8 +18,6 @@ export type RemoveTodoActionType = {
 
 export type AddTodoActionType = {
     type: 'ADD-TODO'
-    // todoListId: string,
-    // title: string
     todoList: TodoListType
 }
 
@@ -108,7 +105,7 @@ export const changeTodoFilterAC = (id: string, newFilter: FilterValueType): Chan
     return {type: 'CHANGE-TODO-FILTER', id: id, newFilter: newFilter}
 }
 
-export const ChangeTodoEntityStatusAC = (id: string, newStatus: RequestStatusType): ChangeTodoEntityStatusACType => {
+export const changeTodoEntityStatusAC = (id: string, newStatus: RequestStatusType): ChangeTodoEntityStatusACType => {
     return {type: 'CHANGE-TODO-ENTITY-STATUS', id: id, newStatus: newStatus}
 }
 
@@ -127,11 +124,10 @@ export const fetchTodoListsTC = (): AppThunk => (dispatch) => {
 
 export const removeTodoTC = (id: string): AppThunk => (dispatch) => {
     dispatch(SetStatusAC('loading'))
-    ChangeTodoEntityStatusAC(id,'loading')
+    dispatch(changeTodoEntityStatusAC(id, 'loading'))
     todoListsAPI.deleteTodoList(id).then(res => {
         dispatch(removeTodoAC(id))
         dispatch(SetStatusAC('succeeded'))
-        ChangeTodoEntityStatusAC(id,'succeeded')
     })
 
 }
@@ -145,10 +141,10 @@ export const addTodoTC = (title: string): AppThunk => (dispatch) => {
 }
 export const changeTodoTitleTC = (id: string, title: string): AppThunk => (dispatch) => {
     dispatch(SetStatusAC('loading'))
-    ChangeTodoEntityStatusAC(id,'loading')
+    changeTodoEntityStatusAC(id, 'loading')
     todoListsAPI.putTodoList(id, title).then(res => {
         dispatch(changeTodoTitleAC(id, title))
         dispatch(SetStatusAC('succeeded'))
-        ChangeTodoEntityStatusAC(id,'succeeded')
+        changeTodoEntityStatusAC(id, 'succeeded')
     })
 }

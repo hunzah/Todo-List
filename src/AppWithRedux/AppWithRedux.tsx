@@ -24,8 +24,11 @@ import {ErrorSnackbar} from '../components/ErrorSnackbar/ErrorSnackbar';
 export type TasksStateType = {
     [key: string]: TaskType[]
 }
+type PropsType = {
+    demo: boolean
+}
 
-function AppWithRedux(demo: boolean = false) {
+function AppWithRedux({demo}: PropsType) {
     const {
         addTodoList,
         todoLists,
@@ -43,6 +46,7 @@ function AppWithRedux(demo: boolean = false) {
     }, [dispatch])
 
     const status = useSelector<AppRootStateType, RequestStatusType>(state => state.app.status)
+
 
     return (
         <div className={s.App}>
@@ -68,7 +72,7 @@ function AppWithRedux(demo: boolean = false) {
             {status === 'loading' && <LinearProgress/>}
             <Container fixed>
                 <Grid container style={{padding: '20px'}}>
-                    <AddItemForm addItem={addTodoList}/>
+                    <AddItemForm addItem={addTodoList} disabled={status === 'loading'}/>
                 </Grid>
                 <Grid container spacing={3}>
 

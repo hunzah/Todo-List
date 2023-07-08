@@ -150,7 +150,7 @@ function App() {
             filter: 'all',
             addedDate: '',
             order: 0,
-            entityStatus:'idle'
+            entityStatus: 'idle'
         }
         setTodoList([...todoLists, newTodoList])
         setTasksObj(prev => ({...prev, [newTodoListId]: []}))
@@ -195,12 +195,12 @@ function App() {
                         return (
                             <Grid item>
                                 <Paper style={{padding: '15px'}}>
-                                    <TodoList
-                                        todolist={tl}
-                                        key={tl.id}
-                                        changeFilter={changeFilter}
-                                        removeTodoList={removeTodoList}
-                                        changeTodoListTitle={changeTodoListTitle}
+                                    <TodoList demo={false}
+                                              todolist={tl}
+                                              key={tl.id}
+                                              changeFilter={changeFilter}
+                                              removeTodoList={removeTodoList}
+                                              changeTodoListTitle={changeTodoListTitle}
                                     />
                                 </Paper>
                             </Grid>)

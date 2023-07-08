@@ -19,13 +19,11 @@ type TodoListPropsType = {
     changeFilter: (value: FilterValueType, todoListId: string) => void
     removeTodoList: (todoListId: string) => void
     changeTodoListTitle: (id: string, newTitle: string) => void
-    demo?: boolean
+    demo: boolean
 }
 
 
-const TodoList = React.memo(({demo = false, ...props}: TodoListPropsType) => {
-
-
+const TodoList = React.memo(({demo, ...props}: TodoListPropsType) => {
     const dispatch: ThunkDispatchType = useDispatch()
     const tasksObj = useSelector<AppRootStateType, TaskType[]>((state => state.tasks[props.todolist.id]))
 
@@ -43,12 +41,10 @@ const TodoList = React.memo(({demo = false, ...props}: TodoListPropsType) => {
     }
 
     function changeTaskStatus(id: string, todoListId: string, status: TaskStatusType) {
-        console.log('task id: ', id, 'todolist id: ', todoListId)
         dispatch(updateTaskTC(id, todoListId, {status: status}))
     }
 
     function changeTaskTitle(id: string, todoListId: string, newTitle: string) {
-        console.log('task id: ', id, 'todolist id: ', todoListId)
         dispatch(updateTaskTC(id, todoListId, {title: newTitle}))
     }
 
@@ -95,11 +91,11 @@ const TodoList = React.memo(({demo = false, ...props}: TodoListPropsType) => {
 
             <div className={s.closeButtonAndTitle}>
                 <h3><EditableSpan title={props.todolist.title} onChangeTitleHandler={changeTodoListTitle}/></h3>
-                <IconButton disabled={props.todolist.entityStatus === 'loading'} onClick={removeTodoListHandler}>
+                <IconButton onClick={removeTodoListHandler} disabled={props.todolist.entityStatus === 'loading'}>
                     <DeleteIcon/>
                 </IconButton>
             </div>
-            <AddItemForm addItem={addTask}/>
+            <AddItemForm addItem={addTask} disabled={props.todolist.entityStatus === 'loading'}/>
             <div>{
                 tasksForTodoList.map(t => {
                     return <Task key={t.id} todoListId={props.todolist.id} task={t}
