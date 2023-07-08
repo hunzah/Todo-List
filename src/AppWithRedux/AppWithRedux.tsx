@@ -25,8 +25,7 @@ export type TasksStateType = {
     [key: string]: TaskType[]
 }
 
-function AppWithRedux() {
-
+function AppWithRedux(demo: boolean = false) {
     const {
         addTodoList,
         todoLists,
@@ -75,12 +74,11 @@ function AppWithRedux() {
                             <Grid item key={tl.id}>
                                 <Paper style={{padding: '15px'}}>
                                     <TodoList
-                                        id={tl.id}
-                                        title={tl.title}
+                                        todolist={tl}
                                         changeFilter={changeFilter}
-                                        filter={tl.filter}
                                         removeTodoList={removeTodoList}
                                         changeTodoListTitle={changeTodoListTitle}
+                                        demo={demo}
                                     />
                                 </Paper>
                             </Grid>)

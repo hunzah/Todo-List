@@ -1,8 +1,7 @@
 import {v1} from 'uuid';
 import {todoListsAPI, TodoListType} from '../api/todolistsAPI';
-import {Dispatch} from 'redux';
-import {AppActionTypes, AppThunk} from '../store';
-import {SetStatusAC, SetStatusACType} from '../AppWithRedux/app.reducer';
+import {AppThunk} from '../store';
+import {SetStatusAC} from '../AppWithRedux/app.reducer';
 
 
 export type TodolistDomainType = TodoListType & {
@@ -110,19 +109,25 @@ export const fetchTodoListsTC = (): AppThunk => (dispatch) => {
 };
 
 export const removeTodoTC = (id: string): AppThunk => (dispatch) => {
+    dispatch(SetStatusAC('loading'))
     todoListsAPI.deleteTodoList(id).then(res => {
         dispatch(removeTodoAC(id))
+        dispatch(SetStatusAC('succeeded'))
     })
 
 }
 export const addTodoTC = (title: string): AppThunk => (dispatch) => {
+    dispatch(SetStatusAC('loading'))
     todoListsAPI.postTodoList(title).then(res => {
         dispatch(addTodoAC(res.data.data.item))
+        dispatch(SetStatusAC('succeeded'))
     })
 
 }
 export const changeTodoTitleTC = (id: string, title: string): AppThunk => (dispatch) => {
+    dispatch(SetStatusAC('loading'))
     todoListsAPI.putTodoList(id, title).then(res => {
         dispatch(changeTodoTitleAC(id, title))
+        dispatch(SetStatusAC('succeeded'))
     })
 }

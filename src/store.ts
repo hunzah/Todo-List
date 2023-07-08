@@ -5,7 +5,6 @@ import thunkMiddleware, {ThunkAction, ThunkDispatch} from 'redux-thunk'
 import {AppActionsType, appReducer} from './AppWithRedux/app.reducer';
 
 
-
 export type AppRootStateType = ReturnType<typeof rootReducer>
 
 

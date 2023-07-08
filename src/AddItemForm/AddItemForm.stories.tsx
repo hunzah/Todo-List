@@ -14,3 +14,6 @@ const callback = action('Button was pressed inside the form')
 export const AddItemFormExample = () => {
     return <AddItemForm addItem={callback} />
 }
+export const AddItemFormDisabledExample = () => {
+    return <AddItemForm addItem={callback} disabled={true}/>
+}

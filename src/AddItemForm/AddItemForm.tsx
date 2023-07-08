@@ -5,8 +5,11 @@ import ControlPoint from '@mui/icons-material/ControlPoint';
 import IconButton from '@mui/material/IconButton';
 import {AddItemFormPropsType, useAddItemForm} from './hooks/useAddItemForm';
 
-
-export const AddItemForm = React.memo((addItem: AddItemFormPropsType) => {
+type PropsType ={
+    addItem: (title: string) => void
+    disabled?:boolean
+}
+export const AddItemForm = React.memo(({addItem,disabled = false}:PropsType) => {
 
     const {
         newItemTitle,
@@ -29,10 +32,11 @@ export const AddItemForm = React.memo((addItem: AddItemFormPropsType) => {
                            onKeyDown={onKeyPressHandler}
                            type={'text'}
                            autoComplete='off'
+                           disabled={disabled}
                 />
                 <IconButton
                     color="primary"
-                    disabled={isAddTaskNotPossible}
+                    disabled={disabled}
                     onClick={() => {
                         onClickHandler()
                     }}>
