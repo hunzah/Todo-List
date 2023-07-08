@@ -1,21 +1,25 @@
-//app-reducer.tsx
-
-
 export type RequestStatusType = 'idle' | 'loading' | 'succeeded' | 'failed'
 
 const initialState = {
-    status: 'loading' as RequestStatusType
+    status: 'loading' as RequestStatusType,
+    error: null as string | null
 }
 
 type InitialStateType = typeof initialState
+
+type ActionsType = ReturnType<typeof SetErrorAC> | ReturnType<typeof SetStatusAC>
 
 export const appReducer = (state: InitialStateType = initialState, action: ActionsType): InitialStateType => {
     switch (action.type) {
         case 'APP/SET-STATUS':
             return {...state, status: action.status}
+        case 'APP/SET-ERROR':
+            return {...state, error: action.error}
         default:
             return state
     }
 }
 
-type ActionsType = any
+
+export const SetStatusAC = (status: RequestStatusType) => ({type: 'APP/SET-STATUS', status: status} as const)
+export const SetErrorAC = (error: string | null) => ({type: 'APP/SET-ERROR', error: error} as const)

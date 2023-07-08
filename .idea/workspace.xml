@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/src/AppWithRedux/app.reducer.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppWithRedux/app.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux/app.reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ErrorSnackbar/ErrorSnackbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ErrorSnackbar/ErrorSnackbar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +60,7 @@
       <recent name="D:\Work\todolist" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.new property with new array should be added when new todolist is added">
+  <component name="RunManager" selected="Jest.myau">
     <configuration name="Task should be added" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -84,6 +87,19 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="myau" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/AppWithRedux/app.reducer.test.tsx" />
+      <test-names>
+        <test-name value="myau" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="new property with new array should be added when new todolist is added" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -94,19 +110,6 @@
       <test-file value="$PROJECT_DIR$/src/TodoList/tasks-reducer.test.ts" />
       <test-names>
         <test-name value="new property with new array should be added when new todolist is added" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="task should be added to todoListId" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/TodoList/tasks-reducer.test.ts" />
-      <test-names>
-        <test-name value="task should be added to todoListId" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -122,11 +125,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.myau" />
         <item itemvalue="npm.start" />
         <item itemvalue="Jest.new property with new array should be added when new todolist is added" />
         <item itemvalue="Jest.empty array should be added when todolist was set " />
         <item itemvalue="Jest.Task should be added" />
-        <item itemvalue="Jest.task should be added to todoListId" />
       </list>
     </recent_temporary>
   </component>
@@ -226,14 +229,7 @@
       <workItem from="1688705642271" duration="21000" />
       <workItem from="1688705713155" duration="7399000" />
       <workItem from="1688758427060" duration="24000" />
-      <workItem from="1688791478268" duration="384000" />
-    </task>
-    <task id="LOCAL-00032" summary="add snapshots and tests">
-      <created>1686832335787</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1686832335787</updated>
+      <workItem from="1688791478268" duration="2218000" />
     </task>
     <task id="LOCAL-00033" summary="add snapshots and tests">
       <created>1686832357791</created>
@@ -571,7 +567,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688758434849</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="commit">
+      <created>1688791938501</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1688791938501</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
