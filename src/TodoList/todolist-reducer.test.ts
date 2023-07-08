@@ -1,6 +1,7 @@
 import {v1} from 'uuid';
 import {
     addTodoAC,
+    ChangeTodoEntityStatusAC,
     changeTodoFilterAC,
     changeTodoTitleAC,
     removeTodoAC,
@@ -17,55 +18,53 @@ const startState: TodolistDomainType[] = [
     {id: todoListId2, title: 'What to buy', filter: 'all', addedDate: '', order: 0, entityStatus: 'loading'}
 ]
 
-test('Todo should be deleted', () => {
+describe('Todo list reducer tests', () => {
+    test('Todo list should be deleted', () => {
+
+        const newState = todoListReducer(startState, removeTodoAC(todoListId2))
+        expect(newState?.length).toBe(1)
+    })
+    test('New Todo list should be added', () => {
 
 
-    const newState = todoListReducer(startState, removeTodoAC(todoListId2))
+        const newState = todoListReducer(startState, addTodoAC({
+            id: 'todoListId3',
+            title: 'aaaaaa',
+            addedDate: '',
+            order: 0
+        },))
+        expect(newState?.length).toBe(3)
+        expect(newState[2]?.filter).toBe('all')
+        expect(newState[0]?.title).toBe('aaaaaa')
 
-    expect(newState?.length).toBe(1)
-})
-test('New todo should be added', () => {
-
-
-    const newState = todoListReducer(startState, addTodoAC({
-        id: 'todoListId3',
-        title: 'aaaaaa',
-        addedDate: '',
-        order: 0
-    },))
-    expect(newState?.length).toBe(3)
-    expect(newState[2]?.filter).toBe('all')
-    expect(newState[0]?.title).toBe('aaaaaa')
-
-})
-test('Todo title should be changed', () => {
+    })
+    test('Todo list title should be changed', () => {
 
 
-    let action = {
-        id: todoListId2,
-        newTitle: 'New Title'
-    }
+        let action = {
+            id: todoListId2,
+            newTitle: 'New Title'
+        }
 
-    const newState = todoListReducer(startState, changeTodoTitleAC(action.id, action.newTitle))
-    expect(newState.length).toBe(2)
-    expect(newState[1]?.title).toBe('New Title')
+        const newState = todoListReducer(startState, changeTodoTitleAC(action.id, action.newTitle))
+        expect(newState.length).toBe(2)
+        expect(newState[1]?.title).toBe('New Title')
 
-})
-test('Todo filter should be changed', () => {
+    })
+    test('Todo list filter should be changed', () => {
 
 
-    let action = {
-        type: 'CHANGE-TODO-FILTER',
-        id: todoListId2,
-        newFilter: 'active'
-    }
+        const newState = todoListReducer(startState, changeTodoFilterAC(todoListId2, 'active'))
+        expect(newState.length).toBe(2)
+        expect(newState[1]?.filter).toBe('active')
 
-    const newState = todoListReducer(startState, changeTodoFilterAC(action.id, 'active'))
-    expect(newState.length).toBe(2)
-    expect(newState[1]?.filter).toBe('active')
-
-})
-test('Todolist should be set', () => {
-    let newState = todoListReducer([], setTodoAC(startState))
-    expect(newState.length).toBe(2)
+    })
+    test('Todo list should be set', () => {
+        let newState = todoListReducer([], setTodoAC(startState))
+        expect(newState.length).toBe(2)
+    })
+    test('Todo list should be disabled when the status is "loading"', () => {
+        let newState = todoListReducer(startState, ChangeTodoEntityStatusAC(todoListId2, 'loading'))
+        expect(newState.length).toBe(2)
+    })
 })

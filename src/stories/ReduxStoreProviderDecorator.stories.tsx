@@ -67,7 +67,7 @@ export const storyBookStore = createStore(rootReducer, initialGlobalState as App
 
 export default meta
 
-export const ReduxStoreProviderDecorator = (storyFn: () => ReactNode) => {
+export const ReduxStoreProviderDecoratorStories = (storyFn: () => ReactNode) => {
     return <Provider store={storyBookStore}>{storyFn()}</Provider>
 }
 

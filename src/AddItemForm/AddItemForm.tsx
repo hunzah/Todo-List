@@ -1,15 +1,15 @@
-import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
+import React from 'react';
 import s from './AddItem.module.css'
 import {TextField} from '@mui/material';
 import ControlPoint from '@mui/icons-material/ControlPoint';
 import IconButton from '@mui/material/IconButton';
-import {AddItemFormPropsType, useAddItemForm} from './hooks/useAddItemForm';
+import {useAddItemForm} from './hooks/useAddItemForm';
 
-type PropsType ={
+type PropsType = {
     addItem: (title: string) => void
-    disabled?:boolean
+    disabled?: boolean
 }
-export const AddItemForm = React.memo(({addItem,disabled = false}:PropsType) => {
+export const AddItemForm = React.memo(({addItem, disabled = false}: PropsType) => {
 
     const {
         newItemTitle,
@@ -17,8 +17,19 @@ export const AddItemForm = React.memo(({addItem,disabled = false}:PropsType) => 
         onNewTitleChangeHandler,
         onKeyPressHandler,
         onClickHandler,
-        isAddTaskNotPossible
     } = useAddItemForm(addItem)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     return (
@@ -31,7 +42,7 @@ export const AddItemForm = React.memo(({addItem,disabled = false}:PropsType) => 
                            onChange={onNewTitleChangeHandler}
                            onKeyDown={onKeyPressHandler}
                            type={'text'}
-                           autoComplete='off'
+                           autoComplete="off"
                            disabled={disabled}
                 />
                 <IconButton

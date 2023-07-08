@@ -2,7 +2,7 @@ import type {Meta, StoryObj} from '@storybook/react';
 import React from 'react';
 import {useSelector} from 'react-redux';
 import {Task} from './Task';
-import {ReduxStoreProviderDecorator} from '../../stories/ReduxStoreProviderDecorator.stories';
+import {ReduxStoreProviderDecoratorStories} from '../../stories/ReduxStoreProviderDecorator.stories';
 import {AppRootStateType} from '../../store';
 import {TaskType} from '../../api/todolistsAPI';
 
@@ -13,7 +13,7 @@ const meta: Meta = {
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
     tags: ['autodocs'],
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-    decorators: [ReduxStoreProviderDecorator]
+    decorators: [ReduxStoreProviderDecoratorStories]
 };
 
 export default meta;

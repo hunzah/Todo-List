@@ -3,13 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AddItemForm/hooks/useAddItemForm.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddItemForm/hooks/useAddItemForm.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddItemForm/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddItemForm/AddItemForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/TodoList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/Task/TaskRedux.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/Task/TaskRedux.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/todolist-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/todolist-reducer.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stories/ReduxStoreProviderDecorator.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/stories/ReduxStoreProviderDecorator.stories.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,17 +63,30 @@
       <recent name="D:\Work\todolist\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.myau">
-    <configuration name="empty array should be added when todolist was set " type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.Todo list reducer tests">
+    <configuration name="Todo list reducer tests" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/TodoList/todolist-reducer.test.ts" />
+      <test-names>
+        <test-name value="Todo list reducer tests" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Todo list should be disabled when the status is &quot;loading&quot;" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/TodoList/tasks-reducer.test.ts" />
+      <test-file value="$PROJECT_DIR$/src/TodoList/todolist-reducer.test.ts" />
       <test-names>
-        <test-name value="empty array should be added when todolist was set " />
+        <test-name value="Todo list should be disabled when the status is &quot;loading&quot;" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -89,19 +100,6 @@
       <test-file value="$PROJECT_DIR$/src/AppWithRedux/app.reducer.test.tsx" />
       <test-names>
         <test-name value="myau" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="new property with new array should be added when new todolist is added" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/TodoList/tasks-reducer.test.ts" />
-      <test-names>
-        <test-name value="new property with new array should be added when new todolist is added" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -127,11 +125,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.Todo list reducer tests" />
+        <item itemvalue="Jest.Todo list should be disabled when the status is &quot;loading&quot;" />
         <item itemvalue="npm.storybook" />
         <item itemvalue="npm.start" />
         <item itemvalue="Jest.myau" />
-        <item itemvalue="Jest.new property with new array should be added when new todolist is added" />
-        <item itemvalue="Jest.empty array should be added when todolist was set " />
       </list>
     </recent_temporary>
   </component>
@@ -232,14 +230,7 @@
       <workItem from="1688705713155" duration="7399000" />
       <workItem from="1688758427060" duration="24000" />
       <workItem from="1688791478268" duration="10421000" />
-      <workItem from="1688822607079" duration="2621000" />
-    </task>
-    <task id="LOCAL-00037" summary="commit">
-      <created>1687026770355</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1687026770355</updated>
+      <workItem from="1688822607079" duration="5140000" />
     </task>
     <task id="LOCAL-00038" summary="commit">
       <created>1687059753608</created>
@@ -577,7 +568,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688804078036</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="commit">
+      <created>1688825537951</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1688825537952</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
