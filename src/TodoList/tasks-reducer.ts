@@ -165,8 +165,10 @@ export const addTaskTC = (newTask: TaskType, todoListId: string): AppThunk => (d
             }
             dispatch(SetStatusAC('failed'))
         }
-
-    });
+    }).catch((error) => {
+        dispatch(SetErrorAC(error.message))
+        dispatch(SetStatusAC('failed'))
+    })
 };
 
 export const deleteTaskTC = (id: string, todoListId: string): AppThunk => (dispatch) => {
@@ -206,10 +208,21 @@ export const updateTaskTC = (id: string, todoListId: string, domainModel: Update
             ...domainModel
         }
         todoListsAPI.putTask(todoListId, id, updatedTask).then(res => {
-            console.log(res.data)
-            dispatch(updateTaskAC(todoListId, id, res.data.data.item));
-            dispatch(SetStatusAC('succeeded'))
-        });
+            if (res.status === 0) {
+                dispatch(updateTaskAC(todoListId, id, res.data.data.item));
+                dispatch(SetStatusAC('succeeded'))
+            } else {
+                if (res.data.messages.length) {
+                    dispatch(SetErrorAC(res.data.messages[0]))
+                } else {
+                    dispatch(SetErrorAC('aaaaaaaaaa'))
+                }
+                dispatch(SetStatusAC('failed'))
+            }
+        }).catch((error) => {
+            dispatch(SetErrorAC(error.message))
+            dispatch(SetStatusAC('failed'))
+        })
     };
 
 
