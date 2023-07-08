@@ -2,6 +2,7 @@ import {v1} from 'uuid';
 import {todoListsAPI, TodoListType} from '../api/todolistsAPI';
 import {AppThunk} from '../store';
 import {RequestStatusType, SetStatusAC} from '../AppWithRedux/app.reducer';
+import {handleServerAppError, handleServerNetworkError} from '../utils/ErrorUtils';
 
 
 export type TodolistDomainType = TodoListType & {
@@ -119,23 +120,37 @@ export const fetchTodoListsTC = (): AppThunk => (dispatch) => {
     todoListsAPI.getTodoLists().then(res => {
         dispatch(setTodoAC(res.data))
         dispatch(SetStatusAC('succeeded'))
-    });
+    }).catch((error) => {
+        handleServerNetworkError(error, dispatch)
+    })
 };
 
 export const removeTodoTC = (id: string): AppThunk => (dispatch) => {
     dispatch(SetStatusAC('loading'))
     dispatch(changeTodoEntityStatusAC(id, 'loading'))
     todoListsAPI.deleteTodoList(id).then(res => {
-        dispatch(removeTodoAC(id))
-        dispatch(SetStatusAC('succeeded'))
+        if (res.data.resultCode === 0) {
+            dispatch(removeTodoAC(id))
+            dispatch(SetStatusAC('succeeded'))
+        } else {
+            handleServerAppError(res.data, dispatch)
+        }
+    }).catch((error) => {
+        handleServerNetworkError(error, dispatch)
     })
-
-}
+};
 export const addTodoTC = (title: string): AppThunk => (dispatch) => {
     dispatch(SetStatusAC('loading'))
     todoListsAPI.postTodoList(title).then(res => {
-        dispatch(addTodoAC(res.data.data.item))
-        dispatch(SetStatusAC('succeeded'))
+        if (res.data.resultCode === 0) {
+            dispatch(addTodoAC(res.data.data.item))
+            dispatch(SetStatusAC('succeeded'))
+        } else {
+            handleServerAppError(res.data, dispatch)
+        }
+
+    }).catch((error) => {
+        handleServerNetworkError(error, dispatch)
     })
 
 }
@@ -143,8 +158,15 @@ export const changeTodoTitleTC = (id: string, title: string): AppThunk => (dispa
     dispatch(SetStatusAC('loading'))
     changeTodoEntityStatusAC(id, 'loading')
     todoListsAPI.putTodoList(id, title).then(res => {
-        dispatch(changeTodoTitleAC(id, title))
-        dispatch(SetStatusAC('succeeded'))
-        changeTodoEntityStatusAC(id, 'succeeded')
+        if (res.data.resultCode === 0) {
+            dispatch(changeTodoTitleAC(id, title))
+            dispatch(SetStatusAC('succeeded'))
+            changeTodoEntityStatusAC(id, 'succeeded')
+        } else {
+            handleServerAppError(res.data, dispatch)
+        }
+    }).catch((error) => {
+        handleServerNetworkError(error, dispatch)
     })
+
 }

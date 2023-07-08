@@ -9,7 +9,7 @@ export type TodoListType = {
 }
 
 
-type ResponseType<D> = {
+export type ResponseType<D> = {
     resultCode: number
     messages: string[]
     data: D
@@ -29,7 +29,6 @@ export type TaskResponseType<D = {}> = {
     item: D
     totalCount: number
     error: string | null
-
 }
 
 export enum TaskStatusType {
