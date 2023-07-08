@@ -19,13 +19,12 @@ export function ErrorSnackbar() {
         setOpen(false)
     }
 
-
     const error = useSelector<AppRootStateType, string | null >(state=> state.app.error)
-    const isOpen = error !==null
+    const isOpen = Boolean(error);
     return (
         <Snackbar open={isOpen} autoHideDuration={6000} onClose={handleClose}>
             <Alert onClose={handleClose} severity="error" sx={{width: '100%'}}>
-                Error message 😠
+                {error} 😠
             </Alert>
         </Snackbar>
     )

@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddItemForm/hooks/useAddItemForm.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddItemForm/hooks/useAddItemForm.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppWithRedux/app.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux/app.reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TodoList/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/tasks-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ErrorSnackbar/ErrorSnackbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ErrorSnackbar/ErrorSnackbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,14 +233,7 @@
       <workItem from="1688705642271" duration="21000" />
       <workItem from="1688705713155" duration="7399000" />
       <workItem from="1688758427060" duration="24000" />
-      <workItem from="1688791478268" duration="3251000" />
-    </task>
-    <task id="LOCAL-00034" summary="add api">
-      <created>1687024467674</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1687024467674</updated>
+      <workItem from="1688791478268" duration="5799000" />
     </task>
     <task id="LOCAL-00035" summary="add api">
       <created>1687025925254</created>
@@ -573,7 +571,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688793753546</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="commit">
+      <created>1688794950741</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1688794950741</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

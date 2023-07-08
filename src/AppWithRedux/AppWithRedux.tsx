@@ -15,7 +15,7 @@ import {useAppWithRedux} from './hooks/useAppWithRedux';
 import {TaskType} from '../api/todolistsAPI';
 import {fetchTodoListsTC} from '../TodoList/todolist-reducer';
 import {useDispatch, useSelector} from 'react-redux';
-import {ThunkDispatchType} from '../store';
+import {AppRootStateType, ThunkDispatchType} from '../store';
 import LinearProgress from '@mui/material/LinearProgress';
 import {RequestStatusType} from './app.reducer';
 import {ErrorSnackbar} from '../components/ErrorSnackbar/ErrorSnackbar';
@@ -40,7 +40,7 @@ function AppWithRedux() {
         dispatch(fetchTodoListsTC())
     }, [dispatch])
 
-    const status = useSelector<RequestStatusType>(state => state.app.status)
+    const status = useSelector<AppRootStateType, RequestStatusType>(state => state.app.status)
 
     return (
         <div className={s.App}>
@@ -63,7 +63,7 @@ function AppWithRedux() {
                 </Toolbar>
 
             </AppBar>
-            {status && <LinearProgress/>}
+            {status === 'loading' && <LinearProgress/>}
             <Container fixed>
                 <Grid container style={{padding: '20px'}}>
                     <AddItemForm addItem={addTodoList}/>

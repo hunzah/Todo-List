@@ -14,7 +14,7 @@ export const useAddItemForm = (props: AddItemFormPropsType) => {
     }
 
 
-    const isAddTaskNotPossible = newItemTitle.length === 0 || newItemTitle.trim().length > 20
+    const isAddTaskNotPossible = newItemTitle.length === 0 || newItemTitle.trim().length > 200
     const onKeyPressHandler =
         isAddTaskNotPossible ? undefined
             : (e: KeyboardEvent<HTMLInputElement>) => {
