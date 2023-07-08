@@ -1,11 +1,12 @@
 import {v1} from 'uuid';
 import {todoListsAPI, TodoListType} from '../api/todolistsAPI';
 import {AppThunk} from '../store';
-import {SetStatusAC} from '../AppWithRedux/app.reducer';
+import {RequestStatusType, SetStatusAC} from '../AppWithRedux/app.reducer';
 
 
 export type TodolistDomainType = TodoListType & {
     filter: FilterValueType
+    entityStatus: RequestStatusType
 }
 export type FilterValueType =
     'all' | 'completed' | 'active'
@@ -57,7 +58,7 @@ export const todoListReducer = (state: TodolistDomainType[] = initialState, acti
         case 'REMOVE-TODO':
             return state.filter(tl => tl.id !== action.id)
         case 'ADD-TODO':
-            return [{...action.todoList, filter: 'all'}, ...state]
+            return [{...action.todoList, filter: 'all', entityStatus: 'idle'}, ...state]
         case 'CHANGE-TODO-TITLE':
             return state.map((tl) => {
                 if (tl.id === action.id) {
@@ -73,7 +74,7 @@ export const todoListReducer = (state: TodolistDomainType[] = initialState, acti
                 return tl;
             });
         case 'SET-TODO':
-            return action.todo.map(tl => ({...tl, filter: 'all'}));
+            return action.todo.map(tl => ({...tl, filter: 'all', entityStatus: 'idle'}));
         default:
             return state
     }

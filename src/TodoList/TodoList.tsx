@@ -95,7 +95,7 @@ const TodoList = React.memo(({demo = false, ...props}: TodoListPropsType) => {
 
             <div className={s.closeButtonAndTitle}>
                 <h3><EditableSpan title={props.todolist.title} onChangeTitleHandler={changeTodoListTitle}/></h3>
-                <IconButton onClick={removeTodoListHandler}>
+                <IconButton disabled={props.todolist.entityStatus === 'loading'} onClick={removeTodoListHandler}>
                     <DeleteIcon/>
                 </IconButton>
             </div>

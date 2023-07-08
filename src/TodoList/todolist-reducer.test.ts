@@ -3,7 +3,8 @@ import {
     addTodoAC,
     changeTodoFilterAC,
     changeTodoTitleAC,
-    removeTodoAC, setTodoAC,
+    removeTodoAC,
+    setTodoAC,
     TodolistDomainType,
     todoListReducer
 } from './todolist-reducer';
@@ -12,8 +13,8 @@ import {
 const todoListId1 = v1()
 const todoListId2 = v1()
 const startState: TodolistDomainType[] = [
-    {id: todoListId1, title: 'What to learn', filter: 'all', addedDate: '', order: 0},
-    {id: todoListId2, title: 'What to buy', filter: 'all', addedDate: '', order: 0}
+    {id: todoListId1, title: 'What to learn', filter: 'all', addedDate: '', order: 0, entityStatus: 'idle'},
+    {id: todoListId2, title: 'What to buy', filter: 'all', addedDate: '', order: 0, entityStatus: 'loading'}
 ]
 
 test('Todo should be deleted', () => {
@@ -26,7 +27,12 @@ test('Todo should be deleted', () => {
 test('New todo should be added', () => {
 
 
-    const newState = todoListReducer(startState, addTodoAC({id: 'todoListId3', title: 'aaaaaa',addedDate: '', order: 0}, ))
+    const newState = todoListReducer(startState, addTodoAC({
+        id: 'todoListId3',
+        title: 'aaaaaa',
+        addedDate: '',
+        order: 0
+    },))
     expect(newState?.length).toBe(3)
     expect(newState[2]?.filter).toBe('all')
     expect(newState[0]?.title).toBe('aaaaaa')
@@ -59,7 +65,7 @@ test('Todo filter should be changed', () => {
     expect(newState[1]?.filter).toBe('active')
 
 })
-test('Todolist should be set',()=>{
-    let newState = todoListReducer([],setTodoAC(startState))
+test('Todolist should be set', () => {
+    let newState = todoListReducer([], setTodoAC(startState))
     expect(newState.length).toBe(2)
 })

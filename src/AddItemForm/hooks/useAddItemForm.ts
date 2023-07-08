@@ -4,7 +4,7 @@ export type AddItemFormPropsType = {
     addItem: (title: string) => void
 }
 
-export const useAddItemForm = (props: AddItemFormPropsType) => {
+export const useAddItemForm = (addItem: (title: string) => void) => {
 
     const [newItemTitle, setNewItemTitle] = useState('')
     const [error, setError] = useState<string | null>(null)
@@ -22,7 +22,7 @@ export const useAddItemForm = (props: AddItemFormPropsType) => {
                     if (newItemTitle.trim() === '') {
                         setError('Title is required')
                     } else {
-                        props.addItem(newItemTitle.trim())
+                        addItem(newItemTitle.trim())
                         setNewItemTitle('')
                         setError(null)
                     }
@@ -34,7 +34,7 @@ export const useAddItemForm = (props: AddItemFormPropsType) => {
         if (newItemTitle.trim() === '') {
             setError('Title is required')
         } else {
-            props.addItem(newItemTitle.trim())
+            addItem(newItemTitle.trim())
             setNewItemTitle('')
         }
     }

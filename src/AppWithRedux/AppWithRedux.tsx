@@ -36,6 +36,9 @@ function AppWithRedux(demo: boolean = false) {
 
     const dispatch: ThunkDispatchType = useDispatch();
     useEffect(() => {
+        if (demo) {
+            return
+        }
         dispatch(fetchTodoListsTC())
     }, [dispatch])
 

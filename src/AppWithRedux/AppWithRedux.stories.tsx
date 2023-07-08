@@ -10,5 +10,5 @@ const meta: Meta = {
 export default meta
 
 export const AppWithReduxExample = () => {
-    return <AppWithRedux/>
+    return <AppWithRedux demo={true}/>
 }
