@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/src/Features/Login/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="add Login.tsx">
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,14 +227,7 @@
       <workItem from="1688791478268" duration="10421000" />
       <workItem from="1688822607079" duration="16125000" />
       <workItem from="1688877333574" duration="420000" />
-      <workItem from="1688976308017" duration="313000" />
-    </task>
-    <task id="LOCAL-00042" summary="commit">
-      <created>1687064576590</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1687064576590</updated>
+      <workItem from="1688976308017" duration="753000" />
     </task>
     <task id="LOCAL-00043" summary="commit">
       <created>1687067188162</created>
@@ -572,7 +565,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688844178221</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="add Login.tsx">
+      <created>1688976642150</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1688976642150</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -609,6 +609,8 @@
     <MESSAGE value="code refactoring" />
     <MESSAGE value="add thunks" />
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="add Login.tsx" />
+    <MESSAGE value="add formik" />
+    <option name="LAST_COMMIT_MESSAGE" value="add formik" />
   </component>
 </project>
