@@ -104,3 +104,22 @@ export const todoListsAPI = {
     },
 }
 
+
+export type loginParamsType = {
+    email: string
+    password: string
+    rememberMe: boolean
+    captcha?: string
+}
+
+export const authAPI = {
+    logIn(params: loginParamsType) {
+        return instance.post<ResponseType<{ userId?: number }>>(`/auth/login`)
+    },
+    logOut() {
+        return instance.delete<ResponseType<{ userId?: number }>>(`/auth/login`)
+    },
+
+
+}
+
