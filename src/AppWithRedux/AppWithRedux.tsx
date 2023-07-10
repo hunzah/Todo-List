@@ -19,6 +19,8 @@ import {AppRootStateType, ThunkDispatchType} from '../store';
 import LinearProgress from '@mui/material/LinearProgress';
 import {RequestStatusType} from './app.reducer';
 import {ErrorSnackbar} from '../components/ErrorSnackbar/ErrorSnackbar';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {Login} from '../Features/Login/Login';
 
 
 export type TasksStateType = {
@@ -49,51 +51,63 @@ function AppWithRedux({demo}: PropsType) {
 
 
     return (
-        <div className={s.App}>
-            <ErrorSnackbar/>
-            <AppBar position="static">
-                <Toolbar>
-                    <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="menu"
-                        sx={{mr: 2}}
-                    >
-                        <MenuIcon/>
-                    </IconButton>
-                    <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
-                        News
-                    </Typography>
-                    <Button color="inherit">Login</Button>
-                </Toolbar>
+        <BrowserRouter>
 
-            </AppBar>
-            {status === 'loading' && <LinearProgress/>}
-            <Container fixed>
-                <Grid container style={{padding: '20px'}}>
-                    <AddItemForm addItem={addTodoList} disabled={status === 'loading'}/>
-                </Grid>
-                <Grid container spacing={3}>
+            <div className={s.App}>
+                <ErrorSnackbar/>
+                <AppBar position="static">
+                    <Toolbar>
+                        <IconButton
+                            size="large"
+                            edge="start"
+                            color="inherit"
+                            aria-label="menu"
+                            sx={{mr: 2}}
+                        >
+                            <MenuIcon/>
+                        </IconButton>
+                        <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
+                            News
+                        </Typography>
+                        <Button color="inherit">Login</Button>
+                    </Toolbar>
 
-                    {todoLists.map((tl) => {
-                        return (
-                            <Grid item key={tl.id}>
-                                <Paper style={{padding: '15px'}}>
-                                    <TodoList
-                                        todolist={tl}
-                                        changeFilter={changeFilter}
-                                        removeTodoList={removeTodoList}
-                                        changeTodoListTitle={changeTodoListTitle}
-                                        demo={demo}
-                                    />
-                                </Paper>
-                            </Grid>)
-                    })}
-                </Grid>
-            </Container>
+                </AppBar>
+                {status === 'loading' && <LinearProgress/>}
+                <Container fixed>
 
-        </div>
+                    <Routes>
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/" element={
+                            <>
+                                <Grid container style={{padding: '20px'}}>
+                                    <AddItemForm addItem={addTodoList} disabled={status === 'loading'} />
+                                </Grid>
+                                <Grid container spacing={3}>
+                                    {todoLists.map((tl) => {
+                                        return (
+                                            <Grid item key={tl.id}>
+                                                <Paper style={{padding: '15px'}}>
+                                                    <TodoList
+                                                        todolist={tl}
+                                                        changeFilter={changeFilter}
+                                                        removeTodoList={removeTodoList}
+                                                        changeTodoListTitle={changeTodoListTitle}
+                                                        demo={demo}
+                                                    />
+                                                </Paper>
+                                            </Grid>
+                                        )
+                                    })}
+                                </Grid>
+                            </>
+                        } />
+                    </Routes>
+                </Container>
+
+            </div>
+
+        </BrowserRouter>
     );
 }
 

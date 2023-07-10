@@ -14,6 +14,8 @@ import AppBar from '@mui/material/AppBar';
 import MenuIcon from '@mui/icons-material/Menu';
 import {FilterValueType, TodolistDomainType} from './TodoList/todolist-reducer';
 import {TaskPriorities, TaskStatusType, TaskType} from './api/todolistsAPI';
+import {BrowserRouter, Route} from 'react-router-dom';
+import {Login} from './Features/Login/Login';
 
 
 export type TasksStateType = {
@@ -157,50 +159,49 @@ function App() {
     }
 
     return (
-        <div className={s.App}>
-            <AppBar position="static">
-                <Toolbar>
-                    <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="menu"
-                        sx={{mr: 2}}
-                    >
-                        <MenuIcon/>
-                    </IconButton>
-                    <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
-                        News
-                    </Typography>
-                    <Button color="inherit">Login</Button>
-                </Toolbar>
-            </AppBar>
-            <Container fixed>
-                <Grid container style={{padding: '20px'}}>
-                    <AddItemForm addItem={addTodoList}/>
-                </Grid>
-                <Grid container spacing={3}>
 
+            <div className={s.App}>
+                <AppBar position="static">
+                    <Toolbar>
+                        <IconButton
+                            size="large"
+                            edge="start"
+                            color="inherit"
+                            aria-label="menu"
+                            sx={{mr: 2}}
+                        >
+                            <MenuIcon/>
+                        </IconButton>
+                        <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
+                            News
+                        </Typography>
+                        <Button color="inherit">Login</Button>
+                    </Toolbar>
+                </AppBar>
+                <Container fixed>
+                    <Grid container style={{padding: '20px'}}>
+                        <AddItemForm addItem={addTodoList}/>
+                    </Grid>
+                    <Grid container spacing={3}>
 
-                    {todoLists.map((tl) => {
+                        {todoLists.map((tl) => {
+                            return (
+                                <Grid item>
+                                    <Paper style={{padding: '15px'}}>
+                                        <TodoList demo={false}
+                                                  todolist={tl}
+                                                  key={tl.id}
+                                                  changeFilter={changeFilter}
+                                                  removeTodoList={removeTodoList}
+                                                  changeTodoListTitle={changeTodoListTitle}
+                                        />
+                                    </Paper>
+                                </Grid>)
+                        })}
+                    </Grid>
+                </Container>
+            </div>
 
-                        return (
-                            <Grid item>
-                                <Paper style={{padding: '15px'}}>
-                                    <TodoList demo={false}
-                                              todolist={tl}
-                                              key={tl.id}
-                                              changeFilter={changeFilter}
-                                              removeTodoList={removeTodoList}
-                                              changeTodoListTitle={changeTodoListTitle}
-                                    />
-                                </Paper>
-                            </Grid>)
-                    })}
-                </Grid>
-
-            </Container>
-        </div>
     );
 }
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="add formik">
+    <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="code refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/tasks-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/todolistsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolistsAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/TodoList.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,14 +229,8 @@
       <workItem from="1688791478268" duration="10421000" />
       <workItem from="1688822607079" duration="16125000" />
       <workItem from="1688877333574" duration="420000" />
-      <workItem from="1688976308017" duration="5252000" />
-    </task>
-    <task id="LOCAL-00044" summary="commit">
-      <created>1687071730880</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1687071730880</updated>
+      <workItem from="1688976308017" duration="5905000" />
+      <workItem from="1688987513072" duration="2191000" />
     </task>
     <task id="LOCAL-00045" summary="commit">
       <created>1687072873195</created>
@@ -574,7 +568,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688977084770</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="code refactoring">
+      <created>1688987065630</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1688987065630</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -608,11 +609,11 @@
     <MESSAGE value="add snapshots and tests" />
     <MESSAGE value="add api" />
     <MESSAGE value="add custom hooks" />
-    <MESSAGE value="code refactoring" />
     <MESSAGE value="add thunks" />
     <MESSAGE value="commit" />
     <MESSAGE value="add Login.tsx" />
     <MESSAGE value="add formik" />
-    <option name="LAST_COMMIT_MESSAGE" value="add formik" />
+    <MESSAGE value="code refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="code refactoring" />
   </component>
 </project>
