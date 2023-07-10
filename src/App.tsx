@@ -181,16 +181,8 @@ function App() {
                 </Grid>
                 <Grid container spacing={3}>
 
+
                     {todoLists.map((tl) => {
-
-                        let tasksForTodoList = tasksObj[tl.id];
-
-                        if (tl.filter === 'completed') {
-                            tasksForTodoList = tasksForTodoList?.filter(t => t.status === TaskStatusType.Completed)
-                        }
-                        if (tl.filter === 'active') {
-                            tasksForTodoList = tasksForTodoList?.filter(t => t.status === TaskStatusType.InProgress)
-                        }
 
                         return (
                             <Grid item>
@@ -205,8 +197,6 @@ function App() {
                                 </Paper>
                             </Grid>)
                     })}
-
-
                 </Grid>
 
             </Container>

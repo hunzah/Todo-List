@@ -201,6 +201,7 @@ export const updateTaskTC = (id: string, todoListId: string, domainModel: Update
             console.warn('task not found')
             return
         }
+        debugger
         const updatedTask: UpdateTaskModelType = {
             title: task.title,
             description: task.description,
@@ -210,14 +211,16 @@ export const updateTaskTC = (id: string, todoListId: string, domainModel: Update
             deadline: task.deadline,
             ...domainModel
         }
-        todoListsAPI.putTask(todoListId, id, updatedTask).then(res => {
-            if (res.status === 0) {
+        todoListsAPI.putTask(todoListId, id, updatedTask)
+            .then(res => {
+            if (res.data.resultCode === 0) {
                 dispatch(updateTaskAC(todoListId, id, res.data.data.item));
                 dispatch(SetStatusAC('succeeded'))
             } else {
                 handleServerAppError(res.data, dispatch)
             }
-        }).catch((error) => {
+        })
+            .catch((error) => {
             handleServerNetworkError(error, dispatch)
         })
     };
