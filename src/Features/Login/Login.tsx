@@ -8,9 +8,12 @@ import FormLabel from '@mui/material/FormLabel';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import {useFormik} from 'formik';
+import {useDispatch} from 'react-redux';
+import {logInTC} from './login-reducer';
+import {ThunkDispatchType} from '../../store';
 
 export const Login = () => {
-
+    const dispatch: ThunkDispatchType = useDispatch()
 
     const formik = useFormik({
         validate: (values) => {
@@ -30,9 +33,11 @@ export const Login = () => {
             rememberMe: false
         },
         onSubmit: values => {
-            alert(JSON.stringify(values));
+            dispatch(logInTC(values));
         },
     })
+
+
 
     return <Grid container justifyContent={'center'}>
         <Grid item justifyContent={'center'}>

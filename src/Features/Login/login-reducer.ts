@@ -1,8 +1,8 @@
 import {AppThunk} from '../../store';
 import {authAPI, loginParamsType} from '../../api/todolistsAPI';
-import {SetStatusAC} from '../../AppWithRedux/app.reducer';
+import {RequestStatusType, SetStatusAC} from '../../AppWithRedux/app.reducer';
+import {handleServerNetworkError} from '../../utils/ErrorUtils';
 
-initialStateType
 
 const initialState: loginParamsType = {
     email: '',
@@ -10,9 +10,9 @@ const initialState: loginParamsType = {
     rememberMe: false,
     captcha: ''
 }
-type ActionTypes = ReturnType<typeof logInAC>
+export type LogInActionTypes = ReturnType<typeof logInAC>
 
-export const loginReducer = (state: loginParamsType = initialState, action: ActionTypes): loginParamsType => {
+export const loginReducer = (state: loginParamsType = initialState, action: LogInActionTypes): loginParamsType => {
 
     switch (action.type) {
         case 'LOG-IN':
@@ -24,16 +24,25 @@ export const loginReducer = (state: loginParamsType = initialState, action: Acti
 
     }
 }
+type LogInACType = {
+    type: 'LOG-IN',
+    params: loginParamsType
+}
 
-
-export const logInAC = (params: loginParamsType) => {
+export const logInAC = (params: loginParamsType): LogInACType => {
     return {type: 'LOG-IN', params: params} as const
 }
 export const logInTC = (params: loginParamsType): AppThunk => (dispatch) => {
     dispatch(SetStatusAC('loading'))
-    return authAPI.logIn().then((res) => {
-        dispatch(SetStatusAC('succeeded'))
-    })
+    return authAPI.logIn(params)
+        .then((res) => {
+            dispatch(SetStatusAC('succeeded'))
+        })
+        .catch((error) => {
+            alert('Error')
+            dispatch(SetStatusAC('failed'))
+            handleServerNetworkError(error, dispatch)
+        })
 }
 
 
