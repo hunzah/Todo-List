@@ -1,17 +1,17 @@
 import React, {useCallback, useEffect} from 'react';
 import s from './TodoList.module.css'
-import {AddItemForm} from '../AddItemForm/AddItemForm';
-import {EditableSpan} from '../EditableSpan/EditableSpan';
+import {AddItemForm} from '../../AddItemForm/AddItemForm';
+import {EditableSpan} from '../../EditableSpan/EditableSpan';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 import {useDispatch, useSelector} from 'react-redux';
-import {AppRootStateType, ThunkDispatchType} from '../store';
+import {AppRootStateType, ThunkDispatchType} from '../../store';
 import {addTaskTC, deleteTaskTC, fetchTasksTC, updateTaskTC} from './tasks-reducer';
 import {v1} from 'uuid';
 import {Task} from './Task/Task';
 import {FilterValueType, TodolistDomainType} from './todolist-reducer';
-import {TaskPriorities, TaskStatusType, TaskType} from '../api/todolistsAPI';
+import {TaskPriorities, TaskStatusType, TaskType} from '../../api/todolistsAPI';
 import {Navigate} from 'react-router-dom';
 
 

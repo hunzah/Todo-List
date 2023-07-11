@@ -1,4 +1,4 @@
-import {TasksStateType} from '../App';
+import {TasksStateType} from '../../App';
 import {AddTodoActionType, RemoveTodoActionType, SetTodoACType} from './todolist-reducer';
 import {
     TaskPriorities,
@@ -7,11 +7,11 @@ import {
     todoListsAPI,
     TodoListType,
     UpdateTaskModelType
-} from '../api/todolistsAPI';
+} from '../../api/todolistsAPI';
 import {Dispatch} from 'redux';
-import {AppActionTypes, AppRootStateType, AppThunk} from '../store';
-import {SetErrorAC, SetErrorACType, SetStatusAC} from '../AppWithRedux/app.reducer';
-import {handleServerAppError, handleServerNetworkError} from '../utils/ErrorUtils';
+import {AppActionTypes, AppRootStateType, AppThunk} from '../../store';
+import {SetErrorAC, SetErrorACType, SetStatusAC} from '../../AppWithRedux/app.reducer';
+import {handleServerAppError, handleServerNetworkError} from '../../utils/ErrorUtils';
 
 export type Action1Type = {
     type: 'REMOVE-TASK'

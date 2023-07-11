@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import s from './App.module.css';
-import TodoList from './TodoList/TodoList';
+import TodoList from './TodoList/Todo/TodoList';
 import {v1} from 'uuid';
 import {AddItemForm} from './AddItemForm/AddItemForm';
 import Typography from '@mui/material/Typography';
@@ -12,7 +12,7 @@ import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
 import MenuIcon from '@mui/icons-material/Menu';
-import {FilterValueType, TodolistDomainType} from './TodoList/todolist-reducer';
+import {FilterValueType, TodolistDomainType} from './TodoList/Todo/todolist-reducer';
 import {TaskPriorities, TaskStatusType, TaskType} from './api/todolistsAPI';
 import {BrowserRouter, Route} from 'react-router-dom';
 import {Login} from './Features/Login/Login';

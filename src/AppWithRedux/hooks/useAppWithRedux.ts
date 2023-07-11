@@ -8,7 +8,7 @@ import {
     FilterValueType,
     removeTodoTC,
     TodolistDomainType
-} from '../../TodoList/todolist-reducer';
+} from '../../TodoList/Todo/todolist-reducer';
 
 export const useAppWithRedux = () => {
 

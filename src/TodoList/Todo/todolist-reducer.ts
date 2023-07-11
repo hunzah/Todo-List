@@ -1,8 +1,8 @@
 import {v1} from 'uuid';
-import {todoListsAPI, TodoListType} from '../api/todolistsAPI';
-import {AppThunk} from '../store';
-import {RequestStatusType, SetStatusAC} from '../AppWithRedux/app.reducer';
-import {handleServerAppError, handleServerNetworkError} from '../utils/ErrorUtils';
+import {todoListsAPI, TodoListType} from '../../api/todolistsAPI';
+import {AppThunk} from '../../store';
+import {RequestStatusType, SetStatusAC} from '../../AppWithRedux/app.reducer';
+import {handleServerAppError, handleServerNetworkError} from '../../utils/ErrorUtils';
 
 
 export type TodolistDomainType = TodoListType & {

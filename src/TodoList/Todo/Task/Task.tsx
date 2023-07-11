@@ -1,10 +1,10 @@
 import React, {useCallback} from 'react';
 import s from '../TodoList.module.css';
-import {SuperCheckBox} from '../../SuperCheckBox/SuperCheckBox';
-import {EditableSpan} from '../../EditableSpan/EditableSpan';
+import {SuperCheckBox} from '../../../SuperCheckBox/SuperCheckBox';
+import {EditableSpan} from '../../../EditableSpan/EditableSpan';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
-import {TaskStatusType, TaskType} from '../../api/todolistsAPI';
+import {TaskStatusType, TaskType} from '../../../api/todolistsAPI';
 
 
 type TaskPropsType = {

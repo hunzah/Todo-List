@@ -1,7 +1,7 @@
 import {Meta} from '@storybook/react';
 import {Task} from './Task';
 import {action} from '@storybook/addon-actions';
-import {TaskPriorities, TaskStatusType} from '../../api/todolistsAPI';
+import {TaskPriorities, TaskStatusType} from '../../../api/todolistsAPI';
 
 const meta: Meta = {
     title: 'Task Component',
