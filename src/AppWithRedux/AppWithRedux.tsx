@@ -19,7 +19,7 @@ import {AppRootStateType, ThunkDispatchType} from '../store';
 import LinearProgress from '@mui/material/LinearProgress';
 import {RequestStatusType, SetIsInitializedTC} from './app.reducer';
 import {ErrorSnackbar} from '../components/ErrorSnackbar/ErrorSnackbar';
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';
 import {Login} from '../Features/Login/Login';
 import {CircularProgress} from '@mui/material';
 
@@ -41,8 +41,9 @@ function AppWithRedux({demo}: PropsType) {
     } = useAppWithRedux()
 
     const dispatch: ThunkDispatchType = useDispatch();
+    const isAuth = useSelector<AppRootStateType>(state => state.logIn.isAuth)
     useEffect(() => {
-        if (demo) {
+        if (demo || !isAuth) {
             return
         }
         dispatch(fetchTodoListsTC())
@@ -57,6 +58,9 @@ function AppWithRedux({demo}: PropsType) {
 
     if (!isInitialized) {
         return <CircularProgress style={{width: '5%', position: 'fixed', top: '50%', right: '50%'}}/>
+    }
+    if (!isAuth) {
+        return <Navigate to={'/login'}/>
     }
 
     return (

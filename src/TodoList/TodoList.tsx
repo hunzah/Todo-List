@@ -27,7 +27,7 @@ type TodoListPropsType = {
 const TodoList = React.memo(({demo, ...props}: TodoListPropsType) => {
     const dispatch: ThunkDispatchType = useDispatch()
     const tasksObj = useSelector<AppRootStateType, TaskType[]>((state => state.tasks[props.todolist.id]))
-    const isAuth = useSelector<AppRootStateType>(state => state.logIn.isAuth)
+
     useEffect(() => {
         if (demo) {
             return
@@ -86,10 +86,9 @@ const TodoList = React.memo(({demo, ...props}: TodoListPropsType) => {
     if (props.todolist.filter === 'active') {
         tasksForTodoList = tasksForTodoList?.filter(t => t.status === TaskStatusType.InProgress || t.status === TaskStatusType.New)
     }
+    debugger
 
-    if (!isAuth) {
-        return <Navigate to={'/login'}/>
-    }
+
     return (
         <div className={s.todolist}>
             <div className={s.closeButtonAndTitle}>
