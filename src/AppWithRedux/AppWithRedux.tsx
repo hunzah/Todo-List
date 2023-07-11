@@ -20,7 +20,7 @@ import {TodoListsWrap} from '../TodoList/TodolistsWrap';
 import Grid from '@mui/material/Grid';
 import {AddItemForm} from '../AddItemForm/AddItemForm';
 import {useAppWithRedux} from './hooks/useAppWithRedux';
-import {logOutAC, logOutTC} from '../Features/Login/login-reducer';
+import {logOutTC} from '../Features/Login/login-reducer';
 
 
 export type TasksStateType = {
@@ -52,11 +52,13 @@ function AppWithRedux({demo}: PropsType) {
     }
 
 
+
     return (
 
         <div className={s.App}>
             <ErrorSnackbar/>
             <AppBar position="static">
+                 {/*@ts-ignore*/}
                 <Toolbar>
                     <IconButton
                         size="large"
@@ -71,20 +73,20 @@ function AppWithRedux({demo}: PropsType) {
                         News
                     </Typography>
                     {isAuth &&
-                    <Button variant='outlined' onClick={()=>dispatch(logOutTC())} color="inherit">Log out</Button>}
+                        <Button variant="outlined" onClick={() => dispatch(logOutTC())} color="inherit">Log
+                            out</Button>}
                 </Toolbar>
             </AppBar>
             {status === 'loading' && <LinearProgress/>}
             <Container fixed>
-                <Grid container style={{padding: '20px'}}>
-                    <AddItemForm addItem={addTodoList} disabled={status === 'loading'}/>
-                </Grid>
-                <Routes>
-                    <Route path="/login" element={<Login/>}/>
-                    <Route path="/" element={
-                        <TodoListsWrap demo={demo}/>
-                    }/>
-                </Routes>
+
+                    <Routes>
+                        <Route path="/login" element={<Login/>}/>
+                        <Route path="/" element={
+                            <TodoListsWrap demo={demo}/>
+                        }/>
+                    </Routes>
+
             </Container>
         </div>
 

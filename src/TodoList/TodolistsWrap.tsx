@@ -7,6 +7,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import {AppRootStateType, ThunkDispatchType} from '../store';
 import {fetchTodoListsTC} from './Todo/todolist-reducer';
 import {Navigate} from 'react-router-dom';
+import {AddItemForm} from '../AddItemForm/AddItemForm';
+import {RequestStatusType} from '../AppWithRedux/app.reducer';
 
 type PropsType = {
     demo: boolean
@@ -14,6 +16,7 @@ type PropsType = {
 
 export const TodoListsWrap = ({demo}: PropsType) => {
     const {
+        addTodoList,
         todoLists,
         changeFilter,
         removeTodoList,
@@ -24,6 +27,7 @@ export const TodoListsWrap = ({demo}: PropsType) => {
 
     const isAuth = useSelector<AppRootStateType>(state => state.logIn.isAuth)
 
+    const status = useSelector<AppRootStateType, RequestStatusType>(state => state.app.status)
     useEffect(() => {
         if (demo) {
             return
@@ -35,27 +39,29 @@ export const TodoListsWrap = ({demo}: PropsType) => {
     if (!isAuth) {
         return <Navigate to={'/login'}/>
     }
+
     return (
         <>
-            <div> {/* или <React.Fragment> */}
-                <Grid container spacing={3}>
-                    {todoLists.map((tl) => {
-                        return (
-                            <Grid item key={tl.id}>
-                                <Paper style={{ padding: "15px" }}>
-                                    <TodoList
-                                        todolist={tl}
-                                        changeFilter={changeFilter}
-                                        removeTodoList={removeTodoList}
-                                        changeTodoListTitle={changeTodoListTitle}
-                                        demo={demo}
-                                    />
-                                </Paper>
-                            </Grid>
-                        );
-                    })}
-                </Grid>
-            </div> {/* или </React.Fragment> */}
+            <Grid container style={{padding: '20px'}}>
+                <AddItemForm addItem={addTodoList} disabled={status === 'loading'}/>
+            </Grid>
+            <Grid container spacing={3}>
+                {todoLists.map((tl) => {
+                    return (
+                        <Grid item key={tl.id}>
+                            <Paper style={{padding: '15px'}}>
+                                <TodoList
+                                    todolist={tl}
+                                    changeFilter={changeFilter}
+                                    removeTodoList={removeTodoList}
+                                    changeTodoListTitle={changeTodoListTitle}
+                                    demo={demo}
+                                />
+                            </Paper>
+                        </Grid>
+                    )
+                })}
+            </Grid>
         </>
-    );
+    )
 }
