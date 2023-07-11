@@ -43,7 +43,7 @@ function AppWithRedux({demo}: PropsType) {
     const dispatch: ThunkDispatchType = useDispatch();
     const isAuth = useSelector<AppRootStateType>(state => state.logIn.isAuth)
     useEffect(() => {
-        if (demo || !isAuth) {
+        if (demo) {
             return
         }
         dispatch(fetchTodoListsTC())
@@ -59,12 +59,13 @@ function AppWithRedux({demo}: PropsType) {
     if (!isInitialized) {
         return <CircularProgress style={{width: '5%', position: 'fixed', top: '50%', right: '50%'}}/>
     }
+
     if (!isAuth) {
         return <Navigate to={'/login'}/>
     }
 
     return (
-        <BrowserRouter>
+        // <BrowserRouter>
             <div className={s.App}>
                 <ErrorSnackbar/>
                 <AppBar position="static">
@@ -117,7 +118,7 @@ function AppWithRedux({demo}: PropsType) {
                     </Routes>
                 </Container>
             </div>
-        </BrowserRouter>
+        // </BrowserRouter>
     );
 }
 

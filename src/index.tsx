@@ -13,11 +13,11 @@ const root = ReactDOM.createRoot(
 
 root.render(
     <Provider store={store}>
-
+        <BrowserRouter>
             {/*<App/>*/}
             {/*<AppWithReducers/>*/}
             <AppWithRedux demo={false}/>
-
+        </BrowserRouter>
     </Provider>
 );
 

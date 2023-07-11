@@ -86,7 +86,6 @@ const TodoList = React.memo(({demo, ...props}: TodoListPropsType) => {
     if (props.todolist.filter === 'active') {
         tasksForTodoList = tasksForTodoList?.filter(t => t.status === TaskStatusType.InProgress || t.status === TaskStatusType.New)
     }
-    debugger
 
 
     return (
