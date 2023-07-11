@@ -35,26 +35,27 @@ export const TodoListsWrap = ({demo}: PropsType) => {
     if (!isAuth) {
         return <Navigate to={'/login'}/>
     }
-
     return (
         <>
-            <Grid container spacing={3}>
-                {todoLists.map((tl) => {
-                    return (
-                        <Grid item key={tl.id}>
-                            <Paper style={{padding: '15px'}}>
-                                <TodoList
-                                    todolist={tl}
-                                    changeFilter={changeFilter}
-                                    removeTodoList={removeTodoList}
-                                    changeTodoListTitle={changeTodoListTitle}
-                                    demo={demo}
-                                />
-                            </Paper>
-                        </Grid>
-                    )
-                })}
-            </Grid>
+            <div> {/* или <React.Fragment> */}
+                <Grid container spacing={3}>
+                    {todoLists.map((tl) => {
+                        return (
+                            <Grid item key={tl.id}>
+                                <Paper style={{ padding: "15px" }}>
+                                    <TodoList
+                                        todolist={tl}
+                                        changeFilter={changeFilter}
+                                        removeTodoList={removeTodoList}
+                                        changeTodoListTitle={changeTodoListTitle}
+                                        demo={demo}
+                                    />
+                                </Paper>
+                            </Grid>
+                        );
+                    })}
+                </Grid>
+            </div> {/* или </React.Fragment> */}
         </>
-    )
+    );
 }

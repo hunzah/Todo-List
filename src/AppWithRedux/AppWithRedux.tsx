@@ -71,9 +71,8 @@ function AppWithRedux({demo}: PropsType) {
                         News
                     </Typography>
                     {isAuth &&
-                    <Button onClick={()=>dispatch(logOutTC())} color="inherit">Log out</Button>}
+                    <Button variant='outlined' onClick={()=>dispatch(logOutTC())} color="inherit">Log out</Button>}
                 </Toolbar>
-
             </AppBar>
             {status === 'loading' && <LinearProgress/>}
             <Container fixed>

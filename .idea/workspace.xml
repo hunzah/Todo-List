@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="code refactoring">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Features/Login/login-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Features/Login/login-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,14 +232,7 @@
       <workItem from="1688877333574" duration="420000" />
       <workItem from="1688976308017" duration="5905000" />
       <workItem from="1688987513072" duration="9786000" />
-      <workItem from="1689058359302" duration="20367000" />
-    </task>
-    <task id="LOCAL-00054" summary="code refactoring">
-      <created>1687510506184</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1687510506184</updated>
+      <workItem from="1689058359302" duration="20712000" />
     </task>
     <task id="LOCAL-00055" summary="code refactoring">
       <created>1687515634513</created>
@@ -579,7 +570,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689108400914</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="code refactoring">
+      <created>1689108989083</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1689108989083</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
