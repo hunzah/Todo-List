@@ -14,7 +14,7 @@ const initialState: loginParamsType = {
 
 type LogInACType = {
     type: 'login/LOG-IN',
-    params: loginParamsType
+    isAuth: boolean
 }
 
 
@@ -25,11 +25,11 @@ export const loginReducer = (state: loginParamsType = initialState, action: LogI
     switch (action.type) {
         case 'login/LOG-IN':
             return {
-                ...state, ...action.params, isAuth: true
+                ...state, isAuth: action.isAuth,
             }
         // case 'login/LOG-OUT':
         //     return {
-        //         ...state, ...action.params, isAuth: false
+        //         ...state, ...action.params, action.isAuth,
         //     }
         default:
             return state
@@ -38,8 +38,8 @@ export const loginReducer = (state: loginParamsType = initialState, action: LogI
 }
 
 
-export const logInAC = (params: loginParamsType): LogInACType => {
-    return {type: 'login/LOG-IN', params: params} as const
+export const logInAC = (isAuth: boolean): LogInACType => {
+    return {type: 'login/LOG-IN', isAuth: isAuth} as const
 }
 export const logInTC = (params: loginParamsType): AppThunk => (dispatch) => {
     dispatch(SetStatusAC('loading'))
@@ -47,8 +47,8 @@ export const logInTC = (params: loginParamsType): AppThunk => (dispatch) => {
         .then((res) => {
             if (res.data.resultCode === 0) {
                 dispatch(SetStatusAC('succeeded'))
-                dispatch(logInAC(params))
-                console.log("Login Successful")
+                dispatch(logInAC(true))
+                console.log('Login Successful')
             } else {
                 handleServerAppError(res.data, dispatch)
             }

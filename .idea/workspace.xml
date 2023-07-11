@@ -3,9 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="code refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppWithRedux/app.reducer.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux/app.reducer.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppWithRedux/app.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux/app.reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Features/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Features/Login/Login.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Features/Login/login-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Features/Login/login-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/todolistsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolistsAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stories/ReduxStoreProviderDecorator.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/stories/ReduxStoreProviderDecorator.stories.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,14 +240,7 @@
       <workItem from="1688877333574" duration="420000" />
       <workItem from="1688976308017" duration="5905000" />
       <workItem from="1688987513072" duration="9786000" />
-      <workItem from="1689058359302" duration="8019000" />
-    </task>
-    <task id="LOCAL-00049" summary="commit">
-      <created>1687457831301</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1687457831301</updated>
+      <workItem from="1689058359302" duration="17344000" />
     </task>
     <task id="LOCAL-00050" summary="commit">
       <created>1687504454654</created>
@@ -580,7 +578,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689066530150</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="code refactoring">
+      <created>1689074111893</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1689074111893</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

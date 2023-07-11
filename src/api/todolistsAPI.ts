@@ -114,13 +114,14 @@ export type loginParamsType = {
 }
 
 export const authAPI = {
+    isAuth() {
+        return instance.get<ResponseType<{ id: number, email: string, login: string }>>('/auth/me')
+    },
     logIn(params: loginParamsType) {
         return instance.post<ResponseType<{ userId?: number }>>(`/auth/login`, params)
     },
     logOut() {
         return instance.delete<ResponseType<{ userId?: number }>>(`/auth/login`)
     },
-
-
 }
 

@@ -12,6 +12,7 @@ import {v1} from 'uuid';
 import {Task} from './Task/Task';
 import {FilterValueType, TodolistDomainType} from './todolist-reducer';
 import {TaskPriorities, TaskStatusType, TaskType} from '../api/todolistsAPI';
+import {Navigate} from 'react-router-dom';
 
 
 type TodoListPropsType = {
@@ -26,7 +27,7 @@ type TodoListPropsType = {
 const TodoList = React.memo(({demo, ...props}: TodoListPropsType) => {
     const dispatch: ThunkDispatchType = useDispatch()
     const tasksObj = useSelector<AppRootStateType, TaskType[]>((state => state.tasks[props.todolist.id]))
-
+    const isAuth = useSelector<AppRootStateType>(state => state.logIn.isAuth)
     useEffect(() => {
         if (demo) {
             return
@@ -86,9 +87,11 @@ const TodoList = React.memo(({demo, ...props}: TodoListPropsType) => {
         tasksForTodoList = tasksForTodoList?.filter(t => t.status === TaskStatusType.InProgress || t.status === TaskStatusType.New)
     }
 
+    if (!isAuth) {
+        return <Navigate to={'/login'}/>
+    }
     return (
         <div className={s.todolist}>
-
             <div className={s.closeButtonAndTitle}>
                 <h3><EditableSpan title={props.todolist.title} onChangeTitleHandler={changeTodoListTitle}/></h3>
                 <IconButton onClick={removeTodoListHandler} disabled={props.todolist.entityStatus === 'loading'}>

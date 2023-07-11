@@ -17,10 +17,11 @@ import {fetchTodoListsTC} from '../TodoList/todolist-reducer';
 import {useDispatch, useSelector} from 'react-redux';
 import {AppRootStateType, ThunkDispatchType} from '../store';
 import LinearProgress from '@mui/material/LinearProgress';
-import {RequestStatusType} from './app.reducer';
+import {RequestStatusType, SetIsInitializedTC} from './app.reducer';
 import {ErrorSnackbar} from '../components/ErrorSnackbar/ErrorSnackbar';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import {Login} from '../Features/Login/Login';
+import {CircularProgress} from '@mui/material';
 
 
 export type TasksStateType = {
@@ -48,11 +49,18 @@ function AppWithRedux({demo}: PropsType) {
     }, [dispatch])
 
     const status = useSelector<AppRootStateType, RequestStatusType>(state => state.app.status)
+    const isInitialized = useSelector<AppRootStateType, boolean>(state => state.app.isInitialized)
 
+    useEffect(() => {
+        dispatch(SetIsInitializedTC())
+    }, [])
+
+    if (!isInitialized) {
+        return <CircularProgress style={{width: '5%', position: 'fixed', top: '50%', right: '50%'}}/>
+    }
 
     return (
         <BrowserRouter>
-
             <div className={s.App}>
                 <ErrorSnackbar/>
                 <AppBar position="static">
@@ -77,11 +85,11 @@ function AppWithRedux({demo}: PropsType) {
                 <Container fixed>
 
                     <Routes>
-                        <Route path="/login" element={<Login />} />
+                        <Route path="/login" element={<Login/>}/>
                         <Route path="/" element={
                             <>
                                 <Grid container style={{padding: '20px'}}>
-                                    <AddItemForm addItem={addTodoList} disabled={status === 'loading'} />
+                                    <AddItemForm addItem={addTodoList} disabled={status === 'loading'}/>
                                 </Grid>
                                 <Grid container spacing={3}>
                                     {todoLists.map((tl) => {
@@ -101,12 +109,10 @@ function AppWithRedux({demo}: PropsType) {
                                     })}
                                 </Grid>
                             </>
-                        } />
+                        }/>
                     </Routes>
                 </Container>
-
             </div>
-
         </BrowserRouter>
     );
 }

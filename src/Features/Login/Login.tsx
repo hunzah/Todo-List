@@ -15,7 +15,8 @@ import { Navigate  } from 'react-router-dom';
 
 export const Login = () => {
     const dispatch: ThunkDispatchType = useDispatch()
-    const isAuth = useSelector<AppRootStateType, boolean>(state => state.logIn.isAuth)
+    const isAuth = useSelector<AppRootStateType>(state => state.logIn.isAuth)
+
 
     const formik = useFormik({
         validate: (values) => {

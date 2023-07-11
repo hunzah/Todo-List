@@ -4,6 +4,7 @@ import './index.module.css';
 import AppWithRedux from './AppWithRedux/AppWithRedux';
 import {store} from './store';
 import {Provider} from 'react-redux';
+import {BrowserRouter} from 'react-router-dom';
 
 
 const root = ReactDOM.createRoot(
@@ -12,9 +13,11 @@ const root = ReactDOM.createRoot(
 
 root.render(
     <Provider store={store}>
-        {/*<App/>*/}
-        {/*<AppWithReducers/>*/}
-        <AppWithRedux demo={false}/>
+
+            {/*<App/>*/}
+            {/*<AppWithReducers/>*/}
+            <AppWithRedux demo={false}/>
+
     </Provider>
 );
 
