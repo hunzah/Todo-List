@@ -20,6 +20,7 @@ import {TodoListsWrap} from '../TodoList/TodolistsWrap';
 import Grid from '@mui/material/Grid';
 import {AddItemForm} from '../AddItemForm/AddItemForm';
 import {useAppWithRedux} from './hooks/useAppWithRedux';
+import {logOutAC, logOutTC} from '../Features/Login/login-reducer';
 
 
 export type TasksStateType = {
@@ -39,6 +40,8 @@ function AppWithRedux({demo}: PropsType) {
     const status = useSelector<AppRootStateType, RequestStatusType>(state => state.app.status)
 
     const isInitialized = useSelector<AppRootStateType, boolean>(state => state.app.isInitialized)
+
+    const isAuth = useSelector<AppRootStateType>(state => state.logIn.isAuth)
 
     useEffect(() => {
         dispatch(SetIsInitializedTC())
@@ -67,7 +70,8 @@ function AppWithRedux({demo}: PropsType) {
                     <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
                         News
                     </Typography>
-                    <Button color="inherit">Login</Button>
+                    {isAuth &&
+                    <Button onClick={()=>dispatch(logOutTC())} color="inherit">Log out</Button>}
                 </Toolbar>
 
             </AppBar>
@@ -79,28 +83,6 @@ function AppWithRedux({demo}: PropsType) {
                 <Routes>
                     <Route path="/login" element={<Login/>}/>
                     <Route path="/" element={
-                        // <>
-                        //     <Grid container style={{padding: '20px'}}>
-                        //         <AddItemForm addItem={addTodoList} disabled={status === 'loading'}/>
-                        //     </Grid>
-                        //     <Grid container spacing={3}>
-                        //         {todoLists.map((tl) => {
-                        //             return (
-                        //                 <Grid item key={tl.id}>
-                        //                     <Paper style={{padding: '15px'}}>
-                        //                         <TodoList
-                        //                             todolist={tl}
-                        //                             changeFilter={changeFilter}
-                        //                             removeTodoList={removeTodoList}
-                        //                             changeTodoListTitle={changeTodoListTitle}
-                        //                             demo={demo}
-                        //                         />
-                        //                     </Paper>
-                        //                 </Grid>
-                        //             )
-                        //         })}
-                        //     </Grid>
-                        // </>
                         <TodoListsWrap demo={demo}/>
                     }/>
                 </Routes>
