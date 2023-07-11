@@ -120,7 +120,6 @@ const TodoList = React.memo(({demo, ...props}: TodoListPropsType) => {
                 <Button
                     variant={props.todolist.filter === 'completed' ? 'contained' : 'text'}
                     onClick={onClickCompletedHandler}
-
                 >Completed
                 </Button>
 

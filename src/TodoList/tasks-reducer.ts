@@ -173,9 +173,11 @@ export const deleteTaskTC = (id: string, todoListId: string): AppThunk => (dispa
     dispatch(SetStatusAC('loading'))
     todoListsAPI.deleteTask(todoListId, id)
         .then(res => {
-            if (res.status === 0) {
+            if (res.data.resultCode === 0) {
                 dispatch(removeTaskAC(id, todoListId));
                 dispatch(SetStatusAC('succeeded'))
+            } else{
+                handleServerAppError(res.data, dispatch)
             }
         })
         .catch((error) => {
@@ -201,7 +203,6 @@ export const updateTaskTC = (id: string, todoListId: string, domainModel: Update
             console.warn('task not found')
             return
         }
-        debugger
         const updatedTask: UpdateTaskModelType = {
             title: task.title,
             description: task.description,

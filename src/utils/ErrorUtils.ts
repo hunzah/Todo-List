@@ -2,11 +2,11 @@ import {SetErrorAC, SetErrorACType, SetStatusAC, SetStatusACType} from '../AppWi
 import {ResponseType} from '../api/todolistsAPI';
 import {Dispatch} from 'redux';
 
-export const handleServerAppError = (res: ResponseType<any>, dispatch: Dispatch<SetErrorACType | SetStatusACType>) => {
-    if (res.data.messages.length) {
-        dispatch(SetErrorAC(res.data.messages[0]))
+export const handleServerAppError = (res:  ResponseType<any> , dispatch: Dispatch<SetErrorACType | SetStatusACType>) => {
+    if (res.messages.length) {
+        dispatch(SetErrorAC(res.messages[0]))
     } else {
-        dispatch(SetErrorAC('aaaaaaaaaa'))
+        dispatch(SetErrorAC('something went wrong'))
     }
     dispatch(SetStatusAC('failed'))
 }

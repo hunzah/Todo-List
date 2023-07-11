@@ -152,7 +152,6 @@ export const addTodoTC = (title: string): AppThunk => (dispatch) => {
     }).catch((error) => {
         handleServerNetworkError(error, dispatch)
     })
-
 }
 export const changeTodoTitleTC = (id: string, title: string): AppThunk => (dispatch) => {
     dispatch(SetStatusAC('loading'))
@@ -167,6 +166,7 @@ export const changeTodoTitleTC = (id: string, title: string): AppThunk => (dispa
         }
     }).catch((error) => {
         handleServerNetworkError(error, dispatch)
+        dispatch(SetStatusAC('failed'))
     })
 
 }

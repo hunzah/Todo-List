@@ -86,7 +86,7 @@ export const todoListsAPI = {
         return instance.put<ResponseType<{}>>(`todo-lists/${todolistId}`, {title: title})
     },
     deleteTodoList(todolistId: string) {
-        return instance.delete<ResponseType<any>>(`todo-lists/${todolistId}`,
+        return instance.delete<ResponseType<{}>>(`todo-lists/${todolistId}`,
         )
     },
 
@@ -97,7 +97,7 @@ export const todoListsAPI = {
         return instance.post<ResponseType<{ item: TaskType }>>(`todo-lists/${todolistId}/tasks`, {title: title})
     },
     deleteTask(todolistId: string, taskId: string) {
-        return instance.delete<TaskResponseType>(`todo-lists/${todolistId}/tasks/${taskId}`)
+        return instance.delete<ResponseType<{}>>(`todo-lists/${todolistId}/tasks/${taskId}`)
     },
     putTask(todolistId: string, taskId: string, updatedTask: UpdateTaskModelType) {
         return instance.put<ResponseType<{ item: TaskType }>>(`todo-lists/${todolistId}/tasks/${taskId}`, updatedTask)
@@ -110,11 +110,12 @@ export type loginParamsType = {
     password: string
     rememberMe: boolean
     captcha?: string
+    isAuth: boolean
 }
 
 export const authAPI = {
     logIn(params: loginParamsType) {
-        return instance.post<ResponseType<{ userId?: number }>>(`/auth/login`)
+        return instance.post<ResponseType<{ userId?: number }>>(`/auth/login`, params)
     },
     logOut() {
         return instance.delete<ResponseType<{ userId?: number }>>(`/auth/login`)

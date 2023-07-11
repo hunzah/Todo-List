@@ -3,9 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="code refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Features/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Features/Login/Login.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Features/Login/login-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Features/Login/login-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/TodoList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/tasks-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/tasks-reducer.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/tasks-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/todolistsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolistsAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ErrorSnackbar/ErrorSnackbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ErrorSnackbar/ErrorSnackbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/ErrorUtils.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ErrorUtils.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,22 +31,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Work/todolist/src/Features/Login",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "nodejs.jest.jest_package": "D:/Work/todolist/node_modules/react-scripts",
-    "nodejs_package_manager_path": "yarn",
-    "ts.external.directory.path": "D:\\Work\\todolist\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Work/todolist/src/Features/Login&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;D:/Work/todolist/node_modules/react-scripts&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Work\\todolist\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Work\todolist\src\Features\Login" />
@@ -61,7 +66,20 @@
       <recent name="D:\Work\todolist\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.Todo list reducer tests">
+  <component name="RunManager" selected="Jest.task reducer tests">
+    <configuration name="Task should be deleted" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/TodoList/tasks-reducer.test.ts" />
+      <test-names>
+        <test-name value="Task should be deleted" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="Todo list reducer tests" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -88,16 +106,16 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="myau" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="task reducer tests" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/AppWithRedux/app.reducer.test.tsx" />
+      <test-file value="$PROJECT_DIR$/src/TodoList/tasks-reducer.test.ts" />
       <test-names>
-        <test-name value="myau" />
+        <test-name value="task reducer tests" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -111,23 +129,13 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="storybook" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="storybook" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.task reducer tests" />
+        <item itemvalue="Jest.Task should be deleted" />
         <item itemvalue="npm.start" />
         <item itemvalue="Jest.Todo list reducer tests" />
         <item itemvalue="Jest.Todo list should be disabled when the status is &quot;loading&quot;" />
-        <item itemvalue="npm.storybook" />
-        <item itemvalue="Jest.myau" />
       </list>
     </recent_temporary>
   </component>
@@ -232,13 +240,7 @@
       <workItem from="1688877333574" duration="420000" />
       <workItem from="1688976308017" duration="5905000" />
       <workItem from="1688987513072" duration="9786000" />
-    </task>
-    <task id="LOCAL-00047" summary="add custom hooks">
-      <created>1687093797061</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1687093797061</updated>
+      <workItem from="1689058359302" duration="5712000" />
     </task>
     <task id="LOCAL-00048" summary="commit">
       <created>1687457807176</created>
@@ -576,7 +578,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688999238144</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="code refactoring">
+      <created>1689058390241</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1689058390241</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
