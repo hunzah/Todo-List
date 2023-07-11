@@ -110,7 +110,7 @@ export type loginParamsType = {
     password: string
     rememberMe: boolean
     captcha?: string
-    isAuth: boolean
+    isAuth?: boolean
 }
 
 export const authAPI = {

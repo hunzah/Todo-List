@@ -27,16 +27,15 @@ export const loginReducer = (state: loginParamsType = initialState, action: LogI
             return {
                 ...state, ...action.params, isAuth: true
             }
-            // case 'login/LOG-OUT':
-            // return {
-            //     ...state, ...action.params, isAuth: false
-            // }
+        // case 'login/LOG-OUT':
+        //     return {
+        //         ...state, ...action.params, isAuth: false
+        //     }
         default:
             return state
 
     }
 }
-
 
 
 export const logInAC = (params: loginParamsType): LogInACType => {
@@ -49,7 +48,7 @@ export const logInTC = (params: loginParamsType): AppThunk => (dispatch) => {
             if (res.data.resultCode === 0) {
                 dispatch(SetStatusAC('succeeded'))
                 dispatch(logInAC(params))
-                alert('success')
+                console.log("Login Successful")
             } else {
                 handleServerAppError(res.data, dispatch)
             }

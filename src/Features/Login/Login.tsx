@@ -8,12 +8,14 @@ import FormLabel from '@mui/material/FormLabel';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import {useFormik} from 'formik';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {logInTC} from './login-reducer';
-import {ThunkDispatchType} from '../../store';
+import {AppRootStateType, ThunkDispatchType} from '../../store';
+import { Navigate  } from 'react-router-dom';
 
 export const Login = () => {
     const dispatch: ThunkDispatchType = useDispatch()
+    const isAuth = useSelector<AppRootStateType, boolean>(state => state.logIn.isAuth)
 
     const formik = useFormik({
         validate: (values) => {
@@ -37,8 +39,9 @@ export const Login = () => {
         },
     })
 
-
-
+    if (isAuth) {
+    return <Navigate  to={'/'}/>
+    }
     return <Grid container justifyContent={'center'}>
         <Grid item justifyContent={'center'}>
             <form onSubmit={formik.handleSubmit}>

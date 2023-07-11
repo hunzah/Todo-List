@@ -3,14 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="code refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Features/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Features/Login/Login.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Features/Login/login-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Features/Login/login-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/TodoList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList/tasks-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/tasks-reducer.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/tasks-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/todolist-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/todolistsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolistsAPI.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ErrorSnackbar/ErrorSnackbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ErrorSnackbar/ErrorSnackbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/ErrorUtils.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ErrorUtils.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,14 +235,7 @@
       <workItem from="1688877333574" duration="420000" />
       <workItem from="1688976308017" duration="5905000" />
       <workItem from="1688987513072" duration="9786000" />
-      <workItem from="1689058359302" duration="5712000" />
-    </task>
-    <task id="LOCAL-00048" summary="commit">
-      <created>1687457807176</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1687457807176</updated>
+      <workItem from="1689058359302" duration="8019000" />
     </task>
     <task id="LOCAL-00049" summary="commit">
       <created>1687457831301</created>
@@ -585,7 +573,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689058390241</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="code refactoring">
+      <created>1689066530150</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1689066530150</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
