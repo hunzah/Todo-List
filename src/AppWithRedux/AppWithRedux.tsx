@@ -47,6 +47,7 @@ function AppWithRedux({demo}: PropsType) {
         dispatch(SetIsInitializedTC())
     }, [])
 
+
     if (!isInitialized) {
         return <CircularProgress style={{width: '5%', position: 'fixed', top: '50%', right: '50%'}}/>
     }
@@ -82,7 +83,7 @@ function AppWithRedux({demo}: PropsType) {
 
                     <Routes>
                         <Route path="/login" element={<Login/>}/>
-                        <Route path="/" element={
+                        <Route path="/Todo-List" element={
                             <TodoListsWrap demo={demo}/>
                         }/>
                     </Routes>
