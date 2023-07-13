@@ -11,6 +11,16 @@
 /*    justify-content: space-between;*/
 /*    padding-left: 30%;*/
 /*}*/
+.closeButtonAndTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 /*.closeButton {*/
 /*    display: flex;*/
@@ -75,3 +85,4 @@
 /*.activeFilter {*/
 /*    background-color: aquamarine;*/
 /*}*/
+

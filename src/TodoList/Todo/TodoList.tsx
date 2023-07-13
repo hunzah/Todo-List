@@ -12,7 +12,6 @@ import {v1} from 'uuid';
 import {Task} from './Task/Task';
 import {FilterValueType, TodolistDomainType} from './todolist-reducer';
 import {TaskPriorities, TaskStatusType, TaskType} from '../../api/todolistsAPI';
-import {Navigate} from 'react-router-dom';
 
 
 type TodoListPropsType = {

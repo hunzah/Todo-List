@@ -34,7 +34,8 @@ export const Task = React.memo((props: TaskPropsType) => {
     }, [props.task.id, props.todoListId])
 
     return (
-        <div className={props.task.status === TaskStatusType.Completed ? s.isDone : ''} key={props.task.id}>
+        <div className={`${s.task} ${props.task.status === TaskStatusType.Completed ? s.isDone : ''}`}
+             key={props.task.id}>
             <div className={s.checkboxTitle}>
                 <SuperCheckBox checked={props.task.status === TaskStatusType.Completed}
                                callback={(isDone) => onChangeCheckBoxHandler(isDone)}/>

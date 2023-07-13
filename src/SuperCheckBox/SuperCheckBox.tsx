@@ -15,7 +15,7 @@ export const SuperCheckBox = (props: PropsType) => {
         <Checkbox
             checked={props.checked}
             onChange={onChangeHandler}
-            color="primary"
+            color="success"
         />
     );
 };
