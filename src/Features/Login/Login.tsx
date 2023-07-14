@@ -16,6 +16,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {logInTC} from './login-reducer';
 import {AppRootStateType, ThunkDispatchType} from '../../store';
 import {Navigate} from 'react-router-dom';
+import s from './Login.module.css'
 
 
 export const Login = () => {
@@ -36,26 +37,32 @@ export const Login = () => {
 
 
     const formik = useFormik({
-        validate: (values) => {
-            if (!values.email) {
-                return {
-                    email: 'email is required',
-                }
-            } else if (!values.password) {
-                return {
-                    password: 'password is required',
-                }
-            }
-        },
         initialValues: {
             email: '',
             password: '',
             rememberMe: false
         },
-        onSubmit: values => {
-            dispatch(logInTC(values));
+        validate: (values) => {
+            if (!values.email) {
+                return {
+                    email: 'Email is required'
+                };
+            } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
+                return {
+                    email: 'Invalid email address'
+                };
+            } else if (!values.password) {
+                return {
+                    password: 'Password is required'
+                };
+            } else {
+                return {};
+            }
         },
-    })
+        onSubmit: (values) => {
+            dispatch(logInTC(values));
+        }
+    });
 
     if (isAuth) {
         return <Navigate to={'/Todo-List'}/>
@@ -77,7 +84,7 @@ export const Login = () => {
                     <FormGroup>
                         <TextField label="Email" margin="normal"
                                    {...formik.getFieldProps('email')}/>
-                        {formik.errors.email ? <div>{formik.errors.email}</div> : null}
+                        {formik.errors.email ? <div className={s.error}>{formik.errors.email}</div> : null}
                         <TextField
                             type={showPassword ? 'text' : 'password'}
                             label="Password"
@@ -97,7 +104,7 @@ export const Login = () => {
                                     </InputAdornment>
                                 ),
                             }}
-                        /> {formik.errors.password ? <div>{formik.errors.password}</div> : null}
+                        /> {formik.errors.password ? <div className={s.error}>{formik.errors.password}</div> : null}
                         <FormControlLabel label={'Remember me'} control={<Checkbox/>}
                                           {...formik.getFieldProps('rememberMe')}
                                           checked={formik.values.rememberMe}/>

@@ -39,6 +39,10 @@ export type SetTodoACType = {
     type: 'SET-TODO'
     todo: TodoListType[]
 }
+export type ClearTodosACType = {
+    type: 'CLEAR-TODO'
+
+}
 type ChangeTodoEntityStatusACType = {
     type: 'CHANGE-TODO-ENTITY-STATUS'
     newStatus: RequestStatusType
@@ -47,7 +51,7 @@ type ChangeTodoEntityStatusACType = {
 
 export type TodoListsActionTypes = RemoveTodoActionType | AddTodoActionType |
     ChangeTodoTitleActionType | ChangeTodoFilterActionType |
-    SetTodoACType | ChangeTodoEntityStatusACType
+    SetTodoACType | ChangeTodoEntityStatusACType | ClearTodosACType
 
 export const todoListId1 = v1()
 export const todoListId2 = v1()
@@ -85,6 +89,7 @@ export const todoListReducer = (state: TodolistDomainType[] = initialState, acti
             });
         case 'SET-TODO':
             return action.todo.map(tl => ({...tl, filter: 'all', entityStatus: 'idle'}));
+            case 'CLEAR-TODO': return []
         default:
             return state
     }
@@ -114,6 +119,9 @@ export const changeTodoEntityStatusAC = (id: string, newStatus: RequestStatusTyp
 
 export const setTodoAC = (todo: TodoListType[]): SetTodoACType => {
     return {type: 'SET-TODO', todo: todo}
+}
+export const clearTodosAC = (): ClearTodosACType => {
+    return {type: 'CLEAR-TODO',}
 }
 
 export const fetchTodoListsTC = (): AppThunk => (dispatch) => {

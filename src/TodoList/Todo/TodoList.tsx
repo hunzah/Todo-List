@@ -27,12 +27,12 @@ const TodoList = React.memo(({demo, ...props}: TodoListPropsType) => {
     const dispatch: ThunkDispatchType = useDispatch()
     const tasksObj = useSelector<AppRootStateType, TaskType[]>((state => state.tasks[props.todolist.id]))
 
-    useEffect(() => {
-        if (demo) {
-            return
-        }
-        dispatch(fetchTasksTC(props.todolist.id))
-    }, [props.todolist.id, dispatch])
+    // useEffect(() => {
+    //     if (demo) {
+    //         return
+    //     }
+    //     dispatch(fetchTasksTC(props.todolist.id))
+    // }, [props.todolist.id, dispatch])
 
 
     // Work With Tasks

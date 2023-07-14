@@ -1,5 +1,5 @@
 import {TasksStateType} from '../../App';
-import {AddTodoActionType, RemoveTodoActionType, SetTodoACType} from './todolist-reducer';
+import {AddTodoActionType, ClearTodosACType, RemoveTodoActionType, SetTodoACType} from './todolist-reducer';
 import {
     TaskPriorities,
     TaskStatusType,
@@ -35,10 +35,13 @@ export type Action5Type = {
     tasks: TaskType[]
     todoListId: string
 }
+export type Action6Type = {
+    type: 'CLEAR-TASKS'
+}
 
 export type TaskActionTypes = Action1Type | Action2Type |
     Action4Type | AddTodoActionType | RemoveTodoActionType |
-    SetTodoACType | Action5Type
+    SetTodoACType | Action5Type | Action6Type
 
 
 const initialState: TasksStateType =
@@ -116,6 +119,9 @@ export const tasksReducer = (state: TasksStateType = initialState, action: TaskA
         case 'SET-TASKS': {
             return {...state, [action.todoListId]: action.tasks}
         }
+        case 'CLEAR-TASKS': {
+            return {}
+        }
         default:
             return state
 
@@ -141,6 +147,9 @@ export const updateTaskAC = (todoListId: string, id: string, model: TaskType): a
 
 export const setTasksAC = (todoListId: string, tasks: TaskType[]): Action5Type => {
     return {type: 'SET-TASKS', todoListId: todoListId, tasks: tasks} as const
+}
+export const clearTasksAC = (): Action6Type => {
+    return {type: 'CLEAR-TASKS',}
 }
 
 export const fetchTasksTC = (todoListId: string): AppThunk => (dispatch) => {

@@ -2,6 +2,8 @@ import {AppThunk} from '../../store';
 import {authAPI, loginParamsType} from '../../api/todolistsAPI';
 import {SetStatusAC} from '../../AppWithRedux/app.reducer';
 import {handleServerAppError, handleServerNetworkError} from '../../utils/ErrorUtils';
+import {clearTasksAC} from '../../TodoList/Todo/tasks-reducer';
+import {clearTodosAC} from '../../TodoList/Todo/todolist-reducer';
 
 
 const initialState: loginParamsType = {
@@ -74,6 +76,9 @@ export const logOutTC = (): AppThunk => (dispatch) => {
             if (res.data.resultCode === 0) {
                 dispatch(SetStatusAC('succeeded'))
                 dispatch(logOutAC(false))
+                dispatch(clearTodosAC())
+                dispatch(clearTasksAC())
+
             } else {
                 handleServerAppError(res.data, dispatch)
             }
