@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ad70047-0bc5-46ac-96c1-8b7743dba7da" name="Changes" comment="code refactoring">
+      <change afterPath="$PROJECT_DIR$/src/assets/images/400.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SuperCheckBox/SuperCheckBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SuperCheckBox/SuperCheckBox.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList/Todo/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/Todo/Task/Task.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList/Todo/TodoList.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/Todo/TodoList.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TodoList/Todo/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/Todo/TodoList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/imgs for background/planet-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppWithRedux/AppWithRedux.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Features/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Features/Login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TodoList/Todo/todolist-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/TodoList/Todo/todolist-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,24 +30,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Work/todolist",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "nodejs.jest.jest_package": "D:/Work/todolist/node_modules/react-scripts",
-    "nodejs_package_manager_path": "yarn",
-    "ts.external.directory.path": "D:\\Work\\todolist\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Work/todolist&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;D:/Work/todolist/node_modules/react-scripts&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Work\\todolist\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Work\todolist\public\imgs for background" />
       <recent name="D:\Work\todolist\src\Features\Login" />
       <recent name="D:\Work\todolist\src\stories" />
       <recent name="D:\Work\todolist\src" />
@@ -55,11 +59,11 @@
       <recent name="D:\Work\todolist\src\EditableSpanPropsType.tsx" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\todolist\src\assets" />
+      <recent name="D:\Work\todolist\src\common" />
       <recent name="D:\Work\todolist\src\TodoList" />
       <recent name="D:\Work\todolist\src\TodoList\Todo" />
       <recent name="D:\Work\todolist\src\TodoList\TodolistsWrap" />
-      <recent name="D:\Work\todolist\src\components" />
-      <recent name="D:\Work\todolist\src\AppWithRedux" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.task reducer tests">
@@ -241,14 +245,11 @@
       <workItem from="1689150869854" duration="813000" />
       <workItem from="1689153096940" duration="4658000" />
       <workItem from="1689247127176" duration="1089000" />
-      <workItem from="1689250669776" duration="608000" />
-    </task>
-    <task id="LOCAL-00062" summary="code refactoring">
-      <created>1688308013816</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1688308013816</updated>
+      <workItem from="1689250669776" duration="1380000" />
+      <workItem from="1689261144144" duration="2154000" />
+      <workItem from="1689266857700" duration="2765000" />
+      <workItem from="1689272597899" duration="2153000" />
+      <workItem from="1689312105910" duration="953000" />
     </task>
     <task id="LOCAL-00063" summary="code refactoring">
       <created>1688311651020</created>
@@ -586,7 +587,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689247510973</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="code refactoring">
+      <created>1689251312796</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1689251312796</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

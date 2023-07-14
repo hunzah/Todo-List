@@ -13,14 +13,12 @@ import {AppRootStateType, ThunkDispatchType} from '../store';
 import LinearProgress from '@mui/material/LinearProgress';
 import {RequestStatusType, SetIsInitializedTC} from './app.reducer';
 import {ErrorSnackbar} from '../components/ErrorSnackbar/ErrorSnackbar';
-import {Route, Routes} from 'react-router-dom';
+import {Navigate, Route, Routes} from 'react-router-dom';
 import {Login} from '../Features/Login/Login';
 import {CircularProgress} from '@mui/material';
 import {TodoListsWrap} from '../TodoList/TodolistsWrap';
-import Grid from '@mui/material/Grid';
-import {AddItemForm} from '../AddItemForm/AddItemForm';
-import {useAppWithRedux} from './hooks/useAppWithRedux';
 import {logOutTC} from '../Features/Login/login-reducer';
+import pageNotFoundPhoto from '../assets/images/400.svg';
 
 
 export type TasksStateType = {
@@ -31,9 +29,6 @@ type PropsType = {
 }
 
 function AppWithRedux({demo}: PropsType) {
-    const {
-        addTodoList,
-    } = useAppWithRedux()
 
     const dispatch: ThunkDispatchType = useDispatch();
 
@@ -53,40 +48,47 @@ function AppWithRedux({demo}: PropsType) {
     }
 
 
-
     return (
 
         <div className={s.App}>
             <ErrorSnackbar/>
             <AppBar position="static">
-                 {/*@ts-ignore*/}
+
                 <Toolbar>
-                    <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="menu"
-                        sx={{mr: 2}}
-                    >
-                        <MenuIcon/>
-                    </IconButton>
-                    <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
-                        News
-                    </Typography>
-                    {isAuth &&
-                        <Button variant="outlined" onClick={() => dispatch(logOutTC())} color="inherit">Log
-                            out</Button>}
+                    <>
+                        <IconButton
+                            size="large"
+                            edge="start"
+                            color="inherit"
+                            aria-label="menu"
+                            sx={{mr: 2}}
+                        >
+                            <MenuIcon/>
+                        </IconButton>
+                        <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
+                            News
+                        </Typography>
+                        {isAuth &&
+                            <Button variant="outlined" onClick={() => dispatch(logOutTC())} color="inherit">Log
+                                out</Button>}
+                    </>
                 </Toolbar>
             </AppBar>
             {status === 'loading' && <LinearProgress/>}
             <Container fixed>
 
-                    <Routes>
-                        <Route path="/login" element={<Login/>}/>
-                        <Route path="/Todo-List" element={
-                            <TodoListsWrap demo={demo}/>
-                        }/>
-                    </Routes>
+                <Routes>
+                    <Route path="/login" element={<Login/>}/>
+                    <Route path="/404"
+                           element={<div className={s.pageNotFound}><img src={pageNotFoundPhoto}/>PAGE NOT FOUND
+                           </div>}/>
+                    <Route path="*" element={<Navigate to="/404"/>}/>
+                    <Route path="/login" element={<Login/>}/>
+
+                    <Route path="/Todo-List" element={
+                        <TodoListsWrap demo={demo}/>
+                    }/>
+                </Routes>
 
             </Container>
         </div>

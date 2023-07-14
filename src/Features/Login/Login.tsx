@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Grid from '@mui/material/Grid';
 import Checkbox from '@mui/material/Checkbox';
 import FormControl from '@mui/material/FormControl';
@@ -7,13 +7,30 @@ import FormGroup from '@mui/material/FormGroup';
 import FormLabel from '@mui/material/FormLabel';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import InputAdornment from '@mui/material/InputAdornment';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import IconButton from '@mui/material/IconButton';
 import {useFormik} from 'formik';
 import {useDispatch, useSelector} from 'react-redux';
 import {logInTC} from './login-reducer';
 import {AppRootStateType, ThunkDispatchType} from '../../store';
-import { Navigate  } from 'react-router-dom';
+import {Navigate} from 'react-router-dom';
+
 
 export const Login = () => {
+
+    //настройка функции 'показать пароль'
+    const [showPassword, setShowPassword] = useState(false);
+    const handleClickShowPassword = () => {
+        setShowPassword(!showPassword);
+    };
+    const handleMouseDownPassword = (event: any) => {
+        event.preventDefault();
+    };
+
+
+// работа с формой
     const dispatch: ThunkDispatchType = useDispatch()
     const isAuth = useSelector<AppRootStateType>(state => state.logIn.isAuth)
 
@@ -41,7 +58,7 @@ export const Login = () => {
     })
 
     if (isAuth) {
-    return <Navigate  to={'/Todo-List'}/>
+        return <Navigate to={'/Todo-List'}/>
     }
     return <Grid container justifyContent={'center'}>
         <Grid item justifyContent={'center'}>
@@ -61,9 +78,25 @@ export const Login = () => {
                         <TextField label="Email" margin="normal"
                                    {...formik.getFieldProps('email')}/>
                         {formik.errors.email ? <div>{formik.errors.email}</div> : null}
-                        <TextField type="password" label="Password"
-                                   margin="normal"
-                                   {...formik.getFieldProps('password')}
+                        <TextField
+                            type={showPassword ? 'text' : 'password'}
+                            label="Password"
+                            margin="normal"
+                            {...formik.getFieldProps('password')}
+                            InputProps={{
+                                endAdornment: (
+                                    <InputAdornment position="end">
+                                        <IconButton
+                                            aria-label="toggle password visibility"
+                                            onClick={handleClickShowPassword}
+                                            onMouseDown={handleMouseDownPassword}
+                                            edge="end"
+                                        >
+                                            {showPassword ? <VisibilityOff/> : <Visibility/>}
+                                        </IconButton>
+                                    </InputAdornment>
+                                ),
+                            }}
                         /> {formik.errors.password ? <div>{formik.errors.password}</div> : null}
                         <FormControlLabel label={'Remember me'} control={<Checkbox/>}
                                           {...formik.getFieldProps('rememberMe')}
