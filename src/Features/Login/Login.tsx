@@ -55,6 +55,10 @@ export const Login = () => {
                 return {
                     password: 'Password is required'
                 };
+            } else if (values.password.length < 4) {
+                return {
+                    password: "Password must contain at least 4 characters"
+                };
             } else {
                 return {};
             }
