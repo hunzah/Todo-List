@@ -86,13 +86,13 @@ export const Login = () => {
                         <p>Password: free</p>
                     </FormLabel>
                     <FormGroup>
-                        <TextField label="Email" margin="normal"
+                        <TextField label="Email" margin="normal" defaultValue={'free@samuraijs.com'}
                                    {...formik.getFieldProps('email')}/>
                         {formik.errors.email ? <div className={s.error}>{formik.errors.email}</div> : null}
                         <TextField
                             type={showPassword ? 'text' : 'password'}
                             label="Password"
-                            margin="normal"
+                            margin="normal" defaultValue={'free'}
                             {...formik.getFieldProps('password')}
                             InputProps={{
                                 endAdornment: (
