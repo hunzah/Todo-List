@@ -28,7 +28,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Work/incubator/exam/exams",
+    "last_opened_file_path": "D:/Work/todolist-toolkit",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -245,13 +245,8 @@
       <workItem from="1689312105910" duration="3284000" />
       <workItem from="1690451970275" duration="2118000" />
       <workItem from="1690532932086" duration="10000" />
-    </task>
-    <task id="LOCAL-00067" summary="add thunks">
-      <created>1688361468660</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1688361468662</updated>
+      <workItem from="1690539287398" duration="20000" />
+      <workItem from="1690615487908" duration="13000" />
     </task>
     <task id="LOCAL-00068" summary="add thunks">
       <created>1688362884392</created>
@@ -589,7 +584,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690452667093</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="code refactoring">
+      <created>1690539295964</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1690539295965</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
